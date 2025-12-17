@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# WordPress backup files (large)
+u157307034.20250919011728/
+u157307034_pOZ2A.sql
+
