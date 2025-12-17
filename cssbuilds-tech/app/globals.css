@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+:root {
+  /* Confident Indigo Palette */
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --primary: #3730a3;
+  --secondary: #06B6D4;
+  --accent: #F59E0B;
+  --muted-foreground: #6B7280;
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  
+  /* Fonts */
+  --font-sans: var(--font-merriweather-sans);
+  --font-poppins: var(--font-poppins);
+  
+  /* Border Radius */
+  --radius-card: 32px;
+  --radius-gallery: 35px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll snap */
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  scroll-snap-type: y proximity;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* Custom Utility Classes */
+.gradient-bg {
+  background-color: var(--primary);
+  /* Multi-layered radial gradients for sophisticated mesh effect */
+  background-image:
+    /* Lighter shade of primary indigo */
+    radial-gradient(at 15% 20%, hsla(244, 56%, 62%, .3) 0px, transparent 50%),
+    /* Subtle hint of secondary cyan */
+    radial-gradient(at 80% 70%, hsla(188, 96%, 43%, .2) 0px, transparent 50%);
+  position: relative;
+}
+
+/* Subtle gradient variant */
+.gradient-bg-subtle {
+  background: linear-gradient(135deg, var(--primary) 0%, hsl(244, 56%, 45%) 100%);
+}
+
+/* Vibrant gradient with accent */
+.gradient-bg-vibrant {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.gradient-overlay {
+  background: linear-gradient(135deg, hsla(244, 56%, 42%, 0.95) 0%, hsla(244, 30%, 30%, 0.95) 100%);
+}
+
+/* Glass morphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animated gradient text - premium subtle version */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Cloud animations - horizontal movement left to right */
+@keyframes cloudMove1 {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(calc(100vw + 120%));
+  }
+}
+
+@keyframes cloudMove2 {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(calc(100vw + 110%));
+  }
+}
+
+@keyframes cloudMove3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100%));
+  }
+}
+
+@keyframes cloudMove4 {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(calc(100vw + 130%));
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsla(244, 56%, 42%, 0.3); }
+  50% { box-shadow: 0 0 40px hsla(244, 56%, 42%, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9FAFB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(244, 56%, 35%);
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px hsla(244, 56%, 42%, 0.2);
+}
+
+/* Custom cursor - hide default on desktop */
+/* Disabled for now
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+  
+  a, button, input, textarea, select {
+    cursor: none !important;
+  }
+}
+*/
+
+/* Hero text shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.hero-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* 3D Transform optimizations for GSAP animations */
+.project-card,
+.project-card-item {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  perspective: 1000px;
+}
+
+/* Smooth hardware-accelerated transforms */
+.project-card *,
+.project-card-item * {
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for modal */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(244, 56%, 35%);
+}

@@ -1,0 +1,10 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Figma icon representation -->
+  <rect x="8" y="8" width="8" height="8" rx="4" fill="#F24E1E"/>
+  <rect x="16" y="8" width="8" height="8" rx="4" fill="#A259FF"/>
+  <rect x="8" y="16" width="8" height="8" rx="4" fill="#19BCFE"/>
+  <rect x="16" y="16" width="8" height="8" rx="4" fill="#09CF83"/>
+  <rect x="8" y="24" width="8" height="8" rx="4" fill="#FFB800"/>
+  <!-- Figma text -->
+  <text x="35" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#000">Figma</text>
+</svg>

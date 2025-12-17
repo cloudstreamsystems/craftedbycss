@@ -1,0 +1,28 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Security Headers - Critical for preventing XSS, clickjacking, and other attacks
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Content Security Policy - Prevents XSS and code injection attacks
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https:; media-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;"
+    # Force HTTPS connections
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    # Prevent clickjacking attacks
+    X-Frame-Options = "DENY"
+    # Prevent MIME-type sniffing
+    X-Content-Type-Options = "nosniff"
+    # Control referrer information
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Restrict dangerous browser features
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+    # Additional security header
+    X-XSS-Protection = "1; mode=block"
