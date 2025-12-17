@@ -1,18 +1,104 @@
-# Cloudstream Systems - Website Rebuild
+# Cloudstream Systems Website
 
 > **...just build**
 
-Modern, production-ready rebuild of cssbuilds.tech using Next.js 15, TypeScript, and TailwindCSS.
+Modern, responsive website for Cloudstream Systems built with Next.js 16, TypeScript, TailwindCSS, and Framer Motion.
 
-## 🚀 Quick Start
+## 🚀 Features
+
+- ✅ **Fully Responsive Design** - Optimized for all devices
+- ✅ **Modern Tech Stack** - Next.js 16, TypeScript, TailwindCSS 4
+- ✅ **Smooth Animations** - Framer Motion for engaging interactions
+- ✅ **SEO Optimized** - Built-in Next.js metadata and optimization
+- ✅ **Fast Performance** - Static generation and image optimization
+- ✅ **Type Safe** - Full TypeScript implementation
+- ✅ **Netlify Ready** - Configured for seamless deployment
+
+## 📁 Project Structure
+
+```
+cssbuilds-tech/
+├── app/                    # Next.js App Router
+│   ├── about/             # About page
+│   ├── services/          # Services page
+│   ├── projects/          # Projects gallery
+│   ├── contact/           # Contact page
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/
+│   ├── home/              # Home page sections
+│   ├── layout/            # Header & Footer
+│   ├── projects/          # Project components
+│   └── ui/                # Reusable UI components
+├── lib/
+│   ├── data/              # Data files (projects, services)
+│   └── utils.ts           # Utility functions
+└── public/                # Static assets
+```
+
+## 🎨 Design System
+
+### Colors
+- **Primary**: `#7076C6` (Purple)
+- **Secondary**: `#4B3A5E` (Dark Purple)
+- **Accent**: `#7177C7` (Light Purple)
+- **Background**: `#F4F5FF` (Light Background)
+
+### Typography
+- **Headings**: Merriweather Sans (Bold, 700)
+- **Body**: Merriweather Sans (Regular, 400)
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js 20 or higher
+- npm or yarn
+
+### Installation
 
 ```bash
 # Install dependencies
 npm install
 
+# Copy environment variables
+cp .env.local.example .env.local
+
 # Run development server
 npm run dev
+```
 
+Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+## 📄 Pages
+
+1. **Home** (`/`) - Hero, About, Stats, Services, Process, Projects, CTA
+2. **About** (`/about`) - Mission, Vision, Story, Values, Team
+3. **Services** (`/services`) - Detailed service offerings and process
+4. **Projects** (`/projects`) - Filterable portfolio gallery
+5. **Contact** (`/contact`) - Contact form and information
+
+## 🚢 Deployment
+
+### Netlify Deployment
+
+1. **Connect Repository**
+   - Push code to GitHub
+   - Connect repository to Netlify
+
+2. **Configure Build Settings**
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+   - The `netlify.toml` file is already configured
+
+3. **Set Environment Variables**
+   - Add environment variables from `.env.local.example`
+
+4. **Deploy**
+   - Netlify will automatically build and deploy
+
+### Manual Build
+
+```bash
 # Build for production
 npm run build
 
@@ -20,75 +106,44 @@ npm run build
 npm start
 ```
 
-## 📁 Repository Structure
+## 🔧 Development
 
-```
-craftedbycss/
-├── craftedbycss/          # Documentation & implementation guide
-├── cssbuilds-tech/        # Next.js application (to be created)
-└── README.md             # This file
-```
+### Available Scripts
 
-## 🎯 Project Status
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
-- [x] WordPress content extraction
-- [x] Design system documentation
-- [x] Implementation guide created
-- [ ] Next.js project setup
-- [ ] Component implementation
-- [ ] Asset migration
-- [ ] Deployment to Netlify
+### Adding New Content
 
-## 📖 Documentation
+**Projects**: Edit `/lib/data/projects.ts`
+**Services**: Edit `/lib/data/services.ts`
 
-See `craftedbycss/README.md` for complete implementation guide including:
-- Design system specifications
-- Component code examples
-- Data structures
-- Deployment instructions
+## 📦 Dependencies
 
-## 🛠️ Tech Stack
+### Core
+- Next.js 16.0.3
+- React 19.2.0
+- TypeScript 5
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: TailwindCSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Deployment**: Netlify
+### UI & Styling
+- TailwindCSS 4
+- Framer Motion 12
+- Lucide React (icons)
+- clsx & tailwind-merge
 
-## 🔗 Links
+## 🎯 Performance
 
-- **Live Site**: https://cssbuilds.tech (to be deployed)
-- **GitHub**: (to be added after pushing to your account)
-- **Documentation**: [Implementation Guide](./craftedbycss/README.md)
-
-## 🚢 Deployment Setup
-
-### Connect to Your GitHub Account
-
-```bash
-# Configure Git with your details
-git config user.name "Your Name"
-git config user.email "your.email@example.com"
-
-# Create a new repository on GitHub, then:
-git remote add origin https://github.com/YOUR_USERNAME/cssbuilds-tech.git
-git branch -M main
-git push -u origin main
-```
-
-### Deploy to Netlify
-
-1. Log in to Netlify
-2. Click "Add new site" → "Import an existing project"
-3. Connect your GitHub account
-4. Select the `cssbuilds-tech` repository
-5. Configure build settings:
-   - Build command: `npm run build`
-   - Publish directory: `.next`
-6. Add environment variables (if needed)
-7. Deploy!
+- Static generation for optimal performance
+- Image optimization with Next.js Image
+- Code splitting and lazy loading
+- Minimal bundle size
 
 ## 📝 License
 
 © 2025 Cloudstream Systems. All rights reserved.
+
+---
+
+**Built with ❤️ by Cloudstream Systems**
