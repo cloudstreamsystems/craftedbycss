@@ -41,8 +41,8 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-[#1e1b4b]/80 backdrop-blur-md shadow-lg border-b border-white/5'
-          : 'bg-transparent'
+        ? 'bg-[#1e1b4b]/80 backdrop-blur-md shadow-lg border-b border-white/5'
+        : 'bg-transparent'
         }`}
     >
       <nav className="container mx-auto pl-4 pr-4 md:pr-20 lg:pr-28 py-4 flex items-center justify-between">
@@ -64,14 +64,14 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-white/90 hover:text-[#00fa80] transition-colors font-medium text-base relative group"
+              className="text-white/90 hover:text-[#ff4500] transition-colors font-medium text-base relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00fa80] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4500] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
           <Link href="/contact">
-            <button className="bg-[#00fa80] text-[#1e1b4b] px-6 py-2 rounded-full font-bold hover:bg-white transition-colors duration-300">
+            <button className="bg-[#ff4500] text-[#1e1b4b] px-6 py-2 rounded-full font-bold hover:bg-white transition-colors duration-300">
               Get Started
             </button>
           </Link>
@@ -108,7 +108,7 @@ export default function Header() {
           >
             {/* Background Elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#3730a3] rounded-full blur-[100px] opacity-20 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#00fa80] rounded-full blur-[100px] opacity-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff4500] rounded-full blur-[100px] opacity-10 pointer-events-none" />
 
             <div className="flex flex-col space-y-6">
               {navigation.map((item, index) => (
@@ -120,11 +120,11 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="flex items-center justify-between text-3xl font-bold text-white hover:text-[#00fa80] transition-colors group"
+                    className="flex items-center justify-between text-3xl font-bold text-white hover:text-[#ff4500] transition-colors group"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
-                    <ArrowRight className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#00fa80]" />
+                    <ArrowRight className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#ff4500]" />
                   </Link>
                   <div className="h-px bg-white/10 mt-6 w-full" />
                 </motion.div>
@@ -137,7 +137,7 @@ export default function Header() {
                 className="pt-8"
               >
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  <button className="w-full bg-[#00fa80] text-[#1e1b4b] py-4 rounded-xl font-bold text-lg hover:bg-white transition-colors duration-300 shadow-lg shadow-[#00fa80]/20">
+                  <button className="w-full bg-[#ff4500] text-[#1e1b4b] py-4 rounded-xl font-bold text-lg hover:bg-white transition-colors duration-300 shadow-lg shadow-[#ff4500]/20">
                     Start Your Project
                   </button>
                 </Link>

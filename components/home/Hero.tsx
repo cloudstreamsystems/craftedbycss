@@ -85,7 +85,7 @@ export default function Hero() {
                     onMouseEnter={(e) =>
                       gsap.to(e.currentTarget, {
                         scale: 1.1,
-                        color: "#00fa80",
+                        color: "#ff4500",
                         duration: 0.2,
                         ease: "power2.out",
                       })
@@ -124,10 +124,10 @@ export default function Hero() {
               magnetic={true}
               className={
                 isViewWorkHovered
-                  ? "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
+                  ? "w-full sm:w-auto !bg-[#ff4500] border-2 border-[#ff4500] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#ff4500]"
                   : isLetsTalkHovered
-                    ? "w-full sm:w-auto !bg-transparent border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
-                    : "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
+                    ? "w-full sm:w-auto !bg-transparent border-2 border-[#ff4500] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
+                    : "w-full sm:w-auto !bg-[#ff4500] border-2 border-[#ff4500] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#ff4500]"
               }
               onMouseEnter={() => setIsViewWorkHovered(true)}
               onMouseLeave={() => setIsViewWorkHovered(false)}
@@ -143,8 +143,8 @@ export default function Hero() {
               magnetic={true}
               className={
                 isLetsTalkHovered
-                  ? "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
-                  : "w-full sm:w-auto !bg-transparent border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
+                  ? "w-full sm:w-auto !bg-[#ff4500] border-2 border-[#ff4500] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#ff4500]"
+                  : "w-full sm:w-auto !bg-transparent border-2 border-[#ff4500] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
               }
               onMouseEnter={() => setIsLetsTalkHovered(true)}
               onMouseLeave={() => setIsLetsTalkHovered(false)}
@@ -170,7 +170,7 @@ export default function Hero() {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl md:text-5xl font-bold mb-2 text-white">{stat.value}</div>
-              <div className="text-sm md:text-base text-[#00fa80]/80">{stat.label}</div>
+              <div className="text-sm md:text-base text-[#ff4500]/80">{stat.label}</div>
             </div>
           ))}
         </motion.div>
