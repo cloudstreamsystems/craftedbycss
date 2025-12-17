@@ -24,7 +24,7 @@ export default function Hero() {
   // GSAP Timeline for word reveal animation
   useGSAP(() => {
     const tl = gsap.timeline();
-    
+
     // Animate all words with stagger
     tl.from(".hero-headline-word", {
       opacity: 0,
@@ -49,7 +49,7 @@ export default function Hero() {
   return (
     <section ref={heroContainerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background with Parallax */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 overflow-hidden"
         style={{ y, opacity }}
       >
@@ -68,16 +68,15 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20">
+      <div className="relative z-10 container mx-auto px-4 text-center text-white pt-24 md:pt-20">
         {/* Word-by-Word Reveal with GSAP */}
-        <div className="mb-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide md:tracking-wider max-w-6xl mx-auto">
+        <div className="mb-8 md:mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-wide md:tracking-wider max-w-6xl mx-auto flex flex-col items-center">
             {headlineLines.map((line, lineIndex) => (
               <div
                 key={`headline-line-${lineIndex}`}
-                className={`w-full flex flex-wrap justify-start md:justify-center gap-x-3 md:gap-x-7 gap-y-2 px-2 md:px-6 ${
-                  lineIndex === 0 ? "mb-2" : "mt-2"
-                }`}
+                className={`w-full flex flex-wrap justify-center gap-x-2 md:gap-x-4 gap-y-1 px-2 md:px-6 ${lineIndex === 0 ? "mb-2" : "mt-2"
+                  }`}
               >
                 {line.split(" ").map((word, wordIndex) => (
                   <span
@@ -109,7 +108,7 @@ export default function Hero() {
         </div>
 
         {/* Static Subheading */}
-        <p className="text-lg md:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto text-white/90 leading-relaxed font-light">
+        <p className="text-lg md:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto text-white/90 leading-relaxed font-light px-4">
           Where creativity meets cutting-edge technology
         </p>
 
@@ -117,18 +116,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md sm:max-w-none mx-auto"
         >
-          <Link href="/projects">
-            <Button 
+          <Link href="/projects" className="w-full sm:w-auto">
+            <Button
               size="lg"
               magnetic={true}
               className={
                 isViewWorkHovered
-                  ? "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
+                  ? "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
                   : isLetsTalkHovered
-                  ? "w-full sm:w-auto !bg-transparent border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
-                  : "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
+                    ? "w-full sm:w-auto !bg-transparent border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
+                    : "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
               }
               onMouseEnter={() => setIsViewWorkHovered(true)}
               onMouseLeave={() => setIsViewWorkHovered(false)}
@@ -138,14 +137,14 @@ export default function Hero() {
               View Our Work <ArrowRight className="ml-2" size={20} />
             </Button>
           </Link>
-          <Link href="/contact">
-            <Button 
+          <Link href="/contact" className="w-full sm:w-auto">
+            <Button
               size="lg"
               magnetic={true}
               className={
                 isLetsTalkHovered
-                  ? "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
-                  : "w-full sm:w-auto !bg-transparent border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
+                  ? "w-full sm:w-auto !bg-[#00fa80] border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-[#00fa80]"
+                  : "w-full sm:w-auto !bg-transparent border-2 border-[#00fa80] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:!bg-transparent"
               }
               onMouseEnter={() => setIsLetsTalkHovered(true)}
               onMouseLeave={() => setIsLetsTalkHovered(false)}
