@@ -118,15 +118,15 @@ export default function Services() {
                 key={service.id}
                 className="service-card group"
               >
-                <div className="relative h-full bg-white rounded-3xl p-10 border border-[#8B93D6] hover:border-[#FF5722] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div className="relative h-full bg-white rounded-3xl p-8 border border-[#8B93D6] hover:border-[#FF5722] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                   {/* Gradient accent on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300`} />
 
                   <div className="relative z-10 text-center flex flex-col h-full">
                     {/* Icon with amber background - centered */}
-                    <div className="flex justify-center mb-8">
+                    <div className="flex justify-center mb-6">
                       <motion.div
-                        className="w-40 h-40 flex items-center justify-center"
+                        className="w-32 h-32 flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
@@ -134,15 +134,15 @@ export default function Services() {
                       </motion.div>
                     </div>
 
-                    <h3 className="text-3xl font-bold mb-4 text-[#111827] group-hover:text-[#3730a3] transition-colors min-h-[4rem]">
+                    <h3 className="text-3xl font-bold mb-3 text-[#111827] group-hover:text-[#3730a3] transition-colors min-h-[4rem]">
                       {service.title}
                     </h3>
 
-                    <p className="text-lg text-gray-600 mb-8 leading-relaxed min-h-[5rem]">
+                    <p className="text-lg text-gray-600 mb-6 leading-relaxed min-h-[5rem]">
                       {service.description}
                     </p>
 
-                    <div className="flex flex-col items-center flex-grow mb-8">
+                    <div className="flex flex-col items-center flex-grow mb-6">
                       <ul className="space-y-3 text-left">
                         {service.features.map((feature) => (
                           <li key={feature} className="flex items-start gap-3 text-base text-gray-600">
