@@ -78,7 +78,7 @@ export default function Header() {
               alt="Cloudstream Systems"
               width={262}
               height={88}
-              className={`h-10 md:h-12 w-auto transition-all duration-500 ${isDarkText ? '' : 'brightness-0 invert'}`}
+              className={`h-10 md:h-12 w-auto transition-all duration-500 ${isDarkText ? 'brightness-0' : 'brightness-0 invert'}`}
               priority
             />
           </Link>

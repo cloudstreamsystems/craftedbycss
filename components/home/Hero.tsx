@@ -170,7 +170,7 @@ export default function Hero() {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl md:text-5xl font-bold mb-2 text-white">{stat.value}</div>
-              <div className="text-sm md:text-base text-[#ff4500]/80">{stat.label}</div>
+              <div className="text-sm md:text-base text-white/90 font-medium">{stat.label}</div>
             </div>
           ))}
         </motion.div>
