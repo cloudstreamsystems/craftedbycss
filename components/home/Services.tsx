@@ -15,13 +15,13 @@ import Link from "next/link";
 
 import LottieIcon from "@/components/ui/LottieIcon";
 import brandIdentityAnim from "@/public/animations/brand-identity.json";
-import websiteDesignAnim from "@/public/animations/website-design.json";
+import websiteSetupAnim from "@/public/website-setup.json";
 import artDirectionAnim from "@/public/animations/art-direction.json";
 import developmentAnim from "@/public/animations/development.json";
 
 const lottieMap = {
   palette: brandIdentityAnim,
-  monitor: websiteDesignAnim,
+  monitor: websiteSetupAnim,
   compass: artDirectionAnim,
   code: developmentAnim,
 };
