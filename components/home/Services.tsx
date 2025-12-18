@@ -105,7 +105,9 @@ export default function Services() {
             Comprehensive digital solutions crafted to elevate your brand and drive measurable results
           </p>
         </div>
+      </Container>
 
+      <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
             const animationData = lottieMap[service.icon as keyof typeof lottieMap];
@@ -116,15 +118,15 @@ export default function Services() {
                 key={service.id}
                 className="service-card group"
               >
-                <div className="relative h-full bg-white rounded-3xl p-8 border border-[#8B93D6] hover:border-[#FF5722] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div className="relative h-full bg-white rounded-3xl p-10 border border-[#8B93D6] hover:border-[#FF5722] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                   {/* Gradient accent on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300`} />
 
                   <div className="relative z-10 text-center flex flex-col h-full">
                     {/* Icon with amber background - centered */}
-                    <div className="flex justify-center mb-6">
+                    <div className="flex justify-center mb-8">
                       <motion.div
-                        className="w-24 h-24 flex items-center justify-center"
+                        className="w-40 h-40 flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
@@ -132,19 +134,19 @@ export default function Services() {
                       </motion.div>
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-3 text-[#111827] group-hover:text-[#3730a3] transition-colors min-h-[4rem]">
+                    <h3 className="text-3xl font-bold mb-4 text-[#111827] group-hover:text-[#3730a3] transition-colors min-h-[4rem]">
                       {service.title}
                     </h3>
 
-                    <p className="text-gray-600 mb-6 leading-relaxed min-h-[4.5rem]">
+                    <p className="text-lg text-gray-600 mb-8 leading-relaxed min-h-[5rem]">
                       {service.description}
                     </p>
 
-                    <div className="flex flex-col items-center flex-grow mb-6">
-                      <ul className="space-y-2 text-left">
+                    <div className="flex flex-col items-center flex-grow mb-8">
+                      <ul className="space-y-3 text-left">
                         {service.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#3730a3] mt-1.5 flex-shrink-0" />
+                          <li key={feature} className="flex items-start gap-3 text-base text-gray-600">
+                            <div className="w-2 h-2 rounded-full bg-[#3730a3] mt-2 flex-shrink-0" />
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -155,10 +157,10 @@ export default function Services() {
                     <div className="flex justify-center">
                       <Link
                         href="/services"
-                        className="inline-flex items-center gap-2 text-[#3730a3] font-semibold text-sm group-hover:gap-3 transition-all"
+                        className="inline-flex items-center gap-2 text-[#3730a3] font-semibold text-base group-hover:gap-3 transition-all"
                       >
                         Learn More
-                        <ArrowUpRight className="w-4 h-4" />
+                        <ArrowUpRight className="w-5 h-5" />
                       </Link>
                     </div>
                   </div>
@@ -167,7 +169,7 @@ export default function Services() {
             );
           })}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
