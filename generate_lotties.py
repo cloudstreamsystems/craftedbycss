@@ -1,37 +1,46 @@
-
 import json
 import os
 
-# Source file
-source_path = '/home/sandbox/craftedbycss/public/brand.json'
 output_dir = '/home/sandbox/craftedbycss/public/animations'
 
-# Ensure output directory exists
-os.makedirs(output_dir, exist_ok=True)
-
-# Theme colors (Normalized RGB [0-1])
-# Original Amber: [1, 0.2667, 0]
-colors = {
-    'brand-identity.json': [1, 0.2667, 0],          # Amber (Accent)
-    'website-design.json': [0.2157, 0.1882, 0.6392], # Indigo (Primary)
-    'art-direction.json': [0.0235, 0.7137, 0.8314],  # Cyan (Secondary)
-    'development.json': [0.9373, 0.2667, 0.2667]     # Rose (Social Media/Distinct)
-}
+# Configuration: Source file -> Output filename -> Target Color
+# Color is normalized RGB [0-1]
+# #ff4400 -> [1, 0.2667, 0]
+configs = [
+    {
+        'source': 'brand.json',
+        'output': 'brand-identity.json',
+        'color': [1, 0.2667, 0]
+    },
+    {
+        'source': 'website-setup.json',
+        'output': 'website-design.json',
+        'color': [1, 0.2667, 0] # Fully #ff4400 as requested
+    },
+    {
+        'source': 'brand.json',
+        'output': 'art-direction.json',
+        'color': [0.0235, 0.7137, 0.8314]
+    },
+    {
+        'source': 'brand.json',
+        'output': 'development.json',
+        'color': [0.9373, 0.2667, 0.2667]
+    }
+]
 
 def replace_color(obj, target_color):
     if isinstance(obj, dict):
-        # Check if this dict represents a color property
-        # Lottie colors are often in "c": {"k": [r, g, b, a]} or just "k": [r, g, b]
-        # In brand.json we saw: "c":{"a":0,"k":[1,0.2667,0],"ix":4}
+        # "c": {"k": [r, g, b, ...]}
         if 'c' in obj and isinstance(obj['c'], dict) and 'k' in obj['c']:
             color_val = obj['c']['k']
             if isinstance(color_val, list) and len(color_val) >= 3:
-                # Check if it matches the original amber color (approx)
-                r, g, b = color_val[0], color_val[1], color_val[2]
-                if r > 0.9 and g > 0.2 and g < 0.3 and b < 0.1:
-                     # Preserve alpha if present (4th component)
-                    new_color = target_color + (color_val[3:] if len(color_val) > 3 else [])
-                    obj['c']['k'] = new_color
+                # For website-setup.json, we want to replace ALL colors
+                # For brand.json, we were only replacing specific ones, but replacing all is usually safer for single-color icons
+                
+                # Preserve alpha if present
+                new_color = target_color + (color_val[3:] if len(color_val) > 3 else [])
+                obj['c']['k'] = new_color
         
         for key, value in obj.items():
             replace_color(value, target_color)
@@ -39,20 +48,22 @@ def replace_color(obj, target_color):
         for item in obj:
             replace_color(item, target_color)
 
-# Read source
-with open(source_path, 'r') as f:
-    base_data = json.load(f)
-
 # Generate files
-for filename, color in colors.items():
-    # Deep copy by parsing JSON again (simplest way to ensure no ref issues)
-    data = json.loads(json.dumps(base_data))
+for config in configs:
+    source_path = os.path.join('/home/sandbox/craftedbycss/public', config['source'])
+    output_path = os.path.join(output_dir, config['output'])
+    
+    if not os.path.exists(source_path):
+        print(f"Skipping {config['output']}: Source {source_path} not found")
+        continue
+
+    with open(source_path, 'r') as f:
+        data = json.load(f)
     
     # Replace colors
-    replace_color(data, color)
+    replace_color(data, config['color'])
     
     # Write to file
-    out_path = os.path.join(output_dir, filename)
-    with open(out_path, 'w') as f:
+    with open(output_path, 'w') as f:
         json.dump(data, f)
-    print(f"Generated {out_path}")
+    print(f"Generated {output_path}")

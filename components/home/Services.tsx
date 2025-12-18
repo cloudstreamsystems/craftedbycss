@@ -15,13 +15,13 @@ import Link from "next/link";
 
 import LottieIcon from "@/components/ui/LottieIcon";
 import brandIdentityAnim from "@/public/animations/brand-identity.json";
-import websiteSetupAnim from "@/public/website-setup.json";
+import websiteDesignAnim from "@/public/animations/website-design.json";
 import artDirectionAnim from "@/public/animations/art-direction.json";
 import developmentAnim from "@/public/animations/development.json";
 
 const lottieMap = {
   palette: brandIdentityAnim,
-  monitor: websiteSetupAnim,
+  monitor: websiteDesignAnim,
   compass: artDirectionAnim,
   code: developmentAnim,
 };
@@ -112,6 +112,7 @@ export default function Services() {
           {services.map((service, index) => {
             const animationData = lottieMap[service.icon as keyof typeof lottieMap];
             const gradient = gradients[index % gradients.length];
+            const isWebsiteService = service.id === "web-design";
 
             return (
               <div
@@ -127,7 +128,8 @@ export default function Services() {
                     <div className="flex justify-center mb-6">
                       <motion.div
                         className="w-20 h-20 flex items-center justify-center"
-                        whileHover={{ scale: 1.05 }}
+                        animate={{ scale: isWebsiteService ? 1.5 : 1 }}
+                        whileHover={{ scale: isWebsiteService ? 1.6 : 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <LottieIcon animationData={animationData} className="w-full h-full" />
