@@ -39,7 +39,7 @@ export default function CTA() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-white text-[#7076C6] hover:bg-white/90 font-bold text-lg px-10 py-6 rounded-full shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105"
+                  className="w-full sm:w-auto bg-white text-[#28236b] hover:bg-white/90 font-bold text-lg px-10 py-6 rounded-full shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105"
                 >
                   Start Your Project <ArrowRight className="ml-2" size={20} />
                 </Button>

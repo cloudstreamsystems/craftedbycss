@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#7076C6] to-[#4B3A5E] text-white py-24">
+      <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
         <Container>
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -29,20 +29,20 @@ export default function AboutPage() {
         <Container>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-[#F4F5FF] rounded-[32px] p-10">
-              <div className="w-16 h-16 bg-[#7076C6] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#28236b] rounded-2xl flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold mb-4 text-[#4B3A5E]">Our Mission</h2>
+              <h2 className="text-3xl font-bold mb-4 text-[#28236b]">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
                 To empower businesses with innovative digital solutions that combine stunning design with powerful functionality. We believe in creating experiences that not only look beautiful but drive measurable business growth.
               </p>
             </div>
 
             <div className="bg-[#F4F5FF] rounded-[32px] p-10">
-              <div className="w-16 h-16 bg-[#7076C6] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#28236b] rounded-2xl flex items-center justify-center mb-6">
                 <Eye className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold mb-4 text-[#4B3A5E]">Our Vision</h2>
+              <h2 className="text-3xl font-bold mb-4 text-[#28236b]">Our Vision</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
                 To be the go-to partner for businesses seeking to transform their digital presence. We envision a future where every brand we touch becomes a leader in their industry through exceptional design and development.
               </p>
@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-[#4B3A5E] text-center">Our Story</h2>
+            <h2 className="text-4xl font-bold mb-8 text-[#28236b] text-center">Our Story</h2>
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
                 Cloudstream Systems was born from a simple belief: great design and powerful technology should work together seamlessly. We started as a small team of passionate designers and developers who were frustrated with the disconnect between beautiful designs and functional implementations.
@@ -74,14 +74,14 @@ export default function AboutPage() {
       {/* Values */}
       <section className="py-20 bg-[#F4F5FF]">
         <Container>
-          <h2 className="text-4xl font-bold mb-12 text-[#4B3A5E] text-center">Our Values</h2>
+          <h2 className="text-4xl font-bold mb-12 text-[#28236b] text-center">Our Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="bg-white rounded-[32px] p-8 text-center">
-                <div className="w-16 h-16 bg-[#7076C6] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-[#28236b] rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[#4B3A5E]">{value.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-[#28236b]">{value.title}</h3>
                 <p className="text-gray-700">{value.description}</p>
               </div>
             ))}
@@ -93,8 +93,8 @@ export default function AboutPage() {
       <section className="py-20">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <Users className="w-16 h-16 text-[#7076C6] mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6 text-[#4B3A5E]">Our Team</h2>
+            <Users className="w-16 h-16 text-[#28236b] mx-auto mb-6" />
+            <h2 className="text-4xl font-bold mb-6 text-[#28236b]">Our Team</h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-8">
               We're a diverse team of designers, developers, strategists, and creative thinkers united by our passion for exceptional digital experiences. Each member brings unique expertise and perspective, allowing us to tackle any challenge with creativity and precision.
             </p>
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#7076C6] to-[#4B3A5E] text-white">
+      <section className="py-20 bg-gradient-to-br from-[#28236b] to-[#28236b] text-white">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Work Together?</h2>
@@ -115,7 +115,7 @@ export default function AboutPage() {
             </p>
             <a
               href="/contact"
-              className="inline-block bg-white text-[#7076C6] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-[#28236b] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Get in Touch
             </a>

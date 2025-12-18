@@ -29,13 +29,13 @@ export default function ContactFormEnhanced() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
-      
+
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus("idle"), 5000);
     }, 2000);
@@ -68,7 +68,7 @@ export default function ContactFormEnhanced() {
         onFocus={() => setFocusedField(name)}
         onBlur={() => setFocusedField(null)}
         required={required}
-        className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#7076C6] focus:outline-none transition-colors peer"
+        className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors peer"
       />
       <motion.label
         htmlFor={id}
@@ -78,8 +78,8 @@ export default function ContactFormEnhanced() {
           isMotionReduced
             ? {}
             : isFieldActive(name)
-            ? { top: "0.5rem", fontSize: "0.75rem", color: "#7076C6" }
-            : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
+              ? { top: "0.5rem", fontSize: "0.75rem", color: "#28236b" }
+              : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
         }
         transition={{ duration: 0.2 }}
       >
@@ -111,7 +111,7 @@ export default function ContactFormEnhanced() {
         onBlur={() => setFocusedField(null)}
         required={required}
         rows={rows}
-        className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#7076C6] focus:outline-none transition-colors resize-none peer"
+        className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors resize-none peer"
       />
       <motion.label
         htmlFor={id}
@@ -121,8 +121,8 @@ export default function ContactFormEnhanced() {
           isMotionReduced
             ? {}
             : isFieldActive(name)
-            ? { top: "0.5rem", fontSize: "0.75rem", color: "#7076C6" }
-            : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
+              ? { top: "0.5rem", fontSize: "0.75rem", color: "#28236b" }
+              : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
         }
         transition={{ duration: 0.2 }}
       >
@@ -193,7 +193,7 @@ export default function ContactFormEnhanced() {
       <button
         type="submit"
         disabled={isSubmitting || submitStatus === "success"}
-        className="w-full bg-[#7076C6] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#4B3A5E] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 overflow-hidden relative"
+        className="w-full bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#28236b] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 overflow-hidden relative"
       >
         <AnimatePresence mode="wait">
           {isSubmitting ? (

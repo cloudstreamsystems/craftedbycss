@@ -89,10 +89,10 @@ export default function Services() {
 
       <Container>
         <div ref={titleRef} className="text-center mb-16">
-          <span className="inline-block text-[#7076C6] font-semibold text-sm uppercase tracking-wider mb-4">
+          <span className="inline-block text-[#28236b] font-semibold text-sm uppercase tracking-wider mb-4">
             What We Do
           </span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-[#4B3A5E]">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-[#28236b]">
             Our Services
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -118,7 +118,7 @@ export default function Services() {
                     {/* Icon with amber background - centered */}
                     <div className="flex justify-center mb-6">
                       <motion.div
-                        className="w-16 h-16 bg-[#ff4400] rounded-2xl flex items-center justify-center shadow-lg"
+                        className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center shadow-lg"
                         whileHover={{ scale: 1.15 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >

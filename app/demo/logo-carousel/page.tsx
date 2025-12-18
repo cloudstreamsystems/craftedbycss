@@ -18,7 +18,7 @@ const customLogos = [
   },
   {
     id: "company-2",
-    name: "Company Logo 2", 
+    name: "Company Logo 2",
     src: "/logos/client-2.png",
     alt: "Company Logo 2",
   },
@@ -46,7 +46,7 @@ export default function LogoCarouselDemo() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#7076C6] to-[#4B3A5E] text-white py-24">
+      <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -61,7 +61,7 @@ export default function LogoCarouselDemo() {
 
       {/* Demo Sections */}
       <div className="py-20 space-y-20">
-        
+
         {/* Tech Logos Carousel */}
         <section className="bg-white">
           <Container>
@@ -73,11 +73,11 @@ export default function LogoCarouselDemo() {
                 Modern tools and frameworks we use
               </p>
             </div>
-            
+
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-              
+
               <LogoCarousel
                 logos={techLogos}
                 speed={20}
@@ -101,11 +101,11 @@ export default function LogoCarouselDemo() {
                 Actual customer logos from the WordPress site
               </p>
             </div>
-            
+
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
-              
+
               <LogoCarousel
                 logos={clientLogos}
                 speed={25}
@@ -129,11 +129,11 @@ export default function LogoCarouselDemo() {
                 Original company logos from WordPress uc_logo_carousel
               </p>
             </div>
-            
+
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-              
+
               <LogoCarousel
                 logos={customLogos}
                 speed={30}
@@ -160,7 +160,7 @@ export default function LogoCarouselDemo() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
                 Configuration Options
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-6 rounded-2xl shadow-sm">
                   <h3 className="text-xl font-semibold mb-4">LogoCarousel Props</h3>
@@ -173,11 +173,11 @@ export default function LogoCarouselDemo() {
                     <li><strong>className:</strong> Additional CSS classes</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-white p-6 rounded-2xl shadow-sm">
                   <h3 className="text-xl font-semibold mb-4">Logo Object Structure</h3>
                   <pre className="text-xs bg-gray-100 p-3 rounded overflow-x-auto">
-{`{
+                    {`{
   id: "unique-id",
   name: "Logo Name",
   src: "/path/to/logo.svg",

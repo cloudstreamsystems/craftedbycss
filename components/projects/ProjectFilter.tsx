@@ -17,11 +17,10 @@ export default function ProjectFilter({
         <button
           key={category}
           onClick={() => onCategoryChange(category)}
-          className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-            activeCategory === category
-              ? "bg-[#7076C6] text-white shadow-lg scale-105"
-              : "bg-white text-[#4B3A5E] hover:bg-[#F4F5FF] border-2 border-gray-200"
-          }`}
+          className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === category
+              ? "bg-[#28236b] text-white shadow-lg scale-105"
+              : "bg-white text-[#28236b] hover:bg-[#F4F5FF] border-2 border-gray-200"
+            }`}
         >
           {category}
         </button>

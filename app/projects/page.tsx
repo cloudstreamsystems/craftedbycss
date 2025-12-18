@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#7076C6] to-[#4B3A5E] text-white py-24">
+      <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index}>
-                <div className="text-5xl font-bold text-[#7076C6] mb-2">
+                <div className="text-5xl font-bold text-[#28236b] mb-2">
                   {stat.value}
                 </div>
                 <div className="text-lg text-gray-700">{stat.label}</div>
@@ -71,7 +71,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#7076C6] to-[#4B3A5E] text-white">
+      <section className="py-20 bg-gradient-to-br from-[#28236b] to-[#28236b] text-white">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
             </p>
             <a
               href="/contact"
-              className="inline-block bg-white text-[#7076C6] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-[#28236b] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Start Your Project
             </a>

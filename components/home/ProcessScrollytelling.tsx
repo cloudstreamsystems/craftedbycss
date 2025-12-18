@@ -107,13 +107,13 @@ export default function ProcessScrollytelling() {
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-purple-200/30 rounded-full blur-3xl" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl" />
-      
+
       <Container>
         <div className="text-center mb-16">
-          <span className="inline-block text-[#7076C6] font-semibold text-sm uppercase tracking-wider mb-4">
+          <span className="inline-block text-[#28236b] font-semibold text-sm uppercase tracking-wider mb-4">
             How We Work
           </span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-[#4B3A5E]">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-[#28236b]">
             Our Process
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -123,16 +123,16 @@ export default function ProcessScrollytelling() {
 
         <div className="relative">
           {/* Animated connection line */}
-          <div 
+          <div
             ref={lineRef}
-            className="hidden lg:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-600" 
-            style={{ top: '4rem' }} 
+            className="hidden lg:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-600"
+            style={{ top: '4rem' }}
           />
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {processSteps.map((step, index) => {
               const Icon = icons[index];
-              
+
               return (
                 <div
                   key={index}
@@ -145,15 +145,15 @@ export default function ProcessScrollytelling() {
                       <div className="w-20 h-20 bg-gradient-to-br from-purple-500 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
                         <Icon className="w-10 h-10 text-white" />
                       </div>
-                      <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-[#7076C6]">
-                        <span className="text-lg font-bold text-[#7076C6]">
+                      <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-[#28236b]">
+                        <span className="text-lg font-bold text-[#28236b]">
                           {index + 1}
                         </span>
                       </div>
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-2xl font-bold mb-4 text-[#4B3A5E]">
+                    <h3 className="text-2xl font-bold mb-4 text-[#28236b]">
                       {step.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">

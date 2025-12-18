@@ -25,14 +25,14 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     // In production, replace with actual API call
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
-      
+
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus("idle"), 5000);
     }, 1000);
@@ -51,7 +51,7 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#7076C6] focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors"
           placeholder="Your name"
         />
       </div>
@@ -67,7 +67,7 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#7076C6] focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors"
           placeholder="your.email@example.com"
         />
       </div>
@@ -83,7 +83,7 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#7076C6] focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors"
           placeholder="How can we help?"
         />
       </div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={6}
-          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#7076C6] focus:outline-none transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors resize-none"
           placeholder="Tell us about your project..."
         />
       </div>
@@ -119,7 +119,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#7076C6] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#4B3A5E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#28236b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {isSubmitting ? (
           "Sending..."

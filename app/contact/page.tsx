@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#7076C6] to-[#4B3A5E] text-white py-24">
+      <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -31,7 +31,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-white rounded-[32px] p-8 md:p-10 shadow-lg">
-              <h2 className="text-3xl font-bold mb-6 text-[#4B3A5E]">
+              <h2 className="text-3xl font-bold mb-6 text-[#28236b]">
                 Send us a Message
               </h2>
               <ContactFormEnhanced />
@@ -40,7 +40,7 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-[#4B3A5E]">
+                <h2 className="text-3xl font-bold mb-6 text-[#28236b]">
                   Contact Information
                 </h2>
                 <p className="text-lg text-gray-700 mb-8">
@@ -51,14 +51,14 @@ export default function ContactPage() {
               {/* Contact Details */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#7076C6] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#4B3A5E] mb-1">Email</h3>
+                    <h3 className="font-semibold text-[#28236b] mb-1">Email</h3>
                     <a
                       href="mailto:contact@cssbuilds.tech"
-                      className="text-gray-700 hover:text-[#7076C6] transition-colors"
+                      className="text-gray-700 hover:text-[#28236b] transition-colors"
                     >
                       contact@cssbuilds.tech
                     </a>
@@ -66,14 +66,14 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#7076C6] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#4B3A5E] mb-1">Phone</h3>
+                    <h3 className="font-semibold text-[#28236b] mb-1">Phone</h3>
                     <a
                       href="tel:+1234567890"
-                      className="text-gray-700 hover:text-[#7076C6] transition-colors"
+                      className="text-gray-700 hover:text-[#28236b] transition-colors"
                     >
                       +1 (234) 567-890
                     </a>
@@ -81,11 +81,11 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#7076C6] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#4B3A5E] mb-1">Location</h3>
+                    <h3 className="font-semibold text-[#28236b] mb-1">Location</h3>
                     <p className="text-gray-700">
                       Remote & Available Worldwide
                     </p>
@@ -95,7 +95,7 @@ export default function ContactPage() {
 
               {/* Social Media */}
               <div className="pt-8 border-t border-gray-200">
-                <h3 className="font-semibold text-[#4B3A5E] mb-4">Follow Us</h3>
+                <h3 className="font-semibold text-[#28236b] mb-4">Follow Us</h3>
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <a
@@ -103,7 +103,7 @@ export default function ContactPage() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-[#F4F5FF] rounded-xl flex items-center justify-center hover:bg-[#7076C6] hover:text-white transition-colors text-[#7076C6]"
+                      className="w-12 h-12 bg-[#F4F5FF] rounded-xl flex items-center justify-center hover:bg-[#28236b] hover:text-white transition-colors text-[#28236b]"
                       aria-label={social.name}
                     >
                       <social.icon className="w-5 h-5" />
@@ -114,7 +114,7 @@ export default function ContactPage() {
 
               {/* Business Hours */}
               <div className="bg-[#F4F5FF] rounded-[32px] p-8">
-                <h3 className="font-semibold text-[#4B3A5E] mb-4">Business Hours</h3>
+                <h3 className="font-semibold text-[#28236b] mb-4">Business Hours</h3>
                 <div className="space-y-2 text-gray-700">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
@@ -139,13 +139,13 @@ export default function ContactPage() {
       <section className="py-20 bg-[#F4F5FF]">
         <Container>
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-[#4B3A5E] text-center">
+            <h2 className="text-4xl font-bold mb-12 text-[#28236b] text-center">
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-white rounded-[32px] p-8">
-                  <h3 className="text-xl font-bold mb-3 text-[#4B3A5E]">
+                  <h3 className="text-xl font-bold mb-3 text-[#28236b]">
                     {faq.question}
                   </h3>
                   <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
