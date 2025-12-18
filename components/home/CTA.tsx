@@ -121,17 +121,6 @@ export default function CTA() {
 
               {/* Right - Contact & Social */}
               <div className="flex flex-col md:flex-row gap-12 md:gap-16">
-                {/* Contact */}
-                <div>
-                  <h5 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Contact</h5>
-                  <a
-                    href="mailto:contact@cssbuilds.tech"
-                    className="text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    contact@cssbuilds.tech
-                  </a>
-                </div>
-
                 {/* Social */}
                 <div>
                   <h5 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Follow</h5>
@@ -149,6 +138,17 @@ export default function CTA() {
                       <Linkedin size={18} />
                     </a>
                   </div>
+                </div>
+
+                {/* Contact */}
+                <div>
+                  <h5 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Contact</h5>
+                  <a
+                    href="mailto:contact@cssbuilds.tech"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
+                  >
+                    contact@cssbuilds.tech
+                  </a>
                 </div>
 
                 {/* Reduce Motion */}
