@@ -12,10 +12,10 @@ os.makedirs(output_dir, exist_ok=True)
 # Theme colors (Normalized RGB [0-1])
 # Original Amber: [1, 0.2667, 0]
 colors = {
-    'brand-identity.json': [1, 0.2667, 0],          # Amber (Original)
-    'website-design.json': [1, 0.2667, 0],          # Amber (Original)
-    'art-direction.json': [1, 0.2667, 0],           # Amber (Original)
-    'development.json': [1, 0.2667, 0]              # Amber (Original)
+    'brand-identity.json': [1, 0.2667, 0],          # Amber (Accent)
+    'website-design.json': [0.2157, 0.1882, 0.6392], # Indigo (Primary)
+    'art-direction.json': [0.0235, 0.7137, 0.8314],  # Cyan (Secondary)
+    'development.json': [0.9373, 0.2667, 0.2667]     # Rose (Social Media/Distinct)
 }
 
 def replace_color(obj, target_color):
