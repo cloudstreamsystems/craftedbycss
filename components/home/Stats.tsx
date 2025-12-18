@@ -40,7 +40,7 @@ export default function Stats() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="relative py-24 bg-gradient-to-br from-[#28236b] via-[#4c3d8f] to-[#1a1648] text-white overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-[#28236b] text-white overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div
