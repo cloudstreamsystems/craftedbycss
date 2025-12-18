@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useMotion } from "@/contexts/MotionContext";
+import Image from "next/image";
 
 interface Logo {
   id: string;
@@ -104,13 +105,12 @@ export default function LogoCarousel({
             key={`${logo.id}-${index}`}
             className="flex-shrink-0 flex items-center justify-center"
           >
-            <img
+            <Image
               src={logo.src}
               alt={logo.alt}
               width={logo.width || 240}
               height={logo.height || 120}
               className="max-w-[240px] max-h-[120px] w-auto h-auto object-contain opacity-70"
-              loading="lazy"
             />
           </motion.div>
         ))}
