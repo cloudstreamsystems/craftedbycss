@@ -99,63 +99,62 @@ export default function CTA() {
             </motion.div>
           </div>
 
-          {/* Footer Elements Moved Here */}
-          <div className="border-t border-white/20 pt-12 mt-12">
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div className="text-center md:text-left flex flex-col h-full justify-between">
-                <div>
-                  <div className="mb-6 flex justify-center md:justify-start">
-                    <img
-                      src="/logo.png"
-                      alt="Cloudstream Systems"
-                      width={175}
-                      height={59}
-                      className="h-10 w-auto brightness-0 invert"
-                    />
-                  </div>
-                  <p className="text-white/80 mb-2 text-lg">
-                    Transforming ideas into digital solutions.
-                  </p>
-                  <p className="text-[#7177C7] font-bold text-lg mb-8">...just build</p>
-                </div>
-
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-sm text-white/60 mt-auto">
-                  <p>&copy; {new Date().getFullYear()} Cloudstream Systems. All rights reserved.</p>
-                  <div className="hidden md:block w-1 h-1 bg-white/30 rounded-full mt-2"></div>
-                  <MotionToggle />
-                </div>
+          {/* Footer */}
+          <div className="border-t border-white/10 pt-16 mt-16">
+            <div className="flex flex-col md:flex-row justify-between gap-12">
+              {/* Left - Branding */}
+              <div className="max-w-sm">
+                <img
+                  src="/logo.png"
+                  alt="Cloudstream Systems"
+                  width={160}
+                  height={54}
+                  className="h-8 w-auto brightness-0 invert mb-4"
+                />
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  Transforming ideas into digital solutions.
+                </p>
+                <p className="text-sm text-white/40">
+                  &copy; {new Date().getFullYear()} Cloudstream Systems
+                </p>
               </div>
 
-              <div className="text-center md:text-right flex flex-col items-center md:items-end gap-10">
-                <div className="group">
-                  <h4 className="font-bold text-xl mb-4 text-white/90 group-hover:text-white transition-colors">Get In Touch</h4>
-                  <div className="flex items-center justify-center md:justify-end gap-3 text-white/80 hover:text-white transition-colors bg-white/5 px-6 py-3 rounded-full backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20">
-                    <Mail size={20} className="text-[#7076C6]" />
-                    <a href="mailto:contact@cssbuilds.tech" className="text-lg font-medium">
-                      contact@cssbuilds.tech
+              {/* Right - Contact & Social */}
+              <div className="flex flex-col md:flex-row gap-12 md:gap-16">
+                {/* Contact */}
+                <div>
+                  <h5 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Contact</h5>
+                  <a
+                    href="mailto:contact@cssbuilds.tech"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
+                  >
+                    contact@cssbuilds.tech
+                  </a>
+                </div>
+
+                {/* Social */}
+                <div>
+                  <h5 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Follow</h5>
+                  <div className="flex gap-5">
+                    <a href="#" className="text-white/50 hover:text-white transition-colors" aria-label="Facebook">
+                      <Facebook size={18} />
+                    </a>
+                    <a href="#" className="text-white/50 hover:text-white transition-colors" aria-label="Twitter">
+                      <Twitter size={18} />
+                    </a>
+                    <a href="#" className="text-white/50 hover:text-white transition-colors" aria-label="Instagram">
+                      <Instagram size={18} />
+                    </a>
+                    <a href="#" className="text-white/50 hover:text-white transition-colors" aria-label="LinkedIn">
+                      <Linkedin size={18} />
                     </a>
                   </div>
                 </div>
 
+                {/* Reduce Motion */}
                 <div>
-                  <h4 className="font-bold text-xl mb-4 text-white/90">Follow Us</h4>
-                  <div className="flex justify-center md:justify-end gap-4">
-                    {[
-                      { icon: Facebook, label: "Facebook" },
-                      { icon: Twitter, label: "Twitter" },
-                      { icon: Instagram, label: "Instagram" },
-                      { icon: Linkedin, label: "LinkedIn" }
-                    ].map((social, index) => (
-                      <a
-                        key={index}
-                        href="#"
-                        className="bg-white/5 p-3 rounded-full border border-white/10 hover:bg-white hover:text-[#1e1b4b] hover:border-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-white/20 group"
-                        aria-label={social.label}
-                      >
-                        <social.icon size={20} className="group-hover:scale-110 transition-transform" />
-                      </a>
-                    ))}
-                  </div>
+                  <h5 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Accessibility</h5>
+                  <MotionToggle />
                 </div>
               </div>
             </div>
