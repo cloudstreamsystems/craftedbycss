@@ -7,7 +7,7 @@ import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import { MotionProvider } from "@/contexts/MotionContext";
 import PageTransition from "@/components/transitions/PageTransition";
 // import CustomCursor from "@/components/ui/CustomCursor";
-import ScrollProgress from "@/components/ui/ScrollProgress";
+// import CustomCursor from "@/components/ui/CustomCursor";
 
 const merriweatherSans = Merriweather_Sans({
   subsets: ["latin"],
@@ -38,7 +38,6 @@ export default function RootLayout({
         <MotionProvider>
           <SmoothScrollProvider>
             {/* <CustomCursor /> */}
-            <ScrollProgress />
             <Header />
             <main>
               <PageTransition>{children}</PageTransition>
