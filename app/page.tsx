@@ -7,23 +7,50 @@ import RecentProjects from "@/components/home/RecentProjects";
 import FAQ from "@/components/home/FAQ";
 import TrustedBy from "@/components/sections/TrustedBy";
 import CTA from "@/components/home/CTA";
+import ScrollObserver from "@/components/ScrollObserver";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Stats />
-      <Services />
-      <Process />
-      <RecentProjects />
-      <FAQ />
-      <TrustedBy
-        title="Trusted by Industry Leaders"
-        subtitle="Join hundreds of companies that trust us with their digital transformation"
-        logoSet="clients"
-      />
-      <CTA />
+      <ScrollObserver mode="chaos">
+        <Hero />
+      </ScrollObserver>
+
+      <ScrollObserver mode="drift">
+        <About />
+      </ScrollObserver>
+
+      <ScrollObserver mode="drift">
+        <Stats />
+      </ScrollObserver>
+
+      <ScrollObserver mode="drift">
+        <Services />
+      </ScrollObserver>
+
+      <ScrollObserver mode="drift">
+        <Process />
+      </ScrollObserver>
+
+      <ScrollObserver mode="drift">
+        <RecentProjects />
+      </ScrollObserver>
+
+      <ScrollObserver mode="drift">
+        <FAQ />
+      </ScrollObserver>
+
+      <ScrollObserver mode="drift">
+        <TrustedBy
+          title="Trusted by Industry Leaders"
+          subtitle="Join hundreds of companies that trust us with their digital transformation"
+          logoSet="clients"
+        />
+      </ScrollObserver>
+
+      <ScrollObserver mode="warning">
+        <CTA />
+      </ScrollObserver>
     </>
   );
 }

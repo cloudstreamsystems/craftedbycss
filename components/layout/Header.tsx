@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useStore } from "@/store/useStore";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -14,147 +16,112 @@ const navigation = [
 ];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const { headerMode, setHeaderMode, isMenuOpen, toggleMenu } = useStore();
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Lock body scroll when menu is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+  // Smart Scroll Logic: Hide on scroll down, show on scroll up
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150 && !isMenuOpen) {
+      setHidden(true);
     } else {
-      document.body.style.overflow = "unset";
+      setHidden(false);
     }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [mobileMenuOpen]);
+
+    // Simple mode switching based on scroll position for now
+    // This can be enhanced with IntersectionObservers for specific sections later
+    if (latest > 50) {
+      if (headerMode === 'chaos') {
+        setHeaderMode('drift'); // Default to light mode (white background) when scrolled
+      }
+    } else {
+      setHeaderMode('chaos'); // Back to transparent at top
+    }
+  });
+
+  // Determine styles based on mode
+  const getHeaderStyles = () => {
+    switch (headerMode) {
+      case 'drift': // White Glass
+        return 'bg-white/90 backdrop-blur-md shadow-sm text-[#1e1b4b]';
+      case 'warning': // Dark Glass
+      case 'order':
+        return 'bg-[#1e1b4b]/90 backdrop-blur-md shadow-sm text-white';
+      case 'chaos': // Transparent
+      default:
+        return 'bg-transparent text-white';
+    }
+  };
+
+  const styles = getHeaderStyles();
+  const isDarkText = headerMode === 'drift';
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-[#1e1b4b]/80 backdrop-blur-md shadow-lg border-b border-white/5'
-        : 'bg-transparent'
-        }`}
-    >
-      <nav className="container mx-auto pl-4 pr-4 md:pr-20 lg:pr-28 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity z-50 relative">
-          <Image
-            src="/logo.png"
-            alt="Cloudstream Systems"
-            width={262}
-            height={88}
-            className="h-12 md:h-16 w-auto brightness-0 invert"
-            priority
-          />
-        </Link>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-white/90 hover:text-[#ff4500] transition-colors font-medium text-base relative group"
-            >
-              {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4500] transition-all duration-300 group-hover:w-full" />
-            </Link>
-          ))}
-          <Link href="/contact">
-            <button className="bg-[#ff4500] text-[#1e1b4b] px-6 py-2 rounded-full font-bold hover:bg-white transition-colors duration-300">
-              Get Started
-            </button>
+    <>
+      <motion.header
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: "-100%" },
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className={`fixed top-0 w-full z-50 transition-colors duration-500 ${styles}`}
+      >
+        <nav className="container mx-auto px-4 md:px-8 lg:px-12 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity z-50 relative">
+            <Image
+              src="/logo.png"
+              alt="Cloudstream Systems"
+              width={262}
+              height={88}
+              className={`h-10 md:h-12 w-auto transition-all duration-500 ${isDarkText ? '' : 'brightness-0 invert'}`}
+              priority
+            />
           </Link>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white z-50 relative p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <motion.div
-            animate={mobileMenuOpen ? "open" : "closed"}
-            variants={{
-              open: { rotate: 180 },
-              closed: { rotate: 0 }
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </motion.div>
-        </button>
-      </nav>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-[#1e1b4b] z-40 md:hidden flex flex-col pt-28 px-6"
-          >
-            {/* Background Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#3730a3] rounded-full blur-[100px] opacity-20 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff4500] rounded-full blur-[100px] opacity-10 pointer-events-none" />
-
-            <div className="flex flex-col space-y-6">
-              {navigation.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + index * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    className="flex items-center justify-between text-3xl font-bold text-white hover:text-[#ff4500] transition-colors group"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                    <ArrowRight className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#ff4500]" />
-                  </Link>
-                  <div className="h-px bg-white/10 mt-6 w-full" />
-                </motion.div>
-              ))}
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="pt-8"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`font-medium text-sm tracking-wide hover:text-[#ff4500] transition-colors relative group ${isDarkText ? 'text-[#1e1b4b]' : 'text-white/90'}`}
               >
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  <button className="w-full bg-[#ff4500] text-[#1e1b4b] py-4 rounded-xl font-bold text-lg hover:bg-white transition-colors duration-300 shadow-lg shadow-[#ff4500]/20">
-                    Start Your Project
-                  </button>
-                </Link>
-              </motion.div>
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4500] transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
+            <Link href="/contact">
+              <button className="bg-[#ff4500] text-[#1e1b4b] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-white hover:text-[#ff4500] transition-all duration-300 shadow-lg shadow-[#ff4500]/20">
+                Get Started
+              </button>
+            </Link>
+          </div>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="mt-auto pb-8 text-center text-white/40 text-sm"
-              >
-                © 2025 Cloudstream Systems
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+          {/* Hamburger Menu Button (Mobile & Tablet) */}
+          <button
+            className={`md:hidden z-50 relative p-2 focus:outline-none ${isMenuOpen ? 'text-white' : (isDarkText ? 'text-[#1e1b4b]' : 'text-white')}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <motion.div
+              animate={isMenuOpen ? "open" : "closed"}
+              variants={{
+                open: { rotate: 90 },
+                closed: { rotate: 0 }
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </motion.div>
+          </button>
+        </nav>
+      </motion.header>
+
+      {/* Full Screen Menu Overlay */}
+      <HamburgerMenu />
+    </>
   );
 }
