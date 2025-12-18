@@ -12,7 +12,7 @@ interface ScrollObserverProps {
 
 export default function ScrollObserver({ mode, children, className = "" }: ScrollObserverProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.1, margin: "-10% 0px -80% 0px" });
+    const isInView = useInView(ref, { amount: 0.1, margin: "-5% 0px -50% 0px" });
     const { setHeaderMode } = useStore();
 
     useEffect(() => {
