@@ -4,7 +4,7 @@
 interface StorageOptions {
   encrypt?: boolean;
   expiry?: number; // milliseconds
-  validate?: (value: any) => boolean;
+  validate?: (value: unknown) => boolean;
 }
 
 class SecureStorage {
@@ -34,7 +34,7 @@ class SecureStorage {
     }
   }
 
-  setItem(key: string, value: any, options: StorageOptions = {}): boolean {
+  setItem(key: string, value: unknown, options: StorageOptions = {}): boolean {
     try {
       const data = {
         value,
@@ -43,7 +43,7 @@ class SecureStorage {
       };
 
       let serialized = JSON.stringify(data);
-      
+
       if (options.encrypt) {
         serialized = this.encrypt(serialized);
       }
@@ -56,7 +56,7 @@ class SecureStorage {
     }
   }
 
-  getItem(key: string, options: StorageOptions = {}): any {
+  getItem<T = unknown>(key: string, options: StorageOptions = {}): T | null {
     try {
       let stored = localStorage.getItem(this.prefix + key);
       if (!stored) return null;
@@ -126,7 +126,7 @@ export const secureStorage = new SecureStorage();
 
 // Validators
 export const validators = {
-  boolean: (value: any): boolean => typeof value === 'boolean',
-  string: (value: any): boolean => typeof value === 'string' && value.length < 1000,
-  number: (value: any): boolean => typeof value === 'number' && !isNaN(value),
+  boolean: (value: unknown): boolean => typeof value === 'boolean',
+  string: (value: unknown): boolean => typeof value === 'string' && value.length < 1000,
+  number: (value: unknown): boolean => typeof value === 'number' && !isNaN(value as number),
 };

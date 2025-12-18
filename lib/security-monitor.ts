@@ -3,7 +3,7 @@
 
 interface SecurityEvent {
   type: 'csp_violation' | 'suspicious_activity' | 'rate_limit_exceeded' | 'form_spam';
-  details: Record<string, any>;
+  details: Record<string, unknown>;
   timestamp: number;
   userAgent: string;
   url: string;
@@ -38,7 +38,7 @@ class SecurityMonitor {
       // Monitor for rapid form submissions
       let formSubmissions = 0;
       const resetFormCount = () => { formSubmissions = 0; };
-      
+
       document.addEventListener('submit', () => {
         formSubmissions++;
         if (formSubmissions > 5) {
@@ -54,7 +54,7 @@ class SecurityMonitor {
       let consoleAccessCount = 0;
       const originalConsole = window.console;
       const resetConsoleCount = () => { consoleAccessCount = 0; };
-      
+
       // This is a basic detection - in production, use more sophisticated methods
       setInterval(() => {
         if (window.console !== originalConsole) {
@@ -72,7 +72,7 @@ class SecurityMonitor {
   }
 
   // Log security events
-  logEvent(type: SecurityEvent['type'], details: Record<string, any>): void {
+  logEvent(type: SecurityEvent['type'], details: Record<string, unknown>): void {
     const event: SecurityEvent = {
       type,
       details,
@@ -108,7 +108,7 @@ class SecurityMonitor {
   private reportCriticalEvent(event: SecurityEvent): void {
     // In production, implement actual reporting
     console.warn('Security Event:', event);
-    
+
     // Example: Send to monitoring service
     // fetch('/api/security/report', {
     //   method: 'POST',
@@ -139,7 +139,7 @@ class SecurityMonitor {
 export const securityMonitor = new SecurityMonitor();
 
 // Utility functions
-export function reportSpamAttempt(formData: Record<string, any>): void {
+export function reportSpamAttempt(formData: Record<string, unknown>): void {
   securityMonitor.logEvent('form_spam', {
     formFields: Object.keys(formData),
     suspiciousContent: true,

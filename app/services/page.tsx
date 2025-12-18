@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Container from "@/components/ui/Container";
+import ScrollObserver from "@/components/ScrollObserver";
 import { services } from "@/lib/data/services";
 import { Palette, Monitor, Compass, Code, Check } from "lucide-react";
 
@@ -19,143 +20,153 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
-        <Container>
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our Services
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90">
-              Comprehensive digital solutions tailored to elevate your brand and drive business growth.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <ScrollObserver mode="chaos">
+        <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
+          <Container>
+            <div className="max-w-3xl">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                Our Services
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90">
+                Comprehensive digital solutions tailored to elevate your brand and drive business growth.
+              </p>
+            </div>
+          </Container>
+        </section>
+      </ScrollObserver>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <Container>
-          <div className="grid gap-12">
-            {services.map((service, index) => {
-              const Icon = iconMap[service.icon];
-              return (
-                <div
-                  key={service.id}
-                  className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    } gap-8 items-center`}
-                >
-                  {/* Icon/Visual Side */}
-                  <div className="w-full md:w-1/3">
-                    <div className="bg-gradient-to-br from-[#28236b] to-[#28236b] rounded-[32px] p-12 flex items-center justify-center aspect-square">
-                      <Icon className="w-32 h-32 text-white" />
+      <ScrollObserver mode="drift">
+        <section className="py-20">
+          <Container>
+            <div className="grid gap-12">
+              {services.map((service, index) => {
+                const Icon = iconMap[service.icon];
+                return (
+                  <div
+                    key={service.id}
+                    className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                      } gap-8 items-center`}
+                  >
+                    {/* Icon/Visual Side */}
+                    <div className="w-full md:w-1/3">
+                      <div className="bg-gradient-to-br from-[#28236b] to-[#28236b] rounded-[32px] p-12 flex items-center justify-center aspect-square">
+                        <Icon className="w-32 h-32 text-white" />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content Side */}
-                  <div className="w-full md:w-2/3">
-                    <h2 className="text-4xl font-bold mb-4 text-[#28236b]">
-                      {service.title}
-                    </h2>
-                    <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div className="w-6 h-6 bg-[#28236b] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <Check className="w-4 h-4 text-white" />
+                    {/* Content Side */}
+                    <div className="w-full md:w-2/3">
+                      <h2 className="text-4xl font-bold mb-4 text-[#28236b]">
+                        {service.title}
+                      </h2>
+                      <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <div className="w-6 h-6 bg-[#28236b] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                              <Check className="w-4 h-4 text-white" />
+                            </div>
+                            <span className="text-lg text-gray-700">{feature}</span>
                           </div>
-                          <span className="text-lg text-gray-700">{feature}</span>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
+      </ScrollObserver>
 
       {/* Process Section */}
-      <section className="py-20 bg-[#F4F5FF]">
-        <Container>
-          <h2 className="text-4xl font-bold mb-12 text-[#28236b] text-center">
-            Our Process
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => (
-              <div key={index} className="bg-white rounded-[32px] p-8">
-                <div className="w-16 h-16 bg-[#28236b] rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-2xl font-bold text-white">
-                    {index + 1}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-[#28236b]">
-                  {step.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20">
-        <Container>
-          <div className="max-w-4xl mx-auto">
+      <ScrollObserver mode="drift">
+        <section className="py-20 bg-[#F4F5FF]">
+          <Container>
             <h2 className="text-4xl font-bold mb-12 text-[#28236b] text-center">
-              Why Choose Cloudstream Systems?
+              Our Process
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Check className="w-6 h-6 text-white" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {process.map((step, index) => (
+                <div key={index} className="bg-white rounded-[32px] p-8">
+                  <div className="w-16 h-16 bg-[#28236b] rounded-2xl flex items-center justify-center mb-6">
+                    <span className="text-2xl font-bold text-white">
+                      {index + 1}
+                    </span>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-[#28236b]">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-gray-700">{benefit.description}</p>
-                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-[#28236b]">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               ))}
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      </ScrollObserver>
+
+      {/* Why Choose Us */}
+      <ScrollObserver mode="drift">
+        <section className="py-20">
+          <Container>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold mb-12 text-[#28236b] text-center">
+                Why Choose Cloudstream Systems?
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Check className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2 text-[#28236b]">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-gray-700">{benefit.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+      </ScrollObserver>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#28236b] to-[#28236b] text-white">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-xl mb-8 text-white/90">
-              Let's discuss how we can help bring your vision to life with our comprehensive digital services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-block bg-white text-[#28236b] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
-              >
-                Get in Touch
-              </a>
-              <a
-                href="/projects"
-                className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-colors"
-              >
-                View Our Work
-              </a>
+      <ScrollObserver mode="warning">
+        <section className="py-20 bg-gradient-to-br from-[#28236b] to-[#28236b] text-white">
+          <Container>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-4xl font-bold mb-6">
+                Ready to Start Your Project?
+              </h2>
+              <p className="text-xl mb-8 text-white/90">
+                Let's discuss how we can help bring your vision to life with our comprehensive digital services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="inline-block bg-white text-[#28236b] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
+                >
+                  Get in Touch
+                </a>
+                <a
+                  href="/projects"
+                  className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-colors"
+                >
+                  View Our Work
+                </a>
+              </div>
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      </ScrollObserver>
     </>
   );
 }

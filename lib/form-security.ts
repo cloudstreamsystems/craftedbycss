@@ -11,7 +11,7 @@ export interface FormValidationResult {
 export function sanitizeInput(input: string): string {
   return input
     .trim()
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') // Remove script tags
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '') // Remove script tags
     .replace(/javascript:/gi, '') // Remove javascript: URLs
     .replace(/on\w+\s*=/gi, '') // Remove event handlers
     .slice(0, 1000); // Limit length
@@ -27,14 +27,14 @@ export function validateEmail(email: string): boolean {
 export function checkRateLimit(key: string, maxAttempts: number = 5, windowMs: number = 300000): boolean {
   const now = Date.now();
   const attempts = JSON.parse(localStorage.getItem(`rate_limit_${key}`) || '[]');
-  
+
   // Clean old attempts
   const validAttempts = attempts.filter((timestamp: number) => now - timestamp < windowMs);
-  
+
   if (validAttempts.length >= maxAttempts) {
     return false; // Rate limited
   }
-  
+
   validAttempts.push(now);
   localStorage.setItem(`rate_limit_${key}`, JSON.stringify(validAttempts));
   return true;
