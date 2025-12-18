@@ -126,7 +126,7 @@ export default function Services() {
                     {/* Icon with amber background - centered */}
                     <div className="flex justify-center mb-6">
                       <motion.div
-                        className="w-28 h-28 flex items-center justify-center"
+                        className="w-20 h-20 flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
@@ -134,7 +134,7 @@ export default function Services() {
                       </motion.div>
                     </div>
 
-                    <h3 className="text-3xl font-bold mb-3 text-[#111827] group-hover:text-[#3730a3] transition-colors min-h-[4rem]">
+                    <h3 className="text-2xl font-bold mb-3 text-[#111827] group-hover:text-[#3730a3] transition-colors min-h-[4rem]">
                       {service.title}
                     </h3>
 
