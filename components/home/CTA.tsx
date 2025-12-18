@@ -109,7 +109,7 @@ export default function CTA() {
                   alt="Cloudstream Systems"
                   width={160}
                   height={54}
-                  className="h-16 w-auto brightness-0 invert mb-4"
+                  className="h-20 w-auto brightness-0 invert mb-4"
                 />
                 <p className="text-white/60 text-sm leading-relaxed">
                   Transforming ideas into digital solutions.
@@ -157,7 +157,7 @@ export default function CTA() {
             </div>
 
             {/* Copyright - Centered */}
-            <div className="text-center pt-2">
+            <div className="text-center">
               <p className="text-sm text-white/40">
                 &copy; {new Date().getFullYear()} Cloudstream Systems
               </p>
