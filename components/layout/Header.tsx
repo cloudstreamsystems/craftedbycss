@@ -75,7 +75,7 @@ export default function Header() {
               alt="Cloudstream Systems"
               width={262}
               height={88}
-              className={`h-10 md:h-12 w-auto transition-all duration-500 ${isDarkText ? 'brightness-0' : 'brightness-0 invert'}`}
+              className={`h-16 md:h-20 w-auto transition-all duration-500 ${isDarkText ? 'brightness-0' : 'brightness-0 invert'}`}
               priority
             />
           </Link>
@@ -86,14 +86,14 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium text-sm tracking-wide hover:text-[#ff4500] transition-colors relative group ${isDarkText ? 'text-[#28236b]' : 'text-white/90'}`}
+                className={`font-medium text-base tracking-wide hover:text-[#ff4500] transition-colors relative group ${isDarkText ? 'text-[#28236b]' : 'text-white/90'}`}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4500] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
             <Link href="/contact">
-              <button className="bg-[#ff4500] text-[#28236b] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-white hover:text-[#ff4500] transition-all duration-300 shadow-lg shadow-[#ff4500]/20">
+              <button className="bg-[#ff4500] text-[#28236b] px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-[#ff4500] transition-all duration-300 shadow-lg shadow-[#ff4500]/20">
                 Get Started
               </button>
             </Link>
