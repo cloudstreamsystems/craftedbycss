@@ -101,32 +101,50 @@ export default function CTA() {
 
           {/* Footer Elements Moved Here */}
           <div className="border-t border-white/20 pt-12 mt-12">
-            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
               <div className="text-center md:text-left">
-                <h4 className="font-bold text-xl mb-4">Get In Touch</h4>
-                <div className="flex items-center justify-center md:justify-start gap-2 text-white/80 mb-6 hover:text-white transition-colors">
-                  <Mail size={20} />
-                  <a href="mailto:contact@cssbuilds.tech" className="text-lg">
-                    contact@cssbuilds.tech
-                  </a>
+                <div className="mb-6 flex justify-center md:justify-start">
+                  <img
+                    src="/logo.png"
+                    alt="Cloudstream Systems"
+                    width={175}
+                    height={59}
+                    className="h-10 w-auto brightness-0 invert"
+                  />
                 </div>
+                <p className="text-white/80 mb-2 text-lg">
+                  Transforming ideas into digital solutions.
+                </p>
+                <p className="text-[#7177C7] font-bold text-lg mb-8">...just build</p>
               </div>
 
-              <div className="text-center md:text-right">
-                <h4 className="font-bold text-xl mb-4">Follow Us</h4>
-                <div className="flex justify-center md:justify-end space-x-6">
-                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Facebook">
-                    <Facebook size={24} />
-                  </a>
-                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Twitter">
-                    <Twitter size={24} />
-                  </a>
-                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Instagram">
-                    <Instagram size={24} />
-                  </a>
-                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="LinkedIn">
-                    <Linkedin size={24} />
-                  </a>
+              <div className="text-center md:text-right flex flex-col items-center md:items-end gap-8">
+                <div>
+                  <h4 className="font-bold text-xl mb-4">Get In Touch</h4>
+                  <div className="flex items-center justify-center md:justify-end gap-2 text-white/80 hover:text-white transition-colors">
+                    <Mail size={20} />
+                    <a href="mailto:contact@cssbuilds.tech" className="text-lg">
+                      contact@cssbuilds.tech
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-xl mb-4">Follow Us</h4>
+                  <div className="flex justify-center md:justify-end space-x-6">
+                    <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Facebook">
+                      <Facebook size={24} />
+                    </a>
+                    <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Twitter">
+                      <Twitter size={24} />
+                    </a>
+                    <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Instagram">
+                      <Instagram size={24} />
+                    </a>
+                    <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="LinkedIn">
+                      <Linkedin size={24} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

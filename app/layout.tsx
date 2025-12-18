@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Merriweather_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import { MotionProvider } from "@/contexts/MotionContext";
 import PageTransition from "@/components/transitions/PageTransition";
@@ -42,7 +41,6 @@ export default function RootLayout({
             <main>
               <PageTransition>{children}</PageTransition>
             </main>
-            <Footer />
           </SmoothScrollProvider>
         </MotionProvider>
       </body>
