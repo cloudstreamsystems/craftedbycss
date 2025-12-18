@@ -42,15 +42,17 @@ export default function Header() {
 
   // Determine styles based on mode
   const getHeaderStyles = () => {
+    const baseStyles = "fixed z-50 transition-all duration-500 ease-in-out";
+
     switch (headerMode) {
-      case 'drift': // White Glass
-        return 'bg-white/90 backdrop-blur-md shadow-sm text-[#1e1b4b]';
-      case 'warning': // Dark Glass
+      case 'drift': // White Glass (Pill Shape)
+        return `${baseStyles} top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl bg-white/90 backdrop-blur-md shadow-lg rounded-full text-[#1e1b4b] border border-white/20`;
+      case 'warning': // Dark Glass (Pill Shape)
       case 'order':
-        return 'bg-[#1e1b4b]/90 backdrop-blur-md shadow-sm text-white';
-      case 'chaos': // Transparent
+        return `${baseStyles} top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl bg-[#1e1b4b]/90 backdrop-blur-md shadow-lg rounded-full text-white border border-white/10`;
+      case 'chaos': // Transparent (Full Width)
       default:
-        return 'bg-transparent text-white';
+        return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
   };
 
@@ -62,11 +64,11 @@ export default function Header() {
       <motion.header
         variants={{
           visible: { y: 0 },
-          hidden: { y: "-100%" },
+          hidden: { y: "-150%" },
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 w-full z-50 transition-colors duration-500 ${styles}`}
+        className={styles}
       >
         <nav className="container mx-auto px-4 md:px-8 lg:px-12 py-4 flex items-center justify-between">
           {/* Logo */}
