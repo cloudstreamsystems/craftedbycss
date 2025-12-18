@@ -4,31 +4,14 @@ import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 import MotionToggle from "@/components/ui/MotionToggle";
 
 export default function CTA() {
   return (
-    <section className="relative pt-32 pb-16 gradient-bg text-white overflow-hidden">
+    <section className="relative pt-32 pb-16 bg-[#28236b] text-white overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.1, 1, 1.1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"
-        />
-      </div>
+
 
       <Container>
         <motion.div
@@ -38,16 +21,7 @@ export default function CTA() {
           viewport={{ once: true }}
           className="relative z-10"
         >
-          {/* Decorative element */}
-          <div className="flex justify-center mb-6">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-16 h-16 border-2 border-white/30 rounded-full flex items-center justify-center"
-            >
-              <Sparkles className="w-8 h-8 text-yellow-300" />
-            </motion.div>
-          </div>
+
 
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
