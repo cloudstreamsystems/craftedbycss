@@ -18,56 +18,53 @@ const navigation = [
 export default function Header() {
   const { headerMode, setHeaderMode, isMenuOpen, toggleMenu } = useStore();
   const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Smart Scroll Logic: Hide on scroll down, show on scroll up
+  // Handle scroll state for chaos mode
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    if (latest > previous && latest > 150 && !isMenuOpen) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-
-    // Simple mode switching based on scroll position for now
-    // This can be enhanced with IntersectionObservers for specific sections later
     if (latest > 50) {
-      if (headerMode === 'chaos') {
-        setHeaderMode('drift'); // Default to light mode (white background) when scrolled
-      }
+      setIsScrolled(true);
     } else {
-      setHeaderMode('chaos'); // Back to transparent at top
+      setIsScrolled(false);
     }
   });
 
   // Determine styles based on mode
   const getHeaderStyles = () => {
     const baseStyles = "fixed z-50 transition-all duration-500 ease-in-out";
+    const pillStyles = "top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl rounded-full shadow-lg backdrop-blur-md";
 
     switch (headerMode) {
-      case 'drift': // White Glass (Pill Shape)
-        return `${baseStyles} top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl bg-white/90 backdrop-blur-md shadow-lg rounded-full text-[#1e1b4b] border border-white/20`;
-      case 'warning': // Dark Glass (Pill Shape)
+      case 'drift': // White Section -> Indigo Header
+        return `${baseStyles} ${pillStyles} bg-[#1e1b4b]/90 text-white border border-white/10`;
+
+      case 'warning': // Indigo Section -> White Header
       case 'order':
-        return `${baseStyles} top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl bg-[#1e1b4b]/90 backdrop-blur-md shadow-lg rounded-full text-white border border-white/10`;
-      case 'chaos': // Transparent (Full Width)
+        return `${baseStyles} ${pillStyles} bg-white/90 text-[#1e1b4b] border border-white/20`;
+
+      case 'chaos': // Hero Section
       default:
+        if (isScrolled) {
+          // Scrolled in Hero -> White Header
+          return `${baseStyles} ${pillStyles} bg-white/90 text-[#1e1b4b] border border-white/20`;
+        }
+        // Top of Hero -> Transparent
         return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
   };
 
   const styles = getHeaderStyles();
-  const isDarkText = headerMode === 'drift';
+
+  // Determine if text should be dark (Indigo) or light (White)
+  // Dark text when: 
+  // - warning/order mode (White Header)
+  // - chaos mode AND scrolled (White Header)
+  const isDarkText = headerMode === 'warning' || headerMode === 'order' || (headerMode === 'chaos' && isScrolled);
 
   return (
     <>
       <motion.header
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-150%" },
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
+        initial={{ y: 0 }}
         className={styles}
       >
         <nav className="container mx-auto px-4 md:px-8 lg:px-12 py-4 flex items-center justify-between">

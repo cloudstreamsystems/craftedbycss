@@ -20,7 +20,7 @@ export default function Home() {
         <About />
       </ScrollObserver>
 
-      <ScrollObserver mode="drift">
+      <ScrollObserver mode="warning">
         <Stats />
       </ScrollObserver>
 
