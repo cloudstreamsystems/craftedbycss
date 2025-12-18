@@ -1,14 +1,13 @@
-"use client";
-
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import MotionToggle from "@/components/ui/MotionToggle";
 
 export default function CTA() {
   return (
-    <section className="relative py-32 gradient-bg text-white overflow-hidden">
+    <section className="relative pt-32 pb-16 gradient-bg text-white overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -48,7 +47,7 @@ export default function CTA() {
             </motion.div>
           </div>
 
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Let's Build Something
               <br />
@@ -59,19 +58,19 @@ export default function CTA() {
             <p className="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed max-w-2xl mx-auto">
               Ready to transform your vision into reality? Let's create a digital experience that sets you apart.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contact">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="w-full sm:w-auto bg-white text-[#7076C6] hover:bg-white/90 font-bold text-lg px-10 py-6 rounded-full shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105"
                 >
                   Start Your Project <ArrowRight className="ml-2" size={20} />
                 </Button>
               </Link>
               <Link href="/projects">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-10 py-6 rounded-full transition-all duration-300"
                 >
                   View Portfolio
@@ -96,6 +95,44 @@ export default function CTA() {
               <div className="hidden sm:block w-px h-4 bg-white/30" />
               <div>Free consultation</div>
             </motion.div>
+          </div>
+
+          {/* Footer Elements Moved Here */}
+          <div className="border-t border-white/20 pt-12 mt-12">
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+              <div className="text-center md:text-left">
+                <h4 className="font-bold text-xl mb-4">Get In Touch</h4>
+                <div className="flex items-center justify-center md:justify-start gap-2 text-white/80 mb-6 hover:text-white transition-colors">
+                  <Mail size={20} />
+                  <a href="mailto:contact@cssbuilds.tech" className="text-lg">
+                    contact@cssbuilds.tech
+                  </a>
+                </div>
+              </div>
+
+              <div className="text-center md:text-right">
+                <h4 className="font-bold text-xl mb-4">Follow Us</h4>
+                <div className="flex justify-center md:justify-end space-x-6">
+                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Facebook">
+                    <Facebook size={24} />
+                  </a>
+                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Twitter">
+                    <Twitter size={24} />
+                  </a>
+                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="Instagram">
+                    <Instagram size={24} />
+                  </a>
+                  <a href="#" className="hover:text-yellow-300 transition-colors transform hover:scale-110" aria-label="LinkedIn">
+                    <Linkedin size={24} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60 pt-8 border-t border-white/10">
+              <p>&copy; {new Date().getFullYear()} Cloudstream Systems. All rights reserved.</p>
+              <MotionToggle />
+            </div>
           </div>
         </motion.div>
       </Container>
