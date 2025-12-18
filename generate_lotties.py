@@ -13,9 +13,9 @@ os.makedirs(output_dir, exist_ok=True)
 # Original Amber: [1, 0.2667, 0]
 colors = {
     'brand-identity.json': [1, 0.2667, 0],          # Amber (Original)
-    'website-design.json': [0.216, 0.188, 0.639],   # Indigo (#3730a3)
-    'art-direction.json': [0.024, 0.714, 0.831],    # Cyan (#06B6D4)
-    'development.json': [0.937, 0.267, 0.267]       # Rose (#EF4444)
+    'website-design.json': [1, 0.2667, 0],          # Amber (Original)
+    'art-direction.json': [1, 0.2667, 0],           # Amber (Original)
+    'development.json': [1, 0.2667, 0]              # Amber (Original)
 }
 
 def replace_color(obj, target_color):
