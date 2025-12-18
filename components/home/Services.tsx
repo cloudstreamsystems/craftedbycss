@@ -126,7 +126,7 @@ export default function Services() {
                     {/* Icon with amber background - centered */}
                     <div className="flex justify-center mb-6">
                       <motion.div
-                        className="w-32 h-32 flex items-center justify-center"
+                        className="w-28 h-28 flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
