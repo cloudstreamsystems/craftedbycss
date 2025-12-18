@@ -31,6 +31,7 @@ export default function LottieIcon({ animationData, className }: LottieIconProps
                 animationData={animationData}
                 loop={true}
                 autoplay={true}
+                className="w-full h-full"
             />
         </div>
     );
