@@ -101,7 +101,7 @@ export default function CTA() {
 
           {/* Footer */}
           <div className="border-t border-white/10 pt-16 mt-16">
-            <div className="flex flex-col md:flex-row justify-between gap-12">
+            <div className="flex flex-col md:flex-row justify-between gap-12 mb-10">
               {/* Left - Branding */}
               <div className="max-w-sm">
                 <img
@@ -111,11 +111,8 @@ export default function CTA() {
                   height={54}
                   className="h-8 w-auto brightness-0 invert mb-4"
                 />
-                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                <p className="text-white/60 text-sm leading-relaxed">
                   Transforming ideas into digital solutions.
-                </p>
-                <p className="text-sm text-white/40">
-                  &copy; {new Date().getFullYear()} Cloudstream Systems
                 </p>
               </div>
 
@@ -157,6 +154,13 @@ export default function CTA() {
                   <MotionToggle />
                 </div>
               </div>
+            </div>
+
+            {/* Copyright - Centered */}
+            <div className="text-center pt-8 border-t border-white/5">
+              <p className="text-sm text-white/40">
+                &copy; {new Date().getFullYear()} Cloudstream Systems
+              </p>
             </div>
           </div>
         </motion.div>
