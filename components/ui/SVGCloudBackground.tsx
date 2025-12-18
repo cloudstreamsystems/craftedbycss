@@ -17,19 +17,19 @@ export default function SVGCloudBackground() {
             <stop offset="0%" stopColor="#3730a3" stopOpacity="0.15" />
             <stop offset="100%" stopColor="#3730a3" stopOpacity="0.05" />
           </linearGradient>
-          
+
           {/* Cyan gradient */}
           <linearGradient id="cloudGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.12" />
             <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.04" />
           </linearGradient>
-          
+
           {/* Amber gradient */}
           <linearGradient id="cloudGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.1" />
-            <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.03" />
+            <stop offset="0%" stopColor="#ff4400" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#ff4400" stopOpacity="0.03" />
           </linearGradient>
-          
+
           {/* Blur filter for softer clouds */}
           <filter id="blur">
             <feGaussianBlur in="SourceGraphic" stdDeviation="30" />

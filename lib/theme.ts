@@ -9,7 +9,7 @@ export const theme = {
     foreground: "#111827",
     primary: "#3730a3",          // Confident Indigo
     secondary: "#06B6D4",        // Professional Cyan
-    accent: "#F59E0B",           // Energetic Amber
+    accent: "#ff4400",           // Energetic Amber
     muted: "#6B7280",            // Gray for secondary text
   },
 
@@ -17,7 +17,7 @@ export const theme = {
   categoryColors: {
     "Web Development": "#3730a3",  // Primary Indigo
     "Branding": "#06B6D4",         // Secondary Cyan
-    "UI/UX": "#F59E0B",            // Accent Amber
+    "UI/UX": "#ff4400",            // Accent Amber
     "Social Media": "#EF4444",     // Keep distinct red
   },
 
@@ -25,7 +25,7 @@ export const theme = {
   categoryGradients: {
     "Web Development": "from-[#3730a3] to-indigo-400",
     "Branding": "from-[#06B6D4] to-cyan-300",
-    "UI/UX": "from-[#F59E0B] to-amber-300",
+    "UI/UX": "from-[#ff4400] to-amber-300",
     "Social Media": "from-rose-500 to-pink-500",
   },
 
@@ -33,7 +33,7 @@ export const theme = {
   gradients: [
     "from-[#3730a3] to-indigo-400",  // Primary Indigo
     "from-[#06B6D4] to-cyan-300",    // Secondary Cyan
-    "from-[#F59E0B] to-amber-300",   // Accent Amber
+    "from-[#ff4400] to-amber-300",   // Accent Amber
     "from-rose-500 to-pink-500",     // Rose/Pink variant
   ],
 

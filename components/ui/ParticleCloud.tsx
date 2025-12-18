@@ -32,7 +32,7 @@ export default function ParticleCloud() {
           },
         },
         color: {
-          value: ["#3730a3", "#06B6D4", "#F59E0B"],
+          value: ["#3730a3", "#06B6D4", "#ff4400"],
         },
         shape: {
           type: "circle",
