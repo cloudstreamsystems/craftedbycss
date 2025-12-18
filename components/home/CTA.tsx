@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 import MotionToggle from "@/components/ui/MotionToggle";
 
@@ -78,7 +79,7 @@ export default function CTA() {
             <div className="flex flex-col md:flex-row justify-between gap-12 mb-10">
               {/* Left - Branding */}
               <div className="max-w-sm">
-                <img
+                <Image
                   src="/logo.png"
                   alt="Cloudstream Systems"
                   width={160}
