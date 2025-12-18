@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -33,12 +32,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
-
+    
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
     }
-
+    
     return () => {
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "unset";
@@ -67,7 +66,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               initial={{ scale: 0.7, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.7, opacity: 0 }}
-              transition={{
+              transition={{ 
                 type: "spring",
                 stiffness: 300,
                 damping: 25
@@ -84,11 +83,9 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               </button>
 
               {/* Full Project Image */}
-              <Image
+              <img
                 src={project.image}
                 alt={project.title}
-                width={1200}
-                height={800}
                 className="w-full h-auto max-h-[85vh] object-cover rounded-[32px] shadow-2xl block"
               />
             </motion.div>

@@ -1,13 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { useLottie } from "lottie-react";
 import { useEffect, useState } from "react";
-
-// Dynamically import Lottie with no SSR to reduce bundle size
-const Lottie = dynamic(() => import("lottie-react"), {
-    ssr: false,
-    loading: () => <div className="animate-pulse bg-gray-200 rounded-full w-full h-full opacity-20" />,
-});
 
 interface LottieIconProps {
     animationData: any;
@@ -15,23 +9,23 @@ interface LottieIconProps {
 }
 
 export default function LottieIcon({ animationData, className }: LottieIconProps) {
-    const [isMounted, setIsMounted] = useState(false);
+    const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-        setIsMounted(true);
+        setIsClient(true);
     }, []);
 
-    if (!isMounted) {
-        return <div className={`${className} animate-pulse bg-gray-200 rounded-full opacity-20`} />;
+    const options = {
+        animationData,
+        loop: true,
+        autoplay: true,
+    };
+
+    const { View } = useLottie(options);
+
+    if (!isClient) {
+        return <div className={className} />;
     }
 
-    return (
-        <div className={className}>
-            <Lottie
-                animationData={animationData}
-                loop={true}
-                autoplay={true}
-            />
-        </div>
-    );
+    return <div className={className}>{View}</div>;
 }
