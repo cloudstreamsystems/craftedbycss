@@ -36,17 +36,17 @@ export default function Header() {
 
     switch (headerMode) {
       case 'drift': // White Section -> Indigo Header
-        return `${baseStyles} ${pillStyles} bg-[#1e1b4b]/90 text-white border border-white/10`;
+        return `${baseStyles} ${pillStyles} bg-[#28236b] text-white border border-white/10`;
 
       case 'warning': // Indigo Section -> White Header
       case 'order':
-        return `${baseStyles} ${pillStyles} bg-white/90 text-[#1e1b4b] border border-white/20`;
+        return `${baseStyles} ${pillStyles} bg-white/90 text-[#28236b] border border-white/20`;
 
       case 'chaos': // Hero Section
       default:
         if (isScrolled) {
           // Scrolled in Hero -> White Header
-          return `${baseStyles} ${pillStyles} bg-white/90 text-[#1e1b4b] border border-white/20`;
+          return `${baseStyles} ${pillStyles} bg-white/90 text-[#28236b] border border-white/20`;
         }
         // Top of Hero -> Transparent
         return `${baseStyles} top-0 w-full bg-transparent text-white`;
@@ -86,14 +86,14 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium text-sm tracking-wide hover:text-[#ff4500] transition-colors relative group ${isDarkText ? 'text-[#1e1b4b]' : 'text-white/90'}`}
+                className={`font-medium text-sm tracking-wide hover:text-[#ff4500] transition-colors relative group ${isDarkText ? 'text-[#28236b]' : 'text-white/90'}`}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4500] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
             <Link href="/contact">
-              <button className="bg-[#ff4500] text-[#1e1b4b] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-white hover:text-[#ff4500] transition-all duration-300 shadow-lg shadow-[#ff4500]/20">
+              <button className="bg-[#ff4500] text-[#28236b] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-white hover:text-[#ff4500] transition-all duration-300 shadow-lg shadow-[#ff4500]/20">
                 Get Started
               </button>
             </Link>
@@ -101,7 +101,7 @@ export default function Header() {
 
           {/* Hamburger Menu Button (Mobile & Tablet) */}
           <button
-            className={`md:hidden z-50 relative p-2 focus:outline-none ${isMenuOpen ? 'text-white' : (isDarkText ? 'text-[#1e1b4b]' : 'text-white')}`}
+            className={`md:hidden z-50 relative p-2 focus:outline-none ${isMenuOpen ? 'text-white' : (isDarkText ? 'text-[#28236b]' : 'text-white')}`}
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >

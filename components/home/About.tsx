@@ -62,33 +62,33 @@ export default function About() {
       {/* Subtle Moving Clouds - Left to Right */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Cloud 1 - Large slow cloud */}
-        <div 
+        <div
           className="absolute top-10 w-96 h-32 bg-white/5 rounded-full blur-3xl animate-cloud-slow"
           style={{
             animation: 'cloudMove1 40s linear infinite',
           }}
         />
-        
+
         {/* Cloud 2 - Medium speed cloud */}
-        <div 
-          className="absolute top-32 w-80 h-24 bg-indigo-100/8 rounded-full blur-2xl"
+        <div
+          className="absolute top-32 w-80 h-24 bg-[#28236b]/5 rounded-full blur-2xl"
           style={{
             animation: 'cloudMove2 35s linear infinite',
             animationDelay: '-10s'
           }}
         />
-        
+
         {/* Cloud 3 - Fast small cloud */}
-        <div 
+        <div
           className="absolute top-64 w-64 h-20 bg-cyan-100/6 rounded-full blur-2xl"
           style={{
             animation: 'cloudMove3 30s linear infinite',
             animationDelay: '-20s'
           }}
         />
-        
+
         {/* Cloud 4 - Bottom layer */}
-        <div 
+        <div
           className="absolute bottom-20 w-72 h-28 bg-white/4 rounded-full blur-3xl"
           style={{
             animation: 'cloudMove4 45s linear infinite',
@@ -96,16 +96,16 @@ export default function About() {
           }}
         />
       </div>
-      
+
       {/* Background decorations with parallax */}
-      <div ref={bgLeft} className="absolute -left-20 top-20 w-96 h-96 bg-gradient-to-br from-indigo-200/40 to-transparent rounded-full blur-3xl" />
+      <div ref={bgLeft} className="absolute -left-20 top-20 w-96 h-96 bg-gradient-to-br from-[#28236b]/20 to-transparent rounded-full blur-3xl" />
       <div ref={bgRight} className="absolute -right-20 bottom-20 w-80 h-80 bg-gradient-to-tl from-cyan-200/40 to-transparent rounded-full blur-3xl" />
-      
+
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image/Visual Side */}
           <div ref={imageRef} className="relative">
-            <div className="relative rounded-[32px] aspect-square overflow-hidden bg-gradient-to-br from-[#3730a3] to-[#1e1b4b]">
+            <div className="relative rounded-[32px] aspect-square overflow-hidden bg-gradient-to-br from-[#28236b] to-[#1a1648]">
               <Image
                 src="/images/hero.png"
                 alt="Cloudstream Systems - Digital Solutions"
@@ -113,7 +113,7 @@ export default function About() {
                 className="object-cover opacity-90 mix-blend-overlay"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#3730a3]/80 to-[#1e1b4b]/80">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#28236b]/80 to-[#1a1648]/80">
                 <div className="text-center text-white p-8">
                   <Target className="w-24 h-24 mx-auto mb-6" />
                   <h3 className="text-3xl font-bold mb-4">...just build</h3>
@@ -139,7 +139,7 @@ export default function About() {
 
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
               <div className="flex items-start gap-3">
-                <div className="w-12 h-12 bg-[#3730a3] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -151,7 +151,7 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-12 h-12 bg-[#3730a3] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -165,7 +165,7 @@ export default function About() {
 
             <Link
               href="/about"
-              className="inline-block bg-[#3730a3] text-white border-2 border-[#3730a3] px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#3730a3] hover:border-[#3730a3] transition-all duration-300"
+              className="inline-block bg-[#28236b] text-white border-2 border-[#28236b] px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#28236b] hover:border-[#28236b] transition-all duration-300"
             >
               Learn More About Us
             </Link>

@@ -48,7 +48,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-indigo-50">
+    <section className="py-20 bg-gradient-to-b from-white to-[#28236b]/5">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-[#3730a3] font-semibold text-sm uppercase tracking-wider mb-4">
+          <span className="inline-block text-[#28236b] font-semibold text-sm uppercase tracking-wider mb-4">
             Got Questions?
           </span>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-[#111827]">
@@ -80,17 +80,16 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full bg-white rounded-2xl p-6 text-left shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-[#3730a3]/20"
+                className="w-full bg-white rounded-2xl p-6 text-left shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-[#28236b]/20"
               >
                 <div className="flex items-center justify-between gap-4">
                   <h3 className="text-lg md:text-xl font-bold text-[#111827] pr-8">
                     {faq.question}
                   </h3>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    openIndex === index 
-                      ? 'bg-[#3730a3] text-white' 
-                      : 'bg-indigo-50 text-[#3730a3]'
-                  }`}>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index
+                      ? 'bg-[#28236b] text-white'
+                      : 'bg-[#28236b]/5 text-[#28236b]'
+                    }`}>
                     {openIndex === index ? (
                       <Minus className="w-5 h-5" />
                     ) : (
@@ -98,7 +97,7 @@ export default function FAQ() {
                     )}
                   </div>
                 </div>
-                
+
                 <AnimatePresence>
                   {openIndex === index && (
                     <motion.div
@@ -132,7 +131,7 @@ export default function FAQ() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-transparent border-2 border-[#3730a3] text-[#3730a3] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#3730a3] hover:text-white hover:scale-105 transition-all duration-300"
+            className="inline-block bg-transparent border-2 border-[#28236b] text-[#28236b] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#28236b] hover:text-white hover:scale-105 transition-all duration-300"
           >
             Get in Touch
           </a>

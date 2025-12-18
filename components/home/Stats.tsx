@@ -40,7 +40,7 @@ export default function Stats() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="relative py-24 bg-gradient-to-br from-[#3730a3] via-[#4c3d8f] to-[#1e1b4b] text-white overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-gradient-to-br from-[#28236b] via-[#4c3d8f] to-[#1a1648] text-white overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div
@@ -50,7 +50,7 @@ export default function Stats() {
             opacity: [0.1, 0.2, 0.1],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"
+          className="absolute top-0 right-0 w-96 h-96 bg-[#28236b]/20 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -67,7 +67,7 @@ export default function Stats() {
         <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
-            
+
             return (
               <motion.div
                 key={stat.label}
@@ -83,12 +83,12 @@ export default function Stats() {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  
+
                   {/* Value */}
                   <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </div>
-                  
+
                   {/* Label */}
                   <div className="text-sm md:text-base text-white/70 font-medium">
                     {stat.label}
