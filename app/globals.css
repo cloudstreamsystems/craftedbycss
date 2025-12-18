@@ -10,6 +10,7 @@
   --muted-foreground: #6B7280;
 }
 
+/* Tailwind v4 Theme Configuration */
 @theme inline {
   /* Colors */
   --color-background: var(--background);
@@ -17,11 +18,11 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  
+
   /* Fonts */
   --font-sans: var(--font-merriweather-sans);
   --font-poppins: var(--font-poppins);
-  
+
   /* Border Radius */
   --radius-card: 32px;
   --radius-gallery: 35px;
@@ -92,8 +93,15 @@ section {
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Cloud animations - horizontal movement left to right */
@@ -101,6 +109,7 @@ section {
   0% {
     transform: translateX(-120%);
   }
+
   100% {
     transform: translateX(calc(100vw + 120%));
   }
@@ -110,6 +119,7 @@ section {
   0% {
     transform: translateX(-110%);
   }
+
   100% {
     transform: translateX(calc(100vw + 110%));
   }
@@ -119,6 +129,7 @@ section {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(calc(100vw + 100%));
   }
@@ -128,6 +139,7 @@ section {
   0% {
     transform: translateX(-130%);
   }
+
   100% {
     transform: translateX(calc(100vw + 130%));
   }
@@ -135,8 +147,15 @@ section {
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .float-animation {
@@ -145,8 +164,15 @@ section {
 
 /* Pulse glow effect */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px hsla(244, 56%, 42%, 0.3); }
-  50% { box-shadow: 0 0 40px hsla(244, 56%, 42%, 0.6); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsla(244, 56%, 42%, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px hsla(244, 56%, 42%, 0.6);
+  }
 }
 
 .pulse-glow {
@@ -204,18 +230,17 @@ html {
   0% {
     background-position: -200% center;
   }
+
   100% {
     background-position: 200% center;
   }
 }
 
 .hero-shimmer {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0.8) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.8) 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
