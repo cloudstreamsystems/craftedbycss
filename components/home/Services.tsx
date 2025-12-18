@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight } from "lucide-react";
+import { Palette, Monitor, Compass, Code2, ArrowUpRight } from "lucide-react";
 import { theme } from "@/lib/theme";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,17 +13,11 @@ import Container from "@/components/ui/Container";
 import { services } from "@/lib/data/services";
 import Link from "next/link";
 
-import LottieIcon from "@/components/ui/LottieIcon";
-import brandIdentityAnim from "@/public/animations/brand-identity.json";
-import websiteDesignAnim from "@/public/animations/website-design.json";
-import artDirectionAnim from "@/public/animations/art-direction.json";
-import developmentAnim from "@/public/animations/development.json";
-
-const lottieMap = {
-  palette: brandIdentityAnim,
-  monitor: websiteDesignAnim,
-  compass: artDirectionAnim,
-  code: developmentAnim,
+const iconMap = {
+  palette: Palette,
+  monitor: Monitor,
+  compass: Compass,
+  code: Code2,
 };
 
 // Use theme gradients for consistent brand colors
@@ -108,7 +102,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
-            const animationData = lottieMap[service.icon as keyof typeof lottieMap];
+            const Icon = iconMap[service.icon as keyof typeof iconMap];
             const gradient = gradients[index % gradients.length];
 
             return (
@@ -128,7 +122,7 @@ export default function Services() {
                         whileHover={{ scale: 1.15 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <LottieIcon animationData={animationData} className="w-12 h-12" />
+                        <Icon className="w-8 h-8 text-white" />
                       </motion.div>
                     </div>
 
