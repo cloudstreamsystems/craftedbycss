@@ -86,14 +86,14 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium text-sm tracking-wide hover:text-[#ff4500] transition-colors relative group ${isDarkText ? 'text-[#28236b]' : 'text-white/90'}`}
+                className={`font-medium text-sm tracking-wide hover:text-[#ff4400] transition-colors relative group ${isDarkText ? 'text-[#28236b]' : 'text-white/90'}`}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4500] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4400] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
             <Link href="/contact">
-              <button className="bg-[#ff4500] text-[#28236b] px-6 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-[#ff4500] transition-all duration-300 shadow-lg shadow-[#ff4500]/20">
+              <button className="bg-[#ff4400] text-[#28236b] px-6 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-[#ff4400] transition-all duration-300 shadow-lg shadow-[#ff4400]/20">
                 Get Started
               </button>
             </Link>
