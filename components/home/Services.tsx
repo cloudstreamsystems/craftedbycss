@@ -116,7 +116,7 @@ export default function Services() {
                 key={service.id}
                 className="service-card group"
               >
-                <div className="relative h-full bg-white rounded-3xl p-8 border-2 border-[#3730a3]/40 hover:border-[#3730a3] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div className="relative h-full bg-white rounded-3xl p-8 border border-[#8B93D6] hover:border-[#FF5722] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                   {/* Gradient accent on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300`} />
 
@@ -124,11 +124,11 @@ export default function Services() {
                     {/* Icon with amber background - centered */}
                     <div className="flex justify-center mb-6">
                       <motion.div
-                        className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center shadow-lg"
-                        whileHover={{ scale: 1.15 }}
+                        className="w-24 h-24 flex items-center justify-center"
+                        whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <LottieIcon animationData={animationData} className="w-12 h-12" />
+                        <LottieIcon animationData={animationData} className="w-full h-full" />
                       </motion.div>
                     </div>
 
