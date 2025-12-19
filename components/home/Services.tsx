@@ -139,14 +139,14 @@ export default function Services() {
                       {service.title}
                     </h3>
 
-                    <p className="text-lg text-white/90 mb-6 leading-relaxed min-h-[5rem]">
+                    <p className="text-lg text-white mb-6 leading-relaxed min-h-[5rem]">
                       {service.description}
                     </p>
 
                     <div className="flex flex-col items-center flex-grow mb-6">
                       <ul className="space-y-3 text-left">
                         {service.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-3 text-base text-white/80">
+                          <li key={feature} className="flex items-start gap-3 text-base text-white">
                             <div className="w-2 h-2 rounded-full bg-white mt-2 flex-shrink-0" />
                             <span>{feature}</span>
                           </li>
