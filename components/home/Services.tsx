@@ -5,7 +5,7 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { theme } from "@/lib/theme";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -176,6 +176,48 @@ export default function Services() {
           })}
         </div>
       </div>
+
+      <Container>
+        {/* View All Services Button */}
+        <div className="text-center mt-12 md:mt-20">
+          <div className="relative inline-block group isolate">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1a1648] transition-colors relative z-0"
+            >
+              View All Services
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+
+            {/* Tooltip */}
+            <div
+              className="absolute -top-32 left-1/2 -translate-x-1/2 md:-top-14 md:translate-y-0 md:left-full md:ml-32 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
+              style={{ zIndex: 9999, transform: 'translateZ(10px)' }}
+            >
+              <div className="relative flex flex-col items-center md:items-start transform rotate-[-6deg]">
+                <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] leading-tight text-center md:text-left">
+                  custom solutions <br className="hidden md:block" /> for every need
+                </span>
+                {/* Simple hand-drawn arrow pointing from text to button */}
+                <svg
+                  className="absolute top-1/2 right-full mr-2 hidden md:block w-16 h-16 text-[#28236b]"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {/* Simple curved line from text (right) to button (left) */}
+                  <path d="M90,20 Q60,60 30,50" />
+                  <path d="M30,50 L40,40" />
+                  <path d="M30,50 L40,60" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
     </section>
   );
 }
