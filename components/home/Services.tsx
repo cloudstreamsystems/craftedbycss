@@ -119,7 +119,7 @@ export default function Services() {
                 key={service.id}
                 className="service-card group"
               >
-                <div className="relative h-full bg-white rounded-3xl p-8 border border-[#8B93D6] hover:border-[#FF5722] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div className="relative h-full bg-[#ff4400] rounded-3xl p-8 border border-white/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                   {/* Gradient accent on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300`} />
 
@@ -136,19 +136,19 @@ export default function Services() {
                       </motion.div>
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-3 text-[#111827] group-hover:text-[#3730a3] transition-colors min-h-[4rem]">
+                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-white transition-colors min-h-[4rem]">
                       {service.title}
                     </h3>
 
-                    <p className="text-lg text-gray-600 mb-6 leading-relaxed min-h-[5rem]">
+                    <p className="text-lg text-white/90 mb-6 leading-relaxed min-h-[5rem]">
                       {service.description}
                     </p>
 
                     <div className="flex flex-col items-center flex-grow mb-6">
                       <ul className="space-y-3 text-left">
                         {service.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-3 text-base text-gray-600">
-                            <div className="w-2 h-2 rounded-full bg-[#3730a3] mt-2 flex-shrink-0" />
+                          <li key={feature} className="flex items-start gap-3 text-base text-white/80">
+                            <div className="w-2 h-2 rounded-full bg-white mt-2 flex-shrink-0" />
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -159,7 +159,7 @@ export default function Services() {
                     <div className="flex justify-center">
                       <Link
                         href="/services"
-                        className="inline-flex items-center gap-2 text-[#3730a3] font-semibold text-base group-hover:gap-3 transition-all"
+                        className="inline-flex items-center gap-2 text-white font-semibold text-base group-hover:gap-3 transition-all"
                       >
                         Learn More
                         <ArrowUpRight className="w-5 h-5" />
