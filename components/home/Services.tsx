@@ -113,6 +113,7 @@ export default function Services() {
             const animationData = lottieMap[service.icon as keyof typeof lottieMap];
             const gradient = gradients[index % gradients.length];
             const isWebsiteService = service.id === "web-design";
+            const isCyberService = service.id === "cybersecurity";
 
             return (
               <div
@@ -127,8 +128,8 @@ export default function Services() {
                     <div className="flex justify-center mb-6">
                       <motion.div
                         className="w-20 h-20 flex items-center justify-center"
-                        animate={{ scale: isWebsiteService ? 1.5 : 1 }}
-                        whileHover={{ scale: isWebsiteService ? 1.6 : 1.05 }}
+                        animate={{ scale: isWebsiteService || isCyberService ? 1.5 : 1 }}
+                        whileHover={{ scale: isWebsiteService || isCyberService ? 1.6 : 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <LottieIcon animationData={animationData} className="w-full h-full" />
