@@ -159,8 +159,8 @@ export default function RecentProjects() {
                 </span>
                 {/* Hand-drawn arrow */}
                 <svg
-                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:right-[100%] md:mr-4 md:left-auto w-12 h-12 md:w-80 md:h-32 text-[#28236b] transform -rotate-90 md:rotate-0"
-                  viewBox="0 0 350 150"
+                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:right-[80%] md:left-auto w-12 h-12 md:w-96 md:h-32 text-[#28236b] transform -rotate-90 md:rotate-0"
+                  viewBox="0 0 400 150"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -169,7 +169,7 @@ export default function RecentProjects() {
                   style={{ overflow: 'visible' }}
                 >
                   {/* Curved arrow pointing from right (text) to left (button) with downward curve */}
-                  <path d="M340,20 Q170,130 0,70" />
+                  <path d="M390,20 Q200,130 0,70" />
                   <path d="M0,70 L15,60" />
                   <path d="M0,70 L15,85" />
                 </svg>
