@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description: "Luxury real estate website showcasing premium properties",
     image: "/images/projects/royal-haven.jpg",
     tags: ["Web Design", "Real Estate", "Luxury"],
-    demoUrl: "https://royalhaven.co.uk/",
+    demoUrl: "#",
   },
   {
     id: "mobile-ui",
