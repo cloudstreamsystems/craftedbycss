@@ -108,7 +108,7 @@ export default function Services() {
       </Container>
 
       <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {services.map((service, index) => {
             const animationData = lottieMap[service.icon as keyof typeof lottieMap];
             const gradient = gradients[index % gradients.length];
