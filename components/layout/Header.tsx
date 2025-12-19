@@ -34,6 +34,11 @@ export default function Header() {
     const baseStyles = "fixed z-50 transition-all duration-500 ease-in-out";
     const pillStyles = "top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl rounded-full shadow-lg backdrop-blur-md";
 
+    // If menu is open, force transparent style (overrides everything)
+    if (isMenuOpen) {
+      return `${baseStyles} top-0 w-full bg-transparent text-white`;
+    }
+
     switch (headerMode) {
       case 'drift': // White Section -> Indigo Header
         return `${baseStyles} ${pillStyles} bg-[#28236b] text-white border border-white/10`;
