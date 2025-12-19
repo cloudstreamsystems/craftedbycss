@@ -76,7 +76,7 @@ export default function CTA() {
 
           {/* Footer */}
           <div className="border-t border-white/10 pt-16 mt-16">
-            <div className="flex flex-col md:flex-row justify-between gap-12 mb-10">
+            <div className="flex flex-col md:flex-row justify-between gap-12 mb-10 items-center">
               {/* Left - Branding */}
               <div className="max-w-sm">
                 <Image
