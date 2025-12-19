@@ -150,7 +150,7 @@ export default function RecentProjects() {
 
             {/* Tooltip */}
             <div
-              className="absolute -top-32 left-1/2 -translate-x-1/2 md:-top-4 md:translate-y-0 md:left-full md:ml-8 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
+              className="absolute -top-32 left-1/2 -translate-x-1/2 md:-top-28 md:translate-y-0 md:left-full md:ml-24 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
               style={{ zIndex: 9999, transform: 'translateZ(10px)' }}
             >
               <div className="relative flex flex-col items-center md:items-start transform rotate-[-6deg]">
