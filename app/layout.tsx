@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Merriweather_Sans, Poppins } from "next/font/google";
+import { Merriweather_Sans, Poppins, Caveat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
@@ -19,6 +19,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+});
+
 export const metadata: Metadata = {
   title: "Cloudstream Systems | Digital Solutions",
   description: "Transforming ideas into digital solutions. Website design and development agency committed to helping businesses establish a powerful online presence.",
@@ -31,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${merriweatherSans.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${merriweatherSans.variable} ${poppins.variable} ${caveat.variable}`}>
       <body className="antialiased">
         <MotionProvider>
           <SmoothScrollProvider>

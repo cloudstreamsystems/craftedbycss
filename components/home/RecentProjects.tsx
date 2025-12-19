@@ -138,14 +138,39 @@ export default function RecentProjects() {
 
       <Container>
         {/* View All Projects Button */}
-        <div className="text-center">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1a1648] transition-colors"
-          >
-            View All Projects
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+        <div className="text-center mt-20">
+          <div className="relative inline-block group">
+            {/* Tooltip */}
+            <div className="absolute -top-16 -right-32 md:-right-40 transform rotate-[-6deg] hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+              <div className="relative">
+                <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] whitespace-nowrap">
+                  Click to view all our projects
+                </span>
+                {/* Hand-drawn arrow */}
+                <svg
+                  className="absolute top-full left-0 w-16 h-16 text-[#28236b] transform -translate-x-4 -translate-y-2"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M80,10 C60,40 20,40 10,80" />
+                  <path d="M10,80 L20,70" />
+                  <path d="M10,80 L5,65" />
+                </svg>
+              </div>
+            </div>
+
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1a1648] transition-colors relative z-10"
+            >
+              View All Projects
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </Container>
 
