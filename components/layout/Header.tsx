@@ -39,8 +39,8 @@ export default function Header() {
       return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
 
-    // If header mode is warning (dark section), force transparent style
-    if (headerMode === 'warning') {
+    // If header mode is chaos (Hero) or warning (dark section), force transparent style
+    if (headerMode === 'chaos' || headerMode === 'warning') {
       return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
 
@@ -55,8 +55,8 @@ export default function Header() {
 
   const styles = getHeaderStyles();
 
-  // Dark text when scrolled (White Header) AND not in warning mode
-  const isDarkText = isScrolled && headerMode !== 'warning';
+  // Dark text when scrolled (White Header) AND not in chaos or warning mode
+  const isDarkText = isScrolled && headerMode !== 'warning' && headerMode !== 'chaos';
 
   return (
     <>
