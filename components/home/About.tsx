@@ -44,9 +44,10 @@ export default function About() {
       }
     });
 
-    // Subtle parallax on the image
+    // Subtle parallax and rotation on the image
     gsap.to(imageRef.current, {
       y: 40,
+      rotation: 10,
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -105,23 +106,14 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image/Visual Side */}
           <div ref={imageRef} className="relative">
-            <div className="relative rounded-[32px] aspect-square overflow-hidden bg-gradient-to-br from-[#28236b] to-[#1a1648]">
+            <div className="relative rounded-[32px] aspect-square overflow-hidden bg-transparent shadow-2xl">
               <Image
                 src="/images/abou_res.png"
                 alt="Cloudstream Systems - Digital Solutions"
                 fill
-                className="object-cover opacity-90 mix-blend-overlay"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#28236b]/80 to-[#1a1648]/80">
-                <div className="text-center text-white p-8">
-                  <Target className="w-24 h-24 mx-auto mb-6" />
-                  <h3 className="text-3xl font-bold mb-4">...just build</h3>
-                  <p className="text-xl text-white/90">
-                    Creating exceptional digital experiences
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 
