@@ -92,8 +92,8 @@ export default function RecentProjects() {
         </div>
       </Container>
 
-      <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto mb-12">
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ perspective: '1000px' }}>
+      <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto mb-8 md:mb-12">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" style={{ perspective: '1000px' }}>
           {featuredProjects.map((project) => (
             <InteractiveCard
               key={project.id}
@@ -138,10 +138,10 @@ export default function RecentProjects() {
 
       <Container>
         {/* View All Projects Button */}
-        <div className="text-center mt-20">
+        <div className="text-center mt-12 md:mt-20">
           <div className="relative inline-block group">
             {/* Tooltip */}
-            <div className="absolute -top-16 -right-32 md:-right-40 transform rotate-[-6deg] hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2 md:-top-16 md:left-auto md:translate-x-0 md:-right-40 transform rotate-[-6deg] block opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 scale-90 md:scale-100 origin-bottom pointer-events-none">
               <div className="relative">
                 <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] whitespace-nowrap">
                   Click to view all our projects
