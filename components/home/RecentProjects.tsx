@@ -142,14 +142,14 @@ export default function RecentProjects() {
           <div className="relative inline-block group">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1a1648] transition-colors relative z-10"
+              className="inline-flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1a1648] transition-colors"
             >
               View All Projects
               <ArrowRight className="w-5 h-5" />
             </Link>
 
             {/* Tooltip */}
-            <div className="absolute -top-32 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-full md:ml-8 transform rotate-[-6deg] block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max z-50">
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-full md:ml-8 transform rotate-[-6deg] block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max z-[100]">
               <div className="relative flex flex-col items-center md:items-start">
                 <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] leading-tight text-center md:text-left">
                   Click to view <br className="hidden md:block" /> all our projects
