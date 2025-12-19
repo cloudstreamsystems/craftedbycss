@@ -23,7 +23,7 @@ export default function ServicesPage() {
       <ScrollObserver mode="chaos">
         <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
           <Container>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Our Services
               </h1>
