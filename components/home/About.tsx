@@ -47,7 +47,7 @@ export default function About() {
     // Subtle parallax and rotation on the image
     gsap.to(imageRef.current, {
       y: 40,
-      rotation: 10,
+      rotation: 45,
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -105,7 +105,7 @@ export default function About() {
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image/Visual Side */}
-          <div ref={imageRef} className="relative">
+          <div ref={imageRef} className="relative lg:-ml-20">
             <div className="relative aspect-square">
               <Image
                 src="/images/abou_res.png"
