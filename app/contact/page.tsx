@@ -6,7 +6,7 @@ import { Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from "luc
 
 export const metadata: Metadata = {
   title: "Contact Us | Cloudstream Systems",
-  description: "Get in touch with Cloudstream Systems. Let's discuss your project and bring your vision to life.",
+  description: "Get in touch with Cloudstream Systems. Let&apos;s discuss your project and bring your vision to life.",
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
                 Get in Touch
               </h1>
               <p className="text-xl md:text-2xl text-white/90">
-                Ready to start your project? We'd love to hear from you. Let's create something amazing together.
+                Ready to start your project? We&apos;d love to hear from you. Let&apos;s create something amazing together.
               </p>
             </div>
           </Container>

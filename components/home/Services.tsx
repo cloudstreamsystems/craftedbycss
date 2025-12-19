@@ -32,7 +32,7 @@ const gradients = theme.gradients;
 export default function Services() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
-  const gridRef = useRef(null);
+
   const bgTopRef = useRef(null);
   const bgBottomRef = useRef(null);
 
@@ -111,7 +111,6 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {services.map((service, index) => {
             const animationData = lottieMap[service.icon as keyof typeof lottieMap];
-            const gradient = gradients[index % gradients.length];
             const isWebsiteService = service.id === "web-design";
             const isCyberService = service.id === "cybersecurity";
 

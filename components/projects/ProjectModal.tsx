@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Calendar, Tag } from "lucide-react";
+import { X } from "lucide-react";
 import { Project } from "@/lib/data/projects";
 
 interface ProjectModalProps {
@@ -12,20 +12,6 @@ interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const categoryColors: Record<string, string> = {
-  "Web Development": "from-blue-500 to-cyan-500",
-  "Branding": "from-purple-500 to-pink-500",
-  "UI/UX": "from-orange-500 to-red-500",
-  "Social Media": "from-green-500 to-emerald-500",
-};
-
-const categoryBackgrounds: Record<string, string> = {
-  "Web Development": "#FF6347", // Tomato orange - closer match to mockup
-  "Branding": "#9B7EBD", // Solid purple to match mockup
-  "UI/UX": "#8B93D6", // Solid blue to match mockup
-  "Social Media": "#2ECC71", // Solid green to match mockup
-};
 
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   // Close on Escape key
@@ -46,9 +32,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   }, [isOpen, onClose]);
 
   if (!project) return null;
-
-  const gradient = categoryColors[project.category] || "from-purple-500 to-pink-500";
-  const modalBackground = categoryBackgrounds[project.category] || "#8B93D6";
 
   const modalContent = (
     <AnimatePresence>

@@ -5,6 +5,120 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2, Check } from "lucide-react";
 import { useMotion } from "@/contexts/MotionContext";
 
+interface FloatingLabelInputProps {
+  id: string;
+  name: string;
+  type?: string;
+  label: string;
+  required?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus: () => void;
+  onBlur: () => void;
+  isActive: boolean;
+  isMotionReduced: boolean;
+}
+
+const FloatingLabelInput = ({
+  id,
+  name,
+  type = "text",
+  label,
+  required = false,
+  value,
+  onChange,
+  onFocus,
+  onBlur,
+  isActive,
+  isMotionReduced,
+}: FloatingLabelInputProps) => (
+  <div className="relative">
+    <input
+      type={type}
+      id={id}
+      name={name}
+      value={value}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      required={required}
+      className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors peer"
+    />
+    <motion.label
+      htmlFor={id}
+      className="absolute left-4 text-gray-500 pointer-events-none origin-left"
+      initial={false}
+      animate={
+        isMotionReduced
+          ? {}
+          : isActive
+            ? { top: "0.5rem", fontSize: "0.75rem", color: "#28236b" }
+            : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
+      }
+      transition={{ duration: 0.2 }}
+    >
+      {label} {required && "*"}
+    </motion.label>
+  </div>
+);
+
+interface FloatingLabelTextareaProps {
+  id: string;
+  name: string;
+  label: string;
+  required?: boolean;
+  rows?: number;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onFocus: () => void;
+  onBlur: () => void;
+  isActive: boolean;
+  isMotionReduced: boolean;
+}
+
+const FloatingLabelTextarea = ({
+  id,
+  name,
+  label,
+  required = false,
+  rows = 6,
+  value,
+  onChange,
+  onFocus,
+  onBlur,
+  isActive,
+  isMotionReduced,
+}: FloatingLabelTextareaProps) => (
+  <div className="relative">
+    <textarea
+      id={id}
+      name={name}
+      value={value}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      required={required}
+      rows={rows}
+      className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors resize-none peer"
+    />
+    <motion.label
+      htmlFor={id}
+      className="absolute left-4 text-gray-500 pointer-events-none origin-left"
+      initial={false}
+      animate={
+        isMotionReduced
+          ? {}
+          : isActive
+            ? { top: "0.5rem", fontSize: "0.75rem", color: "#28236b" }
+            : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
+      }
+      transition={{ duration: 0.2 }}
+    >
+      {label} {required && "*"}
+    </motion.label>
+  </div>
+);
+
 export default function ContactFormEnhanced() {
   const [formData, setFormData] = useState({
     name: "",
@@ -45,92 +159,6 @@ export default function ContactFormEnhanced() {
     return focusedField === field || formData[field as keyof typeof formData] !== "";
   };
 
-  const FloatingLabelInput = ({
-    id,
-    name,
-    type = "text",
-    label,
-    required = false,
-  }: {
-    id: string;
-    name: string;
-    type?: string;
-    label: string;
-    required?: boolean;
-  }) => (
-    <div className="relative">
-      <input
-        type={type}
-        id={id}
-        name={name}
-        value={formData[name as keyof typeof formData]}
-        onChange={handleChange}
-        onFocus={() => setFocusedField(name)}
-        onBlur={() => setFocusedField(null)}
-        required={required}
-        className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors peer"
-      />
-      <motion.label
-        htmlFor={id}
-        className="absolute left-4 text-gray-500 pointer-events-none origin-left"
-        initial={false}
-        animate={
-          isMotionReduced
-            ? {}
-            : isFieldActive(name)
-              ? { top: "0.5rem", fontSize: "0.75rem", color: "#28236b" }
-              : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
-        }
-        transition={{ duration: 0.2 }}
-      >
-        {label} {required && "*"}
-      </motion.label>
-    </div>
-  );
-
-  const FloatingLabelTextarea = ({
-    id,
-    name,
-    label,
-    required = false,
-    rows = 6,
-  }: {
-    id: string;
-    name: string;
-    label: string;
-    required?: boolean;
-    rows?: number;
-  }) => (
-    <div className="relative">
-      <textarea
-        id={id}
-        name={name}
-        value={formData[name as keyof typeof formData]}
-        onChange={handleChange}
-        onFocus={() => setFocusedField(name)}
-        onBlur={() => setFocusedField(null)}
-        required={required}
-        rows={rows}
-        className="w-full px-4 pt-6 pb-2 rounded-2xl border-2 border-gray-200 focus:border-[#28236b] focus:outline-none transition-colors resize-none peer"
-      />
-      <motion.label
-        htmlFor={id}
-        className="absolute left-4 text-gray-500 pointer-events-none origin-left"
-        initial={false}
-        animate={
-          isMotionReduced
-            ? {}
-            : isFieldActive(name)
-              ? { top: "0.5rem", fontSize: "0.75rem", color: "#28236b" }
-              : { top: "1rem", fontSize: "1rem", color: "#6B7280" }
-        }
-        transition={{ duration: 0.2 }}
-      >
-        {label} {required && "*"}
-      </motion.label>
-    </div>
-  );
-
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <FloatingLabelInput
@@ -139,6 +167,12 @@ export default function ContactFormEnhanced() {
         type="text"
         label="Name"
         required
+        value={formData.name}
+        onChange={handleChange as (e: React.ChangeEvent<HTMLInputElement>) => void}
+        onFocus={() => setFocusedField("name")}
+        onBlur={() => setFocusedField(null)}
+        isActive={isFieldActive("name")}
+        isMotionReduced={isMotionReduced}
       />
 
       <FloatingLabelInput
@@ -147,6 +181,12 @@ export default function ContactFormEnhanced() {
         type="email"
         label="Email"
         required
+        value={formData.email}
+        onChange={handleChange as (e: React.ChangeEvent<HTMLInputElement>) => void}
+        onFocus={() => setFocusedField("email")}
+        onBlur={() => setFocusedField(null)}
+        isActive={isFieldActive("email")}
+        isMotionReduced={isMotionReduced}
       />
 
       <FloatingLabelInput
@@ -155,6 +195,12 @@ export default function ContactFormEnhanced() {
         type="text"
         label="Subject"
         required
+        value={formData.subject}
+        onChange={handleChange as (e: React.ChangeEvent<HTMLInputElement>) => void}
+        onFocus={() => setFocusedField("subject")}
+        onBlur={() => setFocusedField(null)}
+        isActive={isFieldActive("subject")}
+        isMotionReduced={isMotionReduced}
       />
 
       <FloatingLabelTextarea
@@ -163,6 +209,12 @@ export default function ContactFormEnhanced() {
         label="Message"
         required
         rows={6}
+        value={formData.message}
+        onChange={handleChange as (e: React.ChangeEvent<HTMLTextAreaElement>) => void}
+        onFocus={() => setFocusedField("message")}
+        onBlur={() => setFocusedField(null)}
+        isActive={isFieldActive("message")}
+        isMotionReduced={isMotionReduced}
       />
 
       <AnimatePresence mode="wait">
@@ -174,7 +226,7 @@ export default function ContactFormEnhanced() {
             className="bg-green-50 border-2 border-green-200 text-green-700 px-4 py-3 rounded-2xl flex items-center gap-2"
           >
             <Check className="w-5 h-5" />
-            Thank you! We'll get back to you soon.
+            Thank you! We&apos;ll get back to you soon.
           </motion.div>
         )}
 

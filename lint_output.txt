@@ -1,0 +1,346 @@
+
+> cssbuilds-tech@0.1.0 lint
+> eslint
+
+
+/home/sandbox/craftedbycss/app/about/page.tsx
+   23:19   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   70:28   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   70:122  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:19   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  126:20   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/app/contact/page.tsx
+  24:48  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  24:77  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/app/demo/logo-carousel/page.tsx
+  170:53  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  170:58  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  170:63  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  170:69  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  170:81  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  170:86  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/app/projects/page.tsx
+  86:20  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  89:48  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/app/services/page.tsx
+   12:31  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  150:20  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/home/About.tsx
+  126:17  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/home/CTA.tsx
+   8:62  warning  'Mail' is defined but never used                                 @typescript-eslint/no-unused-vars
+  29:18  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  36:63  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/home/FAQ.tsx
+  130:37  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/home/Hero.tsx
+  154:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/home/Process.tsx
+  78:28  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+
+/home/sandbox/craftedbycss/components/home/ProcessScrollytelling.tsx
+   63:22  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+  134:28  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+  139:34  warning  Generic Object Injection Sink               security/detect-object-injection
+
+/home/sandbox/craftedbycss/components/home/RecentProjects.tsx
+  20:9   warning  'sectionRef' is assigned a value but never used                  @typescript-eslint/no-unused-vars
+  91:59  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/home/Services.tsx
+   35:9   warning  'gridRef' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  114:19  warning  'gradient' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sandbox/craftedbycss/components/layout/Header.tsx
+  19:23  warning  'setHeaderMode' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sandbox/craftedbycss/components/projects/ProjectGrid.tsx
+  28:26  warning  'index' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/sandbox/craftedbycss/components/projects/ProjectModal.tsx
+   7:13  warning  'ExternalLink' is defined but never used              @typescript-eslint/no-unused-vars
+   7:27  warning  'Calendar' is defined but never used                  @typescript-eslint/no-unused-vars
+   7:37  warning  'Tag' is defined but never used                       @typescript-eslint/no-unused-vars
+  50:9   warning  'gradient' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  51:9   warning  'modalBackground' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sandbox/craftedbycss/components/ui/AnimatedCounter.tsx
+   4:10  warning  'motion' is defined but never used             @typescript-eslint/no-unused-vars
+  12:63  warning  'duration' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sandbox/craftedbycss/components/ui/Button.tsx
+  34:39  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/sandbox/craftedbycss/components/ui/Button.tsx:34:39
+  32 |   
+  33 |   // Magnetic effect using GSAP with boundary constraints - now contextSafe
+> 34 |   const handleMouseMove = contextSafe((e: React.MouseEvent<HTMLButtonElement>) => {
+     |                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |     if (!magnetic || !buttonRef.current) return;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 36 |     
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 55 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 56 |   });
+     | ^^^^ Passing a ref to a function may read its value during render
+  57 |   
+  58 |   const handleMouseLeave = contextSafe(() => {
+  59 |     if (!magnetic || !buttonRef.current) return;                                                                                                                                                                                                                                                                                                                          react-hooks/refs
+  58:40  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/sandbox/craftedbycss/components/ui/Button.tsx:58:40
+  56 |   });
+  57 |   
+> 58 |   const handleMouseLeave = contextSafe(() => {
+     |                                        ^^^^^^^
+> 59 |     if (!magnetic || !buttonRef.current) return;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 60 |     
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 61 |     gsap.to(buttonRef.current, {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |       x: 0,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 63 |       y: 0,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 64 |       duration: 0.5,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 65 |       ease: "elastic.out(1, 0.3)",
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 66 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 67 |   });
+     | ^^^^ Passing a ref to a function may read its value during render
+  68 |   const variants = {
+  69 |     primary: "bg-primary hover:bg-accent text-white",
+  70 |     secondary: "bg-secondary hover:bg-primary text-white",  react-hooks/refs
+  85:9   warning  Function Call Object Injection Sink                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        security/detect-object-injection
+  86:9   warning  Function Call Object Injection Sink                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        security/detect-object-injection
+
+/home/sandbox/craftedbycss/components/ui/ContactForm.tsx
+  109:24  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx
+  136:8   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:136:8
+  134 |   return (
+  135 |     <form onSubmit={handleSubmit} className="space-y-6">
+> 136 |       <FloatingLabelInput
+      |        ^^^^^^^^^^^^^^^^^^ This component is created during render
+  137 |         id="name"
+  138 |         name="name"
+  139 |         type="text"
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:48:30
+  46 |   };
+  47 |
+> 48 |   const FloatingLabelInput = ({
+     |                              ^^
+> 49 |     id,
+     | ^^^^^^^
+> 50 |     name,
+     …
+     | ^^^^^^^
+> 88 |     </div>
+     | ^^^^^^^
+> 89 |   );
+     | ^^^^ The component is created during render here
+  90 |
+  91 |   const FloatingLabelTextarea = ({
+  92 |     id,      react-hooks/static-components
+  144:8   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:144:8
+  142 |       />
+  143 |
+> 144 |       <FloatingLabelInput
+      |        ^^^^^^^^^^^^^^^^^^ This component is created during render
+  145 |         id="email"
+  146 |         name="email"
+  147 |         type="email"
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:48:30
+  46 |   };
+  47 |
+> 48 |   const FloatingLabelInput = ({
+     |                              ^^
+> 49 |     id,
+     | ^^^^^^^
+> 50 |     name,
+     …
+     | ^^^^^^^
+> 88 |     </div>
+     | ^^^^^^^
+> 89 |   );
+     | ^^^^ The component is created during render here
+  90 |
+  91 |   const FloatingLabelTextarea = ({
+  92 |     id,                                                              react-hooks/static-components
+  152:8   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:152:8
+  150 |       />
+  151 |
+> 152 |       <FloatingLabelInput
+      |        ^^^^^^^^^^^^^^^^^^ This component is created during render
+  153 |         id="subject"
+  154 |         name="subject"
+  155 |         type="text"
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:48:30
+  46 |   };
+  47 |
+> 48 |   const FloatingLabelInput = ({
+     |                              ^^
+> 49 |     id,
+     | ^^^^^^^
+> 50 |     name,
+     …
+     | ^^^^^^^
+> 88 |     </div>
+     | ^^^^^^^
+> 89 |   );
+     | ^^^^ The component is created during render here
+  90 |
+  91 |   const FloatingLabelTextarea = ({
+  92 |     id,                                                           react-hooks/static-components
+  160:8   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:160:8
+  158 |       />
+  159 |
+> 160 |       <FloatingLabelTextarea
+      |        ^^^^^^^^^^^^^^^^^^^^^ This component is created during render
+  161 |         id="message"
+  162 |         name="message"
+  163 |         label="Message"
+
+/home/sandbox/craftedbycss/components/ui/ContactFormEnhanced.tsx:91:33
+   89 |   );
+   90 |
+>  91 |   const FloatingLabelTextarea = ({
+      |                                 ^^
+>  92 |     id,
+      | ^^^^^^^
+>  93 |     name,
+      …
+      | ^^^^^^^
+> 131 |     </div>
+      | ^^^^^^^
+> 132 |   );
+      | ^^^^ The component is created during render here
+  133 |
+  134 |   return (
+  135 |     <form onSubmit={handleSubmit} className="space-y-6">  react-hooks/static-components
+  177:26  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react/no-unescaped-entities
+
+/home/sandbox/craftedbycss/components/ui/InteractiveCard.tsx
+  26:39  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/sandbox/craftedbycss/components/ui/InteractiveCard.tsx:26:39
+  24 |   );
+  25 |
+> 26 |   const handleMouseMove = contextSafe((e: React.MouseEvent<HTMLDivElement>) => {
+     |                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |     if (!cardRef.current) return;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 49 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 50 |   });
+     | ^^^^ Passing a ref to a function may read its value during render
+  51 |
+  52 |   const handleMouseLeave = contextSafe(() => {
+  53 |     if (!cardRef.current) return;  react-hooks/refs
+  52:40  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/sandbox/craftedbycss/components/ui/InteractiveCard.tsx:52:40
+  50 |   });
+  51 |
+> 52 |   const handleMouseLeave = contextSafe(() => {
+     |                                        ^^^^^^^
+> 53 |     if (!cardRef.current) return;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 54 |     setIsHovered(false);
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 61 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   });
+     | ^^^^ Passing a ref to a function may read its value during render
+  63 |
+  64 |   const handleMouseEnter = () => {
+  65 |     setIsHovered(true);                                                                  react-hooks/refs
+
+/home/sandbox/craftedbycss/components/ui/LogoCarousel.tsx
+  31:3  warning  'grayscale' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sandbox/craftedbycss/components/ui/LottieIcon.tsx
+  13:20  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-explicit-any
+  21:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/sandbox/craftedbycss/components/ui/LottieIcon.tsx:21:9
+  19 |
+  20 |     useEffect(() => {
+> 21 |         setIsMounted(true);
+     |         ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  22 |     }, []);
+  23 |
+  24 |     if (!isMounted) {  react-hooks/set-state-in-effect
+
+/home/sandbox/craftedbycss/contexts/MotionContext.tsx
+  19:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/sandbox/craftedbycss/contexts/MotionContext.tsx:19:7
+  17 |     const stored = localStorage.getItem("reduceMotion");
+  18 |     if (stored !== null) {
+> 19 |       setIsMotionReduced(stored === "true");
+     |       ^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  20 |     } else {
+  21 |       // Check system preference
+  22 |       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;  react-hooks/set-state-in-effect
+
+✖ 56 problems (36 errors, 20 warnings)
+

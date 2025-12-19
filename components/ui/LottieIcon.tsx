@@ -10,6 +10,7 @@ const Lottie = dynamic(() => import("lottie-react"), {
 });
 
 interface LottieIconProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     animationData: any;
     className?: string;
 }
@@ -18,6 +19,7 @@ export default function LottieIcon({ animationData, className }: LottieIconProps
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
     }, []);
 

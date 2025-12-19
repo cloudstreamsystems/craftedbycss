@@ -167,7 +167,7 @@ export default function LogoCarouselDemo() {
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li><strong>logos:</strong> Array of logo objects</li>
                     <li><strong>speed:</strong> Animation speed (default: 30)</li>
-                    <li><strong>direction:</strong> "left" or "right" (default: "left")</li>
+                    <li><strong>direction:</strong> &quot;left&quot; or &quot;right&quot; (default: &quot;left&quot;)</li>
                     <li><strong>pauseOnHover:</strong> Pause on hover (default: true)</li>
                     <li><strong>grayscale:</strong> Apply grayscale filter (default: true)</li>
                     <li><strong>className:</strong> Additional CSS classes</li>

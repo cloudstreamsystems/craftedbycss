@@ -25,7 +25,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
     gsap.set(cards, { clearProps: "all" });
 
     // Animate each card individually on scroll (like GSAP website)
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       gsap.fromTo(
         card,
         {

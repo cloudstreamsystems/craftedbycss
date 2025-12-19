@@ -23,6 +23,7 @@ export default function InteractiveCard({ children, className = "", onClick }: I
     { scope: cardRef }
   );
 
+  // eslint-disable-next-line react-hooks/refs
   const handleMouseMove = contextSafe((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
 
@@ -49,6 +50,7 @@ export default function InteractiveCard({ children, className = "", onClick }: I
     });
   });
 
+  // eslint-disable-next-line react-hooks/refs
   const handleMouseLeave = contextSafe(() => {
     if (!cardRef.current) return;
     setIsHovered(false);

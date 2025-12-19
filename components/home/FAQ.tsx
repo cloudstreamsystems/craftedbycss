@@ -87,8 +87,8 @@ export default function FAQ() {
                     {faq.question}
                   </h3>
                   <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index
-                      ? 'bg-[#28236b] text-white'
-                      : 'bg-[#28236b]/5 text-[#28236b]'
+                    ? 'bg-[#28236b] text-white'
+                    : 'bg-[#28236b]/5 text-[#28236b]'
                     }`}>
                     {openIndex === index ? (
                       <Minus className="w-5 h-5" />
@@ -127,7 +127,7 @@ export default function FAQ() {
           className="text-center mt-16"
         >
           <p className="text-lg text-gray-600 mb-6">
-            Still have questions? We're here to help!
+            Still have questions? We&apos;re here to help!
           </p>
           <a
             href="/contact"

@@ -16,11 +16,11 @@ const navigation = [
 ];
 
 export default function Header() {
-  const { headerMode, setHeaderMode, isMenuOpen, toggleMenu } = useStore();
+  const { isMenuOpen, toggleMenu } = useStore();
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Handle scroll state for chaos mode
+  // Handle scroll state
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 50) {
       setIsScrolled(true);
@@ -29,7 +29,7 @@ export default function Header() {
     }
   });
 
-  // Determine styles based on mode
+  // Determine styles based on scroll state
   const getHeaderStyles = () => {
     const baseStyles = "fixed z-50 transition-all duration-500 ease-in-out";
     const pillStyles = "top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl rounded-full shadow-lg backdrop-blur-md";
@@ -39,32 +39,19 @@ export default function Header() {
       return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
 
-    switch (headerMode) {
-      case 'drift': // White Section -> Indigo Header
-        return `${baseStyles} ${pillStyles} bg-[#28236b] text-white border border-white/10`;
-
-      case 'warning': // Indigo Section -> White Header
-      case 'order':
-        return `${baseStyles} ${pillStyles} bg-white/90 text-[#28236b] border border-white/20`;
-
-      case 'chaos': // Hero Section
-      default:
-        if (isScrolled) {
-          // Scrolled in Hero -> White Header
-          return `${baseStyles} ${pillStyles} bg-white/90 text-[#28236b] border border-white/20`;
-        }
-        // Top of Hero -> Transparent
-        return `${baseStyles} top-0 w-full bg-transparent text-white`;
+    if (isScrolled) {
+      // Scrolled -> White Header
+      return `${baseStyles} ${pillStyles} bg-white/90 text-[#28236b] border border-white/20`;
     }
+
+    // Top -> Transparent
+    return `${baseStyles} top-0 w-full bg-transparent text-white`;
   };
 
   const styles = getHeaderStyles();
 
-  // Determine if text should be dark (Indigo) or light (White)
-  // Dark text when: 
-  // - warning/order mode (White Header)
-  // - chaos mode AND scrolled (White Header)
-  const isDarkText = headerMode === 'warning' || headerMode === 'order' || (headerMode === 'chaos' && isScrolled);
+  // Dark text when scrolled (White Header)
+  const isDarkText = isScrolled;
 
   return (
     <>

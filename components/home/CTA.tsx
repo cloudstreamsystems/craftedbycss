@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import MotionToggle from "@/components/ui/MotionToggle";
 
 export default function CTA() {
@@ -26,14 +26,14 @@ export default function CTA() {
 
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Let's Build Something
+              Let&apos;s Build Something
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white">
                 Extraordinary
               </span>
             </h2>
             <p className="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed max-w-2xl mx-auto">
-              Ready to transform your vision into reality? Let's create a digital experience that sets you apart.
+              Ready to transform your vision into reality? Let&apos;s create a digital experience that sets you apart.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

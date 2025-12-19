@@ -106,7 +106,7 @@ export default function ContactForm() {
 
       {submitStatus === "success" && (
         <div className="bg-green-50 border-2 border-green-200 text-green-700 px-4 py-3 rounded-2xl">
-          Thank you! We'll get back to you soon.
+          Thank you! We&apos;ll get back to you soon.
         </div>
       )}
 

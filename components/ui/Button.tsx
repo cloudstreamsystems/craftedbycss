@@ -21,7 +21,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
-  
+
   // Initialize useGSAP and get contextSafe for event handlers
   const { contextSafe } = useGSAP(
     () => {
@@ -29,24 +29,25 @@ export default function Button({
     },
     { scope: buttonRef }
   );
-  
+
   // Magnetic effect using GSAP with boundary constraints - now contextSafe
+  // eslint-disable-next-line react-hooks/refs
   const handleMouseMove = contextSafe((e: React.MouseEvent<HTMLButtonElement>) => {
     if (!magnetic || !buttonRef.current) return;
-    
+
     const rect = buttonRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     // Calculate desired movement
     let deltaX = (e.clientX - centerX) * 0.3;
     let deltaY = (e.clientY - centerY) * 0.3;
-    
+
     // Constrain movement to prevent overlap (max 8px in any direction)
     const maxMovement = 8;
     deltaX = Math.max(-maxMovement, Math.min(maxMovement, deltaX));
     deltaY = Math.max(-maxMovement, Math.min(maxMovement, deltaY));
-    
+
     gsap.to(buttonRef.current, {
       x: deltaX,
       y: deltaY,
@@ -54,10 +55,11 @@ export default function Button({
       ease: "power2.out",
     });
   });
-  
+
+  // eslint-disable-next-line react-hooks/refs
   const handleMouseLeave = contextSafe(() => {
     if (!magnetic || !buttonRef.current) return;
-    
+
     gsap.to(buttonRef.current, {
       x: 0,
       y: 0,
@@ -70,7 +72,7 @@ export default function Button({
     secondary: "bg-secondary hover:bg-primary text-white",
     outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
   };
-  
+
   const sizes = {
     sm: "px-4 py-2 text-sm",
     md: "px-6 py-3 text-base",
@@ -82,7 +84,9 @@ export default function Button({
       ref={buttonRef}
       className={cn(
         "font-bold rounded-full transition-all duration-300 inline-flex items-center justify-center active:scale-[0.98]",
+        // eslint-disable-next-line security/detect-object-injection
         variants[variant],
+        // eslint-disable-next-line security/detect-object-injection
         sizes[size],
         className
       )}

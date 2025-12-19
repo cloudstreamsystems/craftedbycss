@@ -20,7 +20,7 @@ export default function AboutPage() {
                 ...just build
               </h1>
               <p className="text-xl md:text-2xl text-white/90">
-                We're a creative digital agency focused on building exceptional brands and digital experiences that drive real results.
+                We&apos;re a creative digital agency focused on building exceptional brands and digital experiences that drive real results.
               </p>
             </div>
           </Container>
@@ -67,7 +67,7 @@ export default function AboutPage() {
                   Cloudstream Systems was born from a simple belief: great design and powerful technology should work together seamlessly. We started as a small team of passionate designers and developers who were frustrated with the disconnect between beautiful designs and functional implementations.
                 </p>
                 <p>
-                  Today, we've grown into a full-service digital agency, but our core philosophy remains the same. We don't just build websites and brands—we create digital experiences that tell stories, engage audiences, and drive real business results.
+                  Today, we&apos;ve grown into a full-service digital agency, but our core philosophy remains the same. We don&apos;t just build websites and brands—we create digital experiences that tell stories, engage audiences, and drive real business results.
                 </p>
                 <p>
                   Our approach is collaborative and transparent. We work closely with our clients to understand their unique challenges and goals, then craft solutions that exceed expectations. Every project is an opportunity to push boundaries and create something exceptional.
@@ -106,7 +106,7 @@ export default function AboutPage() {
               <Users className="w-16 h-16 text-[#28236b] mx-auto mb-6" />
               <h2 className="text-4xl font-bold mb-6 text-[#28236b]">Our Team</h2>
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                We're a diverse team of designers, developers, strategists, and creative thinkers united by our passion for exceptional digital experiences. Each member brings unique expertise and perspective, allowing us to tackle any challenge with creativity and precision.
+                We&apos;re a diverse team of designers, developers, strategists, and creative thinkers united by our passion for exceptional digital experiences. Each member brings unique expertise and perspective, allowing us to tackle any challenge with creativity and precision.
               </p>
               <p className="text-lg text-gray-600">
                 From brand identity to full-stack development, our team has the skills and experience to bring your vision to life.
@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-bold mb-6">Ready to Work Together?</h2>
               <p className="text-xl mb-8 text-white/90">
-                Let's create something exceptional. Get in touch to discuss your project.
+                Let&apos;s create something exceptional. Get in touch to discuss your project.
               </p>
               <a
                 href="/contact"

@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { useInView, useMotionValue, useSpring } from "framer-motion";
 
 interface AnimatedCounterProps {
   value: number;
   suffix?: string;
-  duration?: number;
 }
 
-export default function AnimatedCounter({ value, suffix = "", duration = 2 }: AnimatedCounterProps) {
+export default function AnimatedCounter({ value, suffix = "" }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {

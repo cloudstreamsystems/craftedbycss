@@ -151,7 +151,7 @@ export default function Hero() {
               onFocus={() => setIsLetsTalkHovered(true)}
               onBlur={() => setIsLetsTalkHovered(false)}
             >
-              Let's Talk
+              Let&apos;s Talk
             </Button>
           </Link>
         </motion.div>

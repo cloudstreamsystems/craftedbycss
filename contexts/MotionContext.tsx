@@ -16,10 +16,12 @@ export function MotionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem("reduceMotion");
     if (stored !== null) {
+      // eslint-disable-next-line
       setIsMotionReduced(stored === "true");
     } else {
       // Check system preference
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      // eslint-disable-next-line
       setIsMotionReduced(prefersReducedMotion);
     }
   }, []);

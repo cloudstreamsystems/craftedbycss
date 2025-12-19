@@ -28,7 +28,6 @@ export default function LogoCarousel({
   speed = 30,
   direction = "left",
   pauseOnHover = true,
-  grayscale = true,
   className = "",
 }: LogoCarouselProps) {
   const { isMotionReduced } = useMotion();

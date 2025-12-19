@@ -83,10 +83,10 @@ export default function ProjectsPage() {
           <Container>
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-bold mb-6">
-                Let's Create Your Success Story
+                Let&apos;s Create Your Success Story
               </h2>
               <p className="text-xl mb-8 text-white/90">
-                Ready to start your project? We'd love to hear about your vision and help bring it to life.
+                Ready to start your project? We&apos;d love to hear about your vision and help bring it to life.
               </p>
               <a
                 href="/contact"

@@ -17,7 +17,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function RecentProjects() {
   // Show all projects
   const featuredProjects = projects;
-  const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -88,7 +87,7 @@ export default function RecentProjects() {
             Recent Projects
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Explore some of our latest work and see how we've helped businesses transform their digital presence
+            Explore some of our latest work and see how we&apos;ve helped businesses transform their digital presence
           </p>
         </div>
 

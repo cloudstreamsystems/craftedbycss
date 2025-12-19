@@ -123,7 +123,7 @@ export default function About() {
               About Cloudstream Systems
             </h2>
             <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-              We're a creative digital agency passionate about building exceptional brands and digital experiences that drive real results.
+              We&apos;re a creative digital agency passionate about building exceptional brands and digital experiences that drive real results.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               With years of experience in design and development, we combine stunning aesthetics with powerful functionality to create solutions that not only look beautiful but perform exceptionally.
