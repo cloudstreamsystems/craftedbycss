@@ -16,7 +16,7 @@ const navigation = [
 ];
 
 export default function Header() {
-  const { isMenuOpen, toggleMenu } = useStore();
+  const { isMenuOpen, toggleMenu, headerMode } = useStore();
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -39,6 +39,11 @@ export default function Header() {
       return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
 
+    // If header mode is warning (dark section), force transparent style
+    if (headerMode === 'warning') {
+      return `${baseStyles} top-0 w-full bg-transparent text-white`;
+    }
+
     if (isScrolled) {
       // Scrolled -> White Header
       return `${baseStyles} ${pillStyles} bg-white/90 text-[#28236b] border border-white/20`;
@@ -50,8 +55,8 @@ export default function Header() {
 
   const styles = getHeaderStyles();
 
-  // Dark text when scrolled (White Header)
-  const isDarkText = isScrolled;
+  // Dark text when scrolled (White Header) AND not in warning mode
+  const isDarkText = isScrolled && headerMode !== 'warning';
 
   return (
     <>
