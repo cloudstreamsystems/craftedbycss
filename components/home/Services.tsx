@@ -120,8 +120,7 @@ export default function Services() {
                 className="service-card group"
               >
                 <div className="relative h-full bg-[#ff4400] rounded-3xl p-8 border border-white/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
-                  {/* Gradient accent on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300`} />
+
 
                   <div className="relative z-10 text-center flex flex-col h-full">
                     {/* Icon with amber background - centered */}

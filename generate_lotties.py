@@ -13,20 +13,20 @@ output_dir = '/home/sandbox/craftedbycss/public/animations'
 # Darker Orange (Count 5) -> Target Orange (Secondary Elements)
 # All others (Shadows, Backgrounds, Fills) -> White (Negative Space)
 website_color_map = {
-    # Main Oranges -> White
-    (1, 0.5569, 0.2275): [1, 1, 1],
-    (1, 0.4431, 0): [1, 1, 1],
+    # Main Oranges (Fills/Backgrounds) -> Target Orange (Blend with card)
+    (1, 0.5569, 0.2275): [1, 0.2667, 0],
+    (1, 0.4431, 0): [1, 0.2667, 0],
     
-    # Browns/Darks (Likely Shadows/Depth) -> White
+    # Browns/Darks (Lines/Structure) -> White (Visible)
     (0.7668, 0.7117, 0.3532): [1, 1, 1],
     (0.4773, 0.3557, 0.2627): [1, 1, 1],
     (0.558, 0.4356, 0.342): [1, 1, 1],
     (0.2852, 0.2226, 0.1748): [1, 1, 1],
     
-    # Lights -> White
-    (0.9961, 0.9608, 0.7412): [1, 1, 1],
-    (1, 0.9867, 0.9): [1, 1, 1],
-    (0.9675, 0.9415, 0.7725): [1, 1, 1]
+    # Lights (Negative Space) -> Target Orange
+    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0],
+    (1, 0.9867, 0.9): [1, 0.2667, 0],
+    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0]
 }
 
 configs = [
@@ -38,7 +38,7 @@ configs = [
     {
         'source': 'website-setup.json',
         'output': 'website-design.json',
-        'color': [1, 1, 1], 
+        'color': [1, 0.2667, 0], # Default fallback (should be covered by map)
         'color_map': website_color_map # Use specific map
     },
     {
