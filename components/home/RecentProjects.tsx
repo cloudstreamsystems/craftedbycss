@@ -141,7 +141,7 @@ export default function RecentProjects() {
         <div className="text-center mt-12 md:mt-20">
           <div className="relative inline-block group">
             {/* Tooltip */}
-            <div className="absolute -top-24 left-1/2 -translate-x-1/2 md:-top-8 md:left-auto md:translate-x-0 md:-right-48 transform rotate-[-6deg] block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 origin-bottom pointer-events-none">
+            <div className="absolute -top-28 left-1/2 -translate-x-1/2 md:-top-14 md:left-auto md:translate-x-0 md:-right-48 transform rotate-[-6deg] block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 origin-bottom pointer-events-none">
               <div className="relative">
                 <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] whitespace-nowrap">
                   Click to view all our projects
