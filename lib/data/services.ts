@@ -32,15 +32,15 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "art-direction",
-    title: "Art Direction",
-    description: "Creative vision that drives measurable results",
-    icon: "compass",
+    id: "cybersecurity",
+    title: "Cybersecurity",
+    description: "Protect your digital assets with enterprise-grade security",
+    icon: "shield",
     features: [
-      "Creative Strategy",
-      "Visual Storytelling",
-      "Campaign Design",
-      "Brand Photography",
+      "Security Audits",
+      "Penetration Testing",
+      "Compliance",
+      "Data Protection",
     ],
   },
   {

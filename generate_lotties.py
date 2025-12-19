@@ -52,7 +52,7 @@ configs = [
     },
     {
         'source': 'brand.json',
-        'output': 'art-direction.json',
+        'output': 'cybersecurity.json',
         'color': [1, 1, 1]
     },
     {
