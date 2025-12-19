@@ -36,40 +36,6 @@ export default function Services() {
   const bgTopRef = useRef(null);
   const bgBottomRef = useRef(null);
 
-  // Refs for Lottie animations to synchronize them
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const lottieRefs = useRef<any[]>([]);
-
-  // Synchronize Lottie animations
-  useEffect(() => {
-    // Small delay to ensure Lotties are mounted
-    const timer = setTimeout(() => {
-      const targetDuration = 4; // Target duration in seconds for all animations
-
-      lottieRefs.current.forEach((ref) => {
-        if (ref) {
-          try {
-            // Get duration in seconds (default is false)
-            const duration = ref.getDuration(false);
-            if (duration > 0) {
-              // Calculate speed to match target duration
-              // speed = original / target
-              // e.g. 2s / 4s = 0.5 speed (slower)
-              // e.g. 8s / 4s = 2.0 speed (faster)
-              const speed = duration / targetDuration;
-              ref.setSpeed(speed);
-              ref.goToAndPlay(0);
-            }
-          } catch (e) {
-            console.warn("Failed to sync lottie", e);
-          }
-        }
-      });
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   // GSAP Timeline for orchestrated animations
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -170,10 +136,6 @@ export default function Services() {
                         <LottieIcon
                           animationData={animationData}
                           className="w-full h-full"
-                          autoplay={false}
-                          lottieRef={(el: any) => {
-                            if (el) lottieRefs.current[index] = el;
-                          }}
                         />
                       </motion.div>
                     </div>
