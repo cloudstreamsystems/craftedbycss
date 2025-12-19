@@ -79,26 +79,26 @@ export default function ProcessStacked() {
                             }}
                         >
                             <div
-                                className={`${step.color} ${step.textColor} rounded-[40px] p-8 md:p-16 shadow-2xl transition-transform duration-500 min-h-[400px] flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16 border border-black/5 mx-auto w-full`}
+                                className={`${step.color} ${step.textColor} rounded-[32px] md:rounded-[40px] p-6 md:p-16 shadow-2xl transition-transform duration-500 min-h-[300px] md:min-h-[400px] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-16 border border-black/5 mx-auto w-full`}
                             >
                                 <div className="flex-1 relative z-10">
-                                    <div className="flex items-center gap-6 mb-8">
-                                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20`}>
-                                            <Icon className={`w-8 h-8 ${step.iconColor}`} />
+                                    <div className="flex items-center gap-4 md:gap-6 mb-6 md:mb-8">
+                                        <div className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20`}>
+                                            <Icon className={`w-6 h-6 md:w-8 md:h-8 ${step.iconColor}`} />
                                         </div>
-                                        <span className="text-xl font-medium opacity-80">Step 0{index + 1}</span>
+                                        <span className="text-lg md:text-xl font-medium opacity-80">Step 0{index + 1}</span>
                                     </div>
 
-                                    <h3 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                                    <h3 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                                         {step.title}
                                     </h3>
-                                    <p className="text-lg md:text-2xl opacity-90 leading-relaxed max-w-2xl">
+                                    <p className="text-base md:text-2xl opacity-90 leading-relaxed max-w-2xl">
                                         {step.description}
                                     </p>
                                 </div>
 
                                 {/* Giant Number Decoration */}
-                                <div className={`absolute right-4 bottom-0 md:right-16 md:top-1/2 md:-translate-y-1/2 text-[12rem] md:text-[20rem] font-bold leading-none ${step.numberColor} pointer-events-none select-none`}>
+                                <div className={`absolute right-4 bottom-4 md:right-16 md:top-1/2 md:-translate-y-1/2 text-[6rem] md:text-[20rem] font-bold leading-none ${step.numberColor} pointer-events-none select-none`}>
                                     {index + 1}
                                 </div>
                             </div>
