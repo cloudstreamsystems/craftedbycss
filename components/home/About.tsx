@@ -106,12 +106,12 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image/Visual Side */}
           <div ref={imageRef} className="relative">
-            <div className="relative rounded-[32px] aspect-square overflow-hidden bg-transparent shadow-2xl">
+            <div className="relative aspect-square">
               <Image
                 src="/images/abou_res.png"
                 alt="Cloudstream Systems - Digital Solutions"
                 fill
-                className="object-cover"
+                className="object-contain mix-blend-multiply drop-shadow-2xl"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
