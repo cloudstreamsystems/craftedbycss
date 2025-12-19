@@ -13,9 +13,12 @@ interface LottieIconProps {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     animationData: any;
     className?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    lottieRef?: any;
+    autoplay?: boolean;
 }
 
-export default function LottieIcon({ animationData, className }: LottieIconProps) {
+export default function LottieIcon({ animationData, className, lottieRef, autoplay = true }: LottieIconProps) {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -30,9 +33,10 @@ export default function LottieIcon({ animationData, className }: LottieIconProps
     return (
         <div className={className}>
             <Lottie
+                lottieRef={lottieRef}
                 animationData={animationData}
                 loop={true}
-                autoplay={true}
+                autoplay={autoplay}
                 className="w-full h-full"
             />
         </div>

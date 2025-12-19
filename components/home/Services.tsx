@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -35,6 +35,40 @@ export default function Services() {
 
   const bgTopRef = useRef(null);
   const bgBottomRef = useRef(null);
+
+  // Refs for Lottie animations to synchronize them
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const lottieRefs = useRef<any[]>([]);
+
+  // Synchronize Lottie animations
+  useEffect(() => {
+    // Small delay to ensure Lotties are mounted
+    const timer = setTimeout(() => {
+      const targetDuration = 4; // Target duration in seconds for all animations
+
+      lottieRefs.current.forEach((ref) => {
+        if (ref) {
+          try {
+            // Get duration in seconds (default is false)
+            const duration = ref.getDuration(false);
+            if (duration > 0) {
+              // Calculate speed to match target duration
+              // speed = original / target
+              // e.g. 2s / 4s = 0.5 speed (slower)
+              // e.g. 8s / 4s = 2.0 speed (faster)
+              const speed = duration / targetDuration;
+              ref.setSpeed(speed);
+              ref.goToAndPlay(0);
+            }
+          } catch (e) {
+            console.warn("Failed to sync lottie", e);
+          }
+        }
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // GSAP Timeline for orchestrated animations
   useGSAP(() => {
@@ -119,7 +153,9 @@ export default function Services() {
                 key={service.id}
                 className="service-card group"
               >
-                <div className="relative h-full bg-[#ff4400] rounded-3xl p-8 border border-white/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div className="relative h-full bg-[#ff4400] rounded-3xl p-8 border border-white/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col overflow-hidden">
+                  {/* Gradient Overlay for better text visibility */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black/20 pointer-events-none" />
 
 
                   <div className="relative z-10 text-center flex flex-col h-full">
@@ -131,7 +167,14 @@ export default function Services() {
                         whileHover={{ scale: isWebsiteService || isCyberService ? 1.6 : 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <LottieIcon animationData={animationData} className="w-full h-full" />
+                        <LottieIcon
+                          animationData={animationData}
+                          className="w-full h-full"
+                          autoplay={false}
+                          lottieRef={(el: any) => {
+                            if (el) lottieRefs.current[index] = el;
+                          }}
+                        />
                       </motion.div>
                     </div>
 
