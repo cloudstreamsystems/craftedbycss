@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import ScrollObserver from "@/components/ScrollObserver";
 import { services } from "@/lib/data/services";
-import { Palette, Monitor, Compass, Code, Check } from "lucide-react";
+import { Palette, Monitor, Shield, Code, Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Services | Cloudstream Systems",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const iconMap: Record<string, any> = {
   palette: Palette,
   monitor: Monitor,
-  compass: Compass,
+  shield: Shield,
   code: Code,
 };
 
