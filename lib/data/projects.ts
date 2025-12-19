@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   image: string;
   tags: string[];
+  demoUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -15,6 +16,7 @@ export const projects: Project[] = [
     description: "Educational institution website with modern design and intuitive navigation",
     image: "/images/projects/atli-institute.jpg",
     tags: ["Web Design", "UI/UX", "Education"],
+    demoUrl: "https://example.com",
   },
   {
     id: "castor-branding",
@@ -23,6 +25,7 @@ export const projects: Project[] = [
     description: "Complete brand identity and packaging design for natural products",
     image: "/images/projects/castor-branding.jpg",
     tags: ["Branding", "Logo Design", "Packaging"],
+    demoUrl: "https://example.com",
   },
   {
     id: "flint-ecommerce",
@@ -31,6 +34,7 @@ export const projects: Project[] = [
     description: "High-performance e-commerce platform with custom features",
     image: "/images/projects/flint-ecommerce.jpg",
     tags: ["E-commerce", "Web Development", "UI/UX"],
+    demoUrl: "https://example.com",
   },
   {
     id: "royal-haven",
@@ -39,6 +43,7 @@ export const projects: Project[] = [
     description: "Luxury real estate website showcasing premium properties",
     image: "/images/projects/royal-haven.jpg",
     tags: ["Web Design", "Real Estate", "Luxury"],
+    demoUrl: "https://example.com",
   },
   {
     id: "mobile-ui",
@@ -47,6 +52,7 @@ export const projects: Project[] = [
     description: "Modern mobile application interface with seamless user experience",
     image: "/images/projects/mobile-ui.jpg",
     tags: ["UI/UX", "Mobile", "App Design"],
+    demoUrl: "https://example.com",
   },
   {
     id: "social-media-campaign",
@@ -55,6 +61,7 @@ export const projects: Project[] = [
     description: "Engaging social media content and campaign strategy",
     image: "/images/projects/social-campaign.jpg",
     tags: ["Social Media", "Marketing", "Content"],
+    demoUrl: "https://example.com",
   },
 ];
 

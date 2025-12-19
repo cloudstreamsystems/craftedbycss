@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { Project } from "@/lib/data/projects";
 
 interface ProjectModalProps {
@@ -74,6 +74,21 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 height={800}
                 className="w-full h-auto max-h-[85vh] object-cover rounded-[32px] shadow-2xl block"
               />
+
+              {/* View Live Demo Button */}
+              {project.demoUrl && (
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-[#1a1648] hover:scale-105 transition-all duration-300 group"
+                  >
+                    View Live Demo
+                    <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         </>

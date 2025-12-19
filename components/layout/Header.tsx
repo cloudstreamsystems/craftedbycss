@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
@@ -21,13 +21,21 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Handle scroll state
+  // Handle scroll state
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
+    const isScrolledDown = latest > 50;
+    if (isScrolled !== isScrolledDown) {
+      setIsScrolled(isScrolledDown);
     }
   });
+
+  // Initialize scroll state on mount
+  useEffect(() => {
+    const currentScroll = scrollY.get();
+    if (currentScroll > 50) {
+      setIsScrolled(true);
+    }
+  }, [scrollY]);
 
   // Determine styles based on scroll state
   const getHeaderStyles = () => {
@@ -39,24 +47,25 @@ export default function Header() {
       return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
 
-    // If header mode is chaos (Hero) or warning (dark section), force transparent style
-    if (headerMode === 'chaos' || headerMode === 'warning') {
+    // If not scrolled, always transparent (position zero)
+    if (!isScrolled) {
       return `${baseStyles} top-0 w-full bg-transparent text-white`;
     }
 
-    if (isScrolled) {
-      // Scrolled -> White Header
+    // Scrolled state - determine color based on section background
+    // chaos (Hero) & warning (Stats/CTA) are Dark sections -> Header should be White
+    if (headerMode === 'chaos' || headerMode === 'warning') {
       return `${baseStyles} ${pillStyles} bg-white/90 text-[#28236b] border border-white/20`;
     }
 
-    // Top -> Transparent
-    return `${baseStyles} top-0 w-full bg-transparent text-white`;
+    // drift (About/Services/Projects) are Light sections -> Header should be Dark
+    return `${baseStyles} ${pillStyles} bg-[#28236b]/90 text-white border border-[#28236b]/20`;
   };
 
   const styles = getHeaderStyles();
 
-  // Dark text when scrolled (White Header) AND not in chaos or warning mode
-  const isDarkText = isScrolled && headerMode !== 'warning' && headerMode !== 'chaos';
+  // Dark text when scrolled (White Header) AND in chaos or warning mode (Dark Section)
+  const isDarkText = isScrolled && (headerMode === 'warning' || headerMode === 'chaos');
 
   return (
     <>
