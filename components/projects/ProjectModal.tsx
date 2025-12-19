@@ -80,9 +80,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
                   <a
                     href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-[#1a1648] hover:scale-105 transition-all duration-300 group"
+                    target={project.demoUrl === "#" ? undefined : "_blank"}
+                    rel={project.demoUrl === "#" ? undefined : "noopener noreferrer"}
+                    onClick={(e) => {
+                      if (project.demoUrl === "#") {
+                        e.preventDefault();
+                      }
+                    }}
+                    className={`flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300 group ${project.demoUrl === "#" ? "cursor-default opacity-80" : "hover:bg-[#1a1648] hover:scale-105"}`}
                   >
                     View Live Demo
                     <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

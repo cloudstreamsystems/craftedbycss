@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description: "Complete brand identity and packaging design for natural products",
     image: "/images/projects/castor-branding.jpg",
     tags: ["Branding", "Logo Design", "Packaging"],
-    demoUrl: "https://example.com",
+    demoUrl: "#",
   },
   {
     id: "flint-ecommerce",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     description: "Modern mobile application interface with seamless user experience",
     image: "/images/projects/mobile-ui.jpg",
     tags: ["UI/UX", "Mobile", "App Design"],
-    demoUrl: "https://example.com",
+    demoUrl: "#",
   },
   {
     id: "social-media-campaign",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     description: "Engaging social media content and campaign strategy",
     image: "/images/projects/social-campaign.jpg",
     tags: ["Social Media", "Marketing", "Content"],
-    demoUrl: "https://example.com",
+    demoUrl: "#",
   },
 ];
 
