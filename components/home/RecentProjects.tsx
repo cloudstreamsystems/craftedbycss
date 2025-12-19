@@ -152,7 +152,7 @@ export default function RecentProjects() {
 
             {/* Tooltip */}
             <div
-              className="absolute -top-32 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-full md:ml-24 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
+              className="absolute -top-32 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-full md:ml-36 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
               style={{ zIndex: 9999, transform: 'translateZ(10px)' }}
             >
               <div className="relative flex flex-col items-center md:items-start transform rotate-[-6deg]">
@@ -161,7 +161,7 @@ export default function RecentProjects() {
                 </span>
                 {/* Hand-drawn arrow */}
                 <svg
-                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-6 md:-left-16 w-12 h-12 md:w-24 md:h-24 text-[#28236b] transform -rotate-90 md:rotate-0 md:-translate-y-4"
+                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-6 md:-left-28 w-12 h-12 md:w-24 md:h-24 text-[#28236b] transform -rotate-90 md:rotate-0 md:-translate-y-4"
                   viewBox="0 0 100 100"
                   fill="none"
                   stroke="currentColor"
