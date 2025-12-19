@@ -141,14 +141,14 @@ export default function RecentProjects() {
         <div className="text-center mt-12 md:mt-20">
           <div className="relative inline-block group">
             {/* Tooltip */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 md:-top-16 md:left-auto md:translate-x-0 md:-right-40 transform rotate-[-6deg] block opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 scale-90 md:scale-100 origin-bottom pointer-events-none">
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 md:-top-8 md:left-auto md:translate-x-0 md:-right-48 transform rotate-[-6deg] block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 origin-bottom pointer-events-none">
               <div className="relative">
                 <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] whitespace-nowrap">
                   Click to view all our projects
                 </span>
                 {/* Hand-drawn arrow */}
                 <svg
-                  className="absolute top-full left-0 w-16 h-16 text-[#28236b] transform -translate-x-4 -translate-y-2"
+                  className="absolute top-full left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-12 h-12 md:w-16 md:h-16 text-[#28236b] transform md:-translate-x-8 -translate-y-2 rotate-90 md:rotate-0"
                   viewBox="0 0 100 100"
                   fill="none"
                   stroke="currentColor"
