@@ -150,7 +150,7 @@ export default function RecentProjects() {
 
             {/* Tooltip */}
             <div
-              className="absolute -top-32 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-full md:ml-36 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
+              className="absolute -top-32 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-full md:ml-52 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
               style={{ zIndex: 9999, transform: 'translateZ(10px)' }}
             >
               <div className="relative flex flex-col items-center md:items-start transform rotate-[-6deg]">
@@ -159,16 +159,17 @@ export default function RecentProjects() {
                 </span>
                 {/* Hand-drawn arrow */}
                 <svg
-                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:right-full md:left-auto md:mr-4 w-12 h-12 md:w-32 md:h-16 text-[#28236b] transform -rotate-90 md:rotate-0"
-                  viewBox="0 0 150 80"
+                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:right-[110%] md:left-auto w-12 h-12 md:w-40 md:h-20 text-[#28236b] transform -rotate-90 md:rotate-0"
+                  viewBox="0 0 160 80"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  style={{ overflow: 'visible' }}
                 >
                   {/* Curved arrow pointing from right (text) to left (button) */}
-                  <path d="M140,40 Q75,40 10,40" />
+                  <path d="M150,40 Q80,40 10,40" />
                   <path d="M10,40 L25,30" />
                   <path d="M10,40 L25,50" />
                 </svg>
