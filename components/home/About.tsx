@@ -107,7 +107,7 @@ export default function About() {
           <div ref={imageRef} className="relative">
             <div className="relative rounded-[32px] aspect-square overflow-hidden bg-gradient-to-br from-[#28236b] to-[#1a1648]">
               <Image
-                src="/images/hero.png"
+                src="/images/abou_res.png"
                 alt="Cloudstream Systems - Digital Solutions"
                 fill
                 className="object-cover opacity-90 mix-blend-overlay"
