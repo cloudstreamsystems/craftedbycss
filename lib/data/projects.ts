@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description: "Educational institution website with modern design and intuitive navigation",
     image: "/images/projects/atli-institute.jpg",
     tags: ["Web Design", "UI/UX", "Education"],
-    demoUrl: "https://example.com",
+    demoUrl: "https://atlinstitute.org/",
   },
   {
     id: "castor-branding",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     description: "High-performance e-commerce platform with custom features",
     image: "/images/projects/flint-ecommerce.jpg",
     tags: ["E-commerce", "Web Development", "UI/UX"],
-    demoUrl: "https://example.com",
+    demoUrl: "https://flint-clothing-shop-jb87-zeta.vercel.app/",
   },
   {
     id: "royal-haven",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description: "Luxury real estate website showcasing premium properties",
     image: "/images/projects/royal-haven.jpg",
     tags: ["Web Design", "Real Estate", "Luxury"],
-    demoUrl: "https://example.com",
+    demoUrl: "https://royalhaven.co.uk/",
   },
   {
     id: "mobile-ui",
