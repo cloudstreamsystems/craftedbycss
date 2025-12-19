@@ -90,8 +90,10 @@ export default function RecentProjects() {
             Explore some of our latest work and see how we&apos;ve helped businesses transform their digital presence
           </p>
         </div>
+      </Container>
 
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" style={{ perspective: '1000px' }}>
+      <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto mb-12">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ perspective: '1000px' }}>
           {featuredProjects.map((project) => (
             <InteractiveCard
               key={project.id}
@@ -132,7 +134,9 @@ export default function RecentProjects() {
             </InteractiveCard>
           ))}
         </div>
+      </div>
 
+      <Container>
         {/* View All Projects Button */}
         <div className="text-center">
           <Link
