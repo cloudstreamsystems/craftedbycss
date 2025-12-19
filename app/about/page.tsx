@@ -15,9 +15,9 @@ export default function AboutPage() {
       <ScrollObserver mode="chaos">
         <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
           <Container>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                ...just build
+                About Us
               </h1>
               <p className="text-xl md:text-2xl text-white/90">
                 We&apos;re a creative digital agency focused on building exceptional brands and digital experiences that drive real results.
@@ -98,23 +98,7 @@ export default function AboutPage() {
         </section>
       </ScrollObserver>
 
-      {/* Team Section */}
-      <ScrollObserver mode="drift">
-        <section className="py-20">
-          <Container>
-            <div className="max-w-3xl mx-auto text-center">
-              <Users className="w-16 h-16 text-[#28236b] mx-auto mb-6" />
-              <h2 className="text-4xl font-bold mb-6 text-[#28236b]">Our Team</h2>
-              <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                We&apos;re a diverse team of designers, developers, strategists, and creative thinkers united by our passion for exceptional digital experiences. Each member brings unique expertise and perspective, allowing us to tackle any challenge with creativity and precision.
-              </p>
-              <p className="text-lg text-gray-600">
-                From brand identity to full-stack development, our team has the skills and experience to bring your vision to life.
-              </p>
-            </div>
-          </Container>
-        </section>
-      </ScrollObserver>
+
 
       {/* CTA Section */}
       <ScrollObserver mode="warning">
