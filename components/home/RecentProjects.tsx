@@ -140,15 +140,13 @@ export default function RecentProjects() {
         {/* View All Projects Button */}
         <div className="text-center mt-12 md:mt-20">
           <div className="relative inline-block group isolate">
-            <div className="relative z-10">
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1a1648] transition-colors"
-              >
-                View All Projects
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1a1648] transition-colors relative z-0"
+            >
+              View All Projects
+              <ArrowRight className="w-5 h-5" />
+            </Link>
 
             {/* Tooltip */}
             <div
@@ -161,18 +159,18 @@ export default function RecentProjects() {
                 </span>
                 {/* Hand-drawn arrow */}
                 <svg
-                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-6 md:-left-48 w-12 h-12 md:w-48 md:h-24 text-[#28236b] transform -rotate-90 md:rotate-0 md:-translate-y-4"
-                  viewBox="0 0 200 100"
+                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:right-full md:left-auto md:mr-4 w-12 h-12 md:w-32 md:h-16 text-[#28236b] transform -rotate-90 md:rotate-0"
+                  viewBox="0 0 150 80"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  {/* Curved arrow pointing left for desktop, down for mobile (via rotation) */}
-                  <path d="M190,10 Q100,60 10,50" />
-                  <path d="M10,50 L25,40" />
-                  <path d="M10,50 L25,60" />
+                  {/* Curved arrow pointing from right (text) to left (button) */}
+                  <path d="M140,40 Q75,40 10,40" />
+                  <path d="M10,40 L25,30" />
+                  <path d="M10,40 L25,50" />
                 </svg>
               </div>
             </div>
