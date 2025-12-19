@@ -116,10 +116,10 @@ export default function CTA() {
                 <div>
                   <h5 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Contact</h5>
                   <a
-                    href="mailto:contact@cssbuilds.tech"
+                    href="mailto:support@craftedbycss.com"
                     className="text-white/80 hover:text-white transition-colors text-sm"
                   >
-                    contact@cssbuilds.tech
+                    support@craftedbycss.com
                   </a>
                 </div>
 
