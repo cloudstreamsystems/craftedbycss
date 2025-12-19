@@ -161,8 +161,8 @@ export default function RecentProjects() {
                 </span>
                 {/* Hand-drawn arrow */}
                 <svg
-                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-6 md:-left-28 w-12 h-12 md:w-24 md:h-24 text-[#28236b] transform -rotate-90 md:rotate-0 md:-translate-y-4"
-                  viewBox="0 0 100 100"
+                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-6 md:-left-48 w-12 h-12 md:w-48 md:h-24 text-[#28236b] transform -rotate-90 md:rotate-0 md:-translate-y-4"
+                  viewBox="0 0 200 100"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -170,7 +170,7 @@ export default function RecentProjects() {
                   strokeLinejoin="round"
                 >
                   {/* Curved arrow pointing left for desktop, down for mobile (via rotation) */}
-                  <path d="M90,10 Q50,60 10,50" />
+                  <path d="M190,10 Q100,60 10,50" />
                   <path d="M10,50 L25,40" />
                   <path d="M10,50 L25,60" />
                 </svg>
