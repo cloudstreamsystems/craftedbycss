@@ -168,9 +168,9 @@ export default function RecentProjects() {
                   strokeLinejoin="round"
                 >
                   {/* Simple curved line from text (right) to button (left) */}
-                  <path d="M90,20 Q50,60 10,50" />
-                  <path d="M10,50 L20,40" />
-                  <path d="M10,50 L20,60" />
+                  <path d="M90,20 Q60,60 30,50" />
+                  <path d="M30,50 L40,40" />
+                  <path d="M30,50 L40,60" />
                 </svg>
               </div>
             </div>
