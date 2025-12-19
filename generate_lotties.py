@@ -15,7 +15,9 @@ output_dir = '/home/sandbox/craftedbycss/public/animations'
 website_color_map = {
     # Main Oranges (Fills/Backgrounds) -> Target Orange (Blend with card)
     (1, 0.5569, 0.2275): [1, 0.2667, 0],
-    (1, 0.4431, 0): [1, 0.2667, 0],
+    
+    # Tags (HTML, CSS, Code) -> White (Visible)
+    (1, 0.4431, 0): [1, 1, 1],
     
     # Browns/Darks (Lines/Structure) -> White (Visible)
     (0.7668, 0.7117, 0.3532): [1, 1, 1],
