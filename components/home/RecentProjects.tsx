@@ -141,14 +141,14 @@ export default function RecentProjects() {
         <div className="text-center mt-12 md:mt-20">
           <div className="relative inline-block group">
             {/* Tooltip */}
-            <div className="absolute -top-28 left-1/2 -translate-x-1/2 md:-top-14 md:left-auto md:translate-x-0 md:-right-48 transform rotate-[-6deg] block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 origin-bottom pointer-events-none">
-              <div className="relative">
-                <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] whitespace-nowrap">
-                  Click to view all our projects
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:left-full md:ml-8 transform rotate-[-6deg] block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max z-20">
+              <div className="relative flex flex-col items-center md:items-start">
+                <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] leading-tight text-center md:text-left">
+                  Click to view <br className="hidden md:block" /> all our projects
                 </span>
                 {/* Hand-drawn arrow */}
                 <svg
-                  className="absolute top-full left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-12 h-12 md:w-16 md:h-16 text-[#28236b] transform md:-translate-x-8 -translate-y-2 rotate-90 md:rotate-0"
+                  className="absolute top-full left-1/2 -translate-x-1/2 md:top-6 md:-left-16 w-12 h-12 md:w-24 md:h-24 text-[#28236b] transform -rotate-90 md:rotate-0 md:-translate-y-4"
                   viewBox="0 0 100 100"
                   fill="none"
                   stroke="currentColor"
@@ -156,9 +156,10 @@ export default function RecentProjects() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M80,10 C60,40 20,40 10,80" />
-                  <path d="M10,80 L20,70" />
-                  <path d="M10,80 L5,65" />
+                  {/* Curved arrow pointing left for desktop, down for mobile (via rotation) */}
+                  <path d="M90,10 Q50,60 10,50" />
+                  <path d="M10,50 L25,40" />
+                  <path d="M10,50 L25,60" />
                 </svg>
               </div>
             </div>
