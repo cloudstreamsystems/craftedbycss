@@ -41,7 +41,14 @@ configs = [
         'source': 'website-setup.json',
         'output': 'website-design.json',
         'color': [1, 0.2667, 0], # Default fallback (should be covered by map)
-        'color_map': website_color_map # Use specific map
+        'color_map': website_color_map, # Use specific map
+        'scale_layers': {
+            'HTML': 1.7,
+            'CSS': 1.7,
+            'Code': 1.7,
+            'Bracket': 1.7,
+            'Glob': 1.7
+        }
     },
     {
         'source': 'brand.json',
@@ -92,6 +99,20 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None):
         for item in obj:
             replace_color(item, target_color, preserve_light, color_map)
 
+def scale_layer(layer, scale_factor):
+    """Scales a layer's transform properties."""
+    if 'ks' in layer and 's' in layer['ks']:
+        scale_prop = layer['ks']['s']
+        # Handle animated scale (keyframed)
+        if 'a' in scale_prop and scale_prop['a'] == 1: 
+            for kf in scale_prop['k']:
+                if 's' in kf and isinstance(kf['s'], list):
+                    # Scale X and Y, leave Z (index 2) alone if present
+                    kf['s'] = [x * scale_factor if i < 2 else x for i, x in enumerate(kf['s'])]
+        # Handle static scale
+        elif 'k' in scale_prop and isinstance(scale_prop['k'], list):
+             scale_prop['k'] = [x * scale_factor if i < 2 else x for i, x in enumerate(scale_prop['k'])]
+
 # Generate files
 for config in configs:
     source_path = os.path.join('/home/sandbox/craftedbycss/public', config['source'])
@@ -106,6 +127,14 @@ for config in configs:
     
     # Replace colors
     replace_color(data, config['color'], config.get('preserve_light', False), config.get('color_map'))
+
+    # Apply layer scaling if configured
+    if 'scale_layers' in config:
+        if 'layers' in data:
+            for layer in data['layers']:
+                if 'nm' in layer and layer['nm'] in config['scale_layers']:
+                    factor = config['scale_layers'][layer['nm']]
+                    scale_layer(layer, factor)
     
     # Write to file
     with open(output_path, 'w') as f:
