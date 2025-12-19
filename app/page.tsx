@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Stats from "@/components/home/Stats";
 import Services from "@/components/home/Services";
-import Process from "@/components/home/Process";
+import ProcessStacked from "@/components/home/ProcessStacked";
 import RecentProjects from "@/components/home/RecentProjects";
 import FAQ from "@/components/home/FAQ";
 import TrustedBy from "@/components/sections/TrustedBy";
@@ -29,7 +29,7 @@ export default function Home() {
       </ScrollObserver>
 
       <ScrollObserver mode="drift">
-        <Process />
+        <ProcessStacked />
       </ScrollObserver>
 
       <ScrollObserver mode="drift">
