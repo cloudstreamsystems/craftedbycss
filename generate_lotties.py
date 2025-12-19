@@ -31,6 +31,17 @@ website_color_map = {
     (0.9675, 0.9415, 0.7725): [1, 0.2667, 0]
 }
 
+cyber_color_map = {
+    # Strokes (Blue/Red) -> White
+    (0, 0.1686, 1): [1, 1, 1],
+    (1, 0, 0.3137): [1, 1, 1],
+    
+    # Fills (Pink/Dark Blue/Purple) -> Target Orange
+    (0.8902, 0.0863, 0.3569): [1, 0.2667, 0],
+    (0.0941, 0.0784, 0.6824): [1, 0.2667, 0],
+    (0.3608, 0.1765, 0.8): [1, 0.2667, 0],
+}
+
 configs = [
     {
         'source': 'brand.json',
@@ -51,9 +62,10 @@ configs = [
         }
     },
     {
-        'source': 'brand.json',
+        'source': 'CYBER.json',
         'output': 'cybersecurity.json',
-        'color': [1, 1, 1]
+        'color': [1, 1, 1],
+        'color_map': cyber_color_map
     },
     {
         'source': 'brand.json',
