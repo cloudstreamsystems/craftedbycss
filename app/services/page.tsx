@@ -19,6 +19,7 @@ const iconMap: Record<string, any> = {
 import Image from "next/image";
 import RotatingImage from "@/components/services/RotatingImage";
 import ProcessStackedServices from "@/components/services/ProcessStackedServices";
+import CybersecurityDemo from "@/components/services/CybersecurityDemo";
 
 export default function ServicesPage() {
   return (
@@ -70,6 +71,10 @@ export default function ServicesPage() {
                             src="/images/abou_res.png"
                             alt="Website / App Design"
                           />
+                        </div>
+                      ) : service.id === "cybersecurity" ? (
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:ml-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-l-none md:rounded-r-[32px] overflow-hidden bg-[#0f172a]">
+                          <CybersecurityDemo />
                         </div>
                       ) : (
                         <div className="bg-gradient-to-br from-[#28236b] to-[#28236b] rounded-[32px] p-12 flex items-center justify-center aspect-square">
