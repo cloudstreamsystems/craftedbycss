@@ -13,8 +13,8 @@ output_dir = '/home/sandbox/craftedbycss/public/animations'
 # Darker Orange (Count 5) -> Target Orange (Secondary Elements)
 # All others (Shadows, Backgrounds, Fills) -> White (Negative Space)
 website_color_map = {
-    # Main Oranges (Fills/Backgrounds) -> Target Orange (Blend with card)
-    (1, 0.5569, 0.2275): [1, 0.2667, 0],
+    # Main Oranges (Fills/Backgrounds) -> Transparent (was Target Orange)
+    (1, 0.5569, 0.2275): [1, 0.2667, 0, 0],
     
     # Tags (HTML, CSS, Code) -> White (Visible)
     (1, 0.4431, 0): [1, 1, 1],
@@ -25,10 +25,10 @@ website_color_map = {
     (0.558, 0.4356, 0.342): [1, 1, 1],
     (0.2852, 0.2226, 0.1748): [1, 1, 1],
     
-    # Lights (Negative Space) -> Target Orange
-    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0],
-    (1, 0.9867, 0.9): [1, 0.2667, 0],
-    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0]
+    # Lights (Negative Space) -> Transparent (was Target Orange)
+    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0, 0],
+    (1, 0.9867, 0.9): [1, 0.2667, 0, 0],
+    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0, 0]
 }
 
 cyber_color_map = {
@@ -80,10 +80,15 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None):
                     # Round to match keys
                     current_rgb = (round(r, 4), round(g, 4), round(b, 4))
                     if current_rgb in color_map:
-                        new_rgb = color_map[current_rgb]
-                        # Preserve alpha if present
-                        new_color = new_rgb + (color_val[3:] if len(color_val) > 3 else [])
-                        obj['c']['k'] = new_color
+                        new_val = color_map[current_rgb]
+                        
+                        # Handle RGBA in map
+                        if len(new_val) == 4:
+                             obj['c']['k'] = new_val
+                        else:
+                            # Preserve alpha if present in original but not in map
+                            new_color = new_val + (color_val[3:] if len(color_val) > 3 else [])
+                            obj['c']['k'] = new_color
                         return # Done for this object
 
                 # Check if it's a light color (background/fill)
