@@ -26,7 +26,7 @@ website_color_map = {
     (0.2852, 0.2226, 0.1748): [1, 1, 1],
     
     # Lights (Negative Space/Blobs) -> Mixed
-    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0, 0], # Transparent (Blob)
+    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0], # Cream -> Target Orange (Tag Backgrounds)
     (1, 0.9867, 0.9): [1, 1, 1], # White (Text)
     (0.9675, 0.9415, 0.7725): [1, 0.2667, 0, 0] # Transparent (Blob Highlight)
 }
@@ -103,8 +103,8 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None, smart
                              obj['c']['k'] = [1, 1, 1]
                              obj['o'] = {'k': 0}
                         else:
-                             # Map to Target Orange (Tags)
-                             obj['c']['k'] = [1, 0.2667, 0]
+                             # Map to White (Tag Text) - High Contrast against Orange Background
+                             obj['c']['k'] = [1, 1, 1]
                         return
 
                     # Light Cream/White Logic (Path 1 / Blob)
