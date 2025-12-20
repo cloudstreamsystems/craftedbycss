@@ -76,6 +76,16 @@ export default function ServicesPage() {
                         <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] rounded-[32px] overflow-hidden bg-[#0f172a] shadow-2xl">
                           <CybersecurityDemo />
                         </div>
+                      ) : service.id === "development" ? (
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden bg-[#F4F5FF]">
+                          <Image
+                            src="/images/Frame 1000005768.png"
+                            alt="Development Dashboard"
+                            fill
+                            className="object-cover object-left-top"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
                       ) : (
                         <div className="bg-gradient-to-br from-[#28236b] to-[#28236b] rounded-[32px] p-12 flex items-center justify-center aspect-square">
                           <Icon className="w-32 h-32 text-white" />
@@ -84,7 +94,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Content Side */}
-                    <div className={`w-full md:w-2/3 ${service.id === "brand-identities" || service.id === "cybersecurity" ? "md:pl-16" : ""} ${service.id === "web-design" ? "md:pr-16" : ""}`}>
+                    <div className={`w-full md:w-2/3 ${service.id === "brand-identities" || service.id === "cybersecurity" ? "md:pl-16" : ""} ${service.id === "web-design" || service.id === "development" ? "md:pr-16" : ""}`}>
                       <h2 className="text-4xl font-bold mb-4 text-[#28236b]">
                         {service.title}
                       </h2>

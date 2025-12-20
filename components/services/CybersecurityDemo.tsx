@@ -20,7 +20,7 @@ Nmap done: 1 IP address (1 host up) scanned in 6.42 seconds`;
 export default function CybersecurityDemo() {
     return (
         <div className="w-full h-full flex items-center justify-center p-6">
-            <Code code={nmapOutput} className="w-full max-w-lg shadow-2xl bg-[#0f172a] border border-white/10 rounded-xl overflow-hidden ring-1 ring-white/5">
+            <Code code={nmapOutput} className="w-full shadow-2xl bg-[#0f172a] border border-white/10 rounded-xl overflow-hidden ring-1 ring-white/5">
                 <CodeHeader className="bg-[#1e293b] border-b border-white/10 text-gray-400 h-12 flex items-center px-4">
                     <div className="flex gap-2 mr-4">
                         <div className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -37,6 +37,7 @@ export default function CybersecurityDemo() {
                     cursor={true}
                     lang="bash"
                     theme="dark"
+                    writing={true}
                 />
             </Code>
             <style jsx global>{`
