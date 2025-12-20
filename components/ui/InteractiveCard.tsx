@@ -70,9 +70,11 @@ export default function InteractiveCard({ children, className = "", onClick, ...
   return (
     <div
       ref={cardRef}
-      className={`relative ${className}`}
+      className={`relative ${className} will-change-transform`}
       style={{
         transformStyle: "preserve-3d",
+        transform: "translateZ(0)", // Force hardware acceleration
+        outline: "1px solid transparent", // Help with anti-aliasing
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

@@ -99,7 +99,11 @@ export default function RecentProjects() {
               key={project.id}
               className="project-card-item group bg-white rounded-[24px] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
               onClick={() => handleProjectClick(project)}
-              style={{ backfaceVisibility: 'hidden' }}
+              style={{
+                backfaceVisibility: 'hidden',
+                WebkitBackfaceVisibility: 'hidden', // Safari support
+                transform: 'translate3d(0,0,0)' // Extra stability
+              }}
             >
               {/* Image */}
               <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-t-[24px]">
