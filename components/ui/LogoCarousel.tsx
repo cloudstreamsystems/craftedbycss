@@ -25,7 +25,7 @@ interface LogoCarouselProps {
 
 export default function LogoCarousel({
   logos,
-  speed = 15,
+  speed = 8,
   direction = "left",
   pauseOnHover = true,
   className = "",
