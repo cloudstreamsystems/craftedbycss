@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description: "Complete brand identity and packaging design for natural products",
     image: "/images/castor-oil-branding.jpg",
     tags: ["Branding", "Logo Design", "Packaging"],
-    demoUrl: "#",
+    demoUrl: "/images/castor-brand-guide.pdf",
   },
   {
     id: "flint-ecommerce",
