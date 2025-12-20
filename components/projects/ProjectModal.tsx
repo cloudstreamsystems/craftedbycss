@@ -87,7 +87,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         e.preventDefault();
                       }
                     }}
-                    className={`flex items-center gap-2 bg-[#28236b] text-white px-6 py-3 rounded-full font-semibold text-sm shadow-lg transition-all duration-300 group whitespace-nowrap ${project.demoUrl === "#" ? "cursor-default opacity-80" : "hover:bg-[#1a1648] hover:scale-105"}`}
+                    className={`flex items-center gap-2 bg-[#ff4400] text-white px-6 py-3 rounded-full font-semibold text-sm shadow-lg transition-all duration-300 group whitespace-nowrap ${project.demoUrl === "#" ? "cursor-default opacity-80" : "hover:bg-[#cc3600] hover:scale-105"}`}
                   >
                     View Live Demo
                     <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
