@@ -4,13 +4,13 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-interface InteractiveCardProps {
+interface InteractiveCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
 }
 
-export default function InteractiveCard({ children, className = "", onClick }: InteractiveCardProps) {
+export default function InteractiveCard({ children, className = "", onClick, ...props }: InteractiveCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [spotlight, setSpotlight] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -78,6 +78,7 @@ export default function InteractiveCard({ children, className = "", onClick }: I
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
       onClick={onClick}
+      {...props}
     >
       {/* Spotlight effect */}
       {isHovered && (
