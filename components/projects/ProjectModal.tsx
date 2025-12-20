@@ -55,7 +55,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 stiffness: 300,
                 damping: 25
               }}
-              className="relative max-w-7xl w-auto"
+              className="relative max-w-7xl w-auto min-w-[90vw] md:min-w-[600px]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -72,7 +72,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 alt={project.title}
                 width={1200}
                 height={800}
-                className="w-auto h-auto max-h-[85vh] rounded-[24px] shadow-2xl block mx-auto"
+                className="w-full h-auto max-h-[85vh] object-cover rounded-[24px] shadow-2xl block mx-auto"
               />
 
               {/* View Live Demo Button */}
@@ -87,7 +87,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         e.preventDefault();
                       }
                     }}
-                    className={`flex items-center gap-2 bg-[#28236b] text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300 group whitespace-nowrap ${project.demoUrl === "#" ? "cursor-default opacity-80" : "hover:bg-[#1a1648] hover:scale-105"}`}
+                    className={`flex items-center gap-2 bg-[#28236b] text-white px-6 py-3 rounded-full font-semibold text-sm shadow-lg transition-all duration-300 group whitespace-nowrap ${project.demoUrl === "#" ? "cursor-default opacity-80" : "hover:bg-[#1a1648] hover:scale-105"}`}
                   >
                     View Live Demo
                     <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
