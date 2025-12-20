@@ -51,7 +51,7 @@ configs = [
     {
         'source': 'website-setup.json',
         'output': 'website-design.json',
-        'color': [1, 0.2667, 0], # Default fallback
+        'color': [1, 0.2667, 0, 0], # Transparent fallback
         'color_map': website_color_map, # Use specific map
     },
     {
@@ -100,8 +100,11 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None):
                     obj['c']['k'] = new_color
                 else:
                     # Replace with target color
-                    new_color = target_color + (color_val[3:] if len(color_val) > 3 else [])
-                    obj['c']['k'] = new_color
+                    if len(target_color) == 4:
+                        obj['c']['k'] = target_color
+                    else:
+                        new_color = target_color + (color_val[3:] if len(color_val) > 3 else [])
+                        obj['c']['k'] = new_color
         
         for key, value in obj.items():
             replace_color(value, target_color, preserve_light, color_map)
