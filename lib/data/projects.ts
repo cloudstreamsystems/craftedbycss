@@ -61,7 +61,7 @@ export const projects: Project[] = [
     description: "Engaging social media content and campaign strategy",
     image: "/images/7-generations-institute-storyboard.jpg",
     tags: ["Social Media", "Marketing", "Content"],
-    demoUrl: "#",
+    demoUrl: "/images/7-generations-institute-storyboard.pdf",
   },
 ];
 
