@@ -59,7 +59,7 @@ export const projects: Project[] = [
     title: "Social Media Campaign",
     category: "Social Media",
     description: "Engaging social media content and campaign strategy",
-    image: "/images/projects/social-campaign.jpg",
+    image: "/images/7-generations-institute-storyboard.jpg",
     tags: ["Social Media", "Marketing", "Content"],
     demoUrl: "#",
   },
