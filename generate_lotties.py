@@ -13,22 +13,22 @@ output_dir = '/home/sandbox/craftedbycss/public/animations'
 # Darker Orange (Count 5) -> Target Orange (Secondary Elements)
 # All others (Shadows, Backgrounds, Fills) -> White (Negative Space)
 website_color_map = {
-    # Main Oranges (Fills/Backgrounds) -> Transparent (Background)
-    (1, 0.5569, 0.2275): [1, 0.2667, 0, 0],
+    # Main Oranges (Monitor/Main Shapes) -> White
+    (1, 0.5569, 0.2275): [1, 1, 1],
     
-    # Tags (HTML, CSS, Code) -> Target Orange (Visible on White)
-    (1, 0.4431, 0): [1, 0.2667, 0],
+    # Tags (HTML, CSS, Code) Backgrounds -> Transparent (Floating Text)
+    (1, 0.4431, 0): [1, 0.2667, 0, 0],
     
-    # Browns/Darks (Lines/Structure) -> White (Visible)
-    (0.7668, 0.7117, 0.3532): [1, 1, 1], # Restore to White (Structure)
+    # Browns/Darks (Lines/Structure) -> White
+    (0.7668, 0.7117, 0.3532): [1, 1, 1],
     (0.4773, 0.3557, 0.2627): [1, 1, 1],
     (0.558, 0.4356, 0.342): [1, 1, 1],
     (0.2852, 0.2226, 0.1748): [1, 1, 1],
     
-    # Lights (Negative Space) -> Mixed
-    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0, 0], # Transparent (Background/Fill)
-    (1, 0.9867, 0.9): [1, 1, 1], # White (Text - Count 13)
-    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0, 0] # Transparent (Background/Fill)
+    # Lights (Negative Space/Blobs) -> Mixed
+    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0, 0], # Transparent (Blob)
+    (1, 0.9867, 0.9): [1, 1, 1], # White (Text)
+    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0, 0] # Transparent (Blob Highlight)
 }
 
 cyber_color_map = {
@@ -53,7 +53,6 @@ configs = [
         'output': 'website-design.json',
         'color': [1, 0.2667, 0, 0], # Transparent fallback
         'color_map': website_color_map, # Use specific map
-        'smart_mode': True,
         'scale_layers': {
             'HTML': 1.8,
             'CSS': 1.8,
