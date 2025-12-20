@@ -95,19 +95,19 @@ body {
   overflow-x: hidden;
 }
 
-/* Smooth scroll snap */
-html {
+/* Smooth scroll snap removed to prevent conflict with Lenis */
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
-main {
+/* main {
   scroll-snap-type: y proximity;
-}
+} */
 
-section {
+/* section {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
-}
+} */
 
 /* Custom Utility Classes */
 .gradient-bg {
@@ -240,9 +240,9 @@ section {
 }
 
 /* Smooth scroll */
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
@@ -382,6 +382,7 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
