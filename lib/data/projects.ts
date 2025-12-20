@@ -23,7 +23,7 @@ export const projects: Project[] = [
     title: "Castor Oil Branding",
     category: "Branding",
     description: "Complete brand identity and packaging design for natural products",
-    image: "/images/projects/castor-branding.jpg",
+    image: "/images/castor-oil-branding.jpg",
     tags: ["Branding", "Logo Design", "Packaging"],
     demoUrl: "#",
   },
