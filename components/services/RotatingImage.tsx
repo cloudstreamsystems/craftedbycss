@@ -21,13 +21,13 @@ export default function RotatingImage({ src, alt }: RotatingImageProps) {
     const rotate = useTransform(scrollYProgress, [0, 1], [-15, 15]);
 
     return (
-        <div ref={containerRef} className="relative w-full h-full flex items-center justify-center p-8">
+        <div ref={containerRef} className="relative w-full h-full flex items-center justify-center">
             <motion.div style={{ rotate }} className="relative w-full h-full">
                 <Image
                     src={src}
                     alt={alt}
                     fill
-                    className="object-contain mix-blend-multiply drop-shadow-2xl"
+                    className="object-contain drop-shadow-2xl"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                 />
