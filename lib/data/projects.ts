@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: "Flint Ecommerce",
     category: "Web Development",
     description: "High-performance e-commerce platform with custom features",
-    image: "/images/projects/flint-ecommerce.jpg",
+    image: "/images/flint-ecommerce.jpg",
     tags: ["E-commerce", "Web Development", "UI/UX"],
     demoUrl: "https://flint-clothing-shop-jb87-zeta.vercel.app/",
   },
