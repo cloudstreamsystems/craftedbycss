@@ -61,10 +61,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-[#28236b] mb-1">Email</h3>
                       <a
-                        href="mailto:contact@cssbuilds.tech"
+                        href="mailto:support@craftedbycss.com"
                         className="text-gray-700 hover:text-[#28236b] transition-colors"
                       >
-                        contact@cssbuilds.tech
+                        support@craftedbycss.com
                       </a>
                     </div>
                   </div>
