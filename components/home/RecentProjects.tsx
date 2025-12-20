@@ -106,7 +106,10 @@ export default function RecentProjects() {
               }}
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-t-[24px]">
+              <div
+                className="relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-t-[24px]"
+                style={{ transform: 'translateZ(0)' }} // Fix for jagged edges in normal state
+              >
                 <Image
                   src={project.image}
                   alt={project.title}
