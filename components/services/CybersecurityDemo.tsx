@@ -43,11 +43,6 @@ export default function CybersecurityDemo() {
                     lang="bash"
                     theme="dark"
                     writing={true}
-                    onDone={() => {
-                        setTimeout(() => {
-                            setKey((prev) => prev + 1);
-                        }, 1500);
-                    }}
                 />
             </Code>
         </div>
