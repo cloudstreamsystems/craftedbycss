@@ -58,7 +58,7 @@ export default function ServicesPage() {
                             src="/images/Bag.png"
                             alt="Brand Identities"
                             fill
-                            className="object-cover"
+                            className="object-cover mix-blend-multiply"
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
@@ -70,7 +70,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Content Side */}
-                    <div className="w-full md:w-2/3">
+                    <div className={`w-full md:w-2/3 ${service.id === "brand-identities" ? "md:pl-16" : ""}`}>
                       <h2 className="text-4xl font-bold mb-4 text-[#28236b]">
                         {service.title}
                       </h2>
