@@ -18,6 +18,7 @@ const iconMap: Record<string, any> = {
 
 import Image from "next/image";
 import RotatingImage from "@/components/services/RotatingImage";
+import ProcessStackedServices from "@/components/services/ProcessStackedServices";
 
 export default function ServicesPage() {
   return (
@@ -106,30 +107,7 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <ScrollObserver mode="drift">
-        <section className="py-20 bg-[#F4F5FF]">
-          <Container>
-            <h2 className="text-4xl font-bold mb-12 text-[#28236b] text-center">
-              Our Process
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {process.map((step, index) => (
-                <div key={index} className="bg-white rounded-[32px] p-8">
-                  <div className="w-16 h-16 bg-[#28236b] rounded-2xl flex items-center justify-center mb-6">
-                    <span className="text-2xl font-bold text-white">
-                      {index + 1}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#28236b]">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+        <ProcessStackedServices />
       </ScrollObserver>
 
       {/* Why Choose Us */}
@@ -193,24 +171,7 @@ export default function ServicesPage() {
   );
 }
 
-const process = [
-  {
-    title: "Discovery",
-    description: "We start by understanding your business, goals, and target audience to create a solid foundation.",
-  },
-  {
-    title: "Strategy",
-    description: "We develop a comprehensive strategy that aligns with your objectives and market position.",
-  },
-  {
-    title: "Design & Build",
-    description: "Our team brings the vision to life with stunning design and robust development.",
-  },
-  {
-    title: "Launch & Grow",
-    description: "We launch your project and provide ongoing support to ensure continued success.",
-  },
-];
+
 
 const benefits = [
   {
