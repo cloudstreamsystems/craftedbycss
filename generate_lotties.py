@@ -85,6 +85,9 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None):
                         # Handle RGBA in map
                         if len(new_val) == 4:
                              obj['c']['k'] = new_val
+                             # If alpha is 0, set opacity to 0
+                             if new_val[3] == 0:
+                                 obj['o'] = {'k': 0}
                         else:
                             # Preserve alpha if present in original but not in map
                             new_color = new_val + (color_val[3:] if len(color_val) > 3 else [])
@@ -102,6 +105,9 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None):
                     # Replace with target color
                     if len(target_color) == 4:
                         obj['c']['k'] = target_color
+                        # If alpha is 0, set opacity to 0
+                        if target_color[3] == 0:
+                            obj['o'] = {'k': 0}
                     else:
                         new_color = target_color + (color_val[3:] if len(color_val) > 3 else [])
                         obj['c']['k'] = new_color
