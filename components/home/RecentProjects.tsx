@@ -92,7 +92,7 @@ export default function RecentProjects() {
         </div>
       </Container>
 
-      <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto mb-8 md:mb-12">
+      <div className="w-full px-2 md:px-4 mx-auto mb-8 md:mb-12">
         <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" style={{ perspective: '1000px' }}>
           {featuredProjects.map((project) => (
             <InteractiveCard

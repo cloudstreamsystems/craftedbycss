@@ -46,7 +46,7 @@ export default function ProjectsPage() {
           </Container>
 
           {/* Projects Grid with GSAP Stagger Animation - Full Width */}
-          <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto mb-8 md:mb-12">
+          <div className="w-full px-2 md:px-4 mx-auto mb-8 md:mb-12">
             <ProjectGrid projects={filteredProjects} />
           </div>
 
