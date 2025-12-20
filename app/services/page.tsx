@@ -77,12 +77,12 @@ export default function ServicesPage() {
                           <CybersecurityDemo />
                         </div>
                       ) : service.id === "development" ? (
-                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden bg-[#F4F5FF]">
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden bg-[#F4F5FF] p-4 md:p-0">
                           <Image
                             src="/images/dashboard-demo.png"
                             alt="Development Dashboard"
                             fill
-                            className="object-cover object-left-top"
+                            className="object-contain md:object-cover object-left-top"
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
