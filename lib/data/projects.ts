@@ -14,7 +14,7 @@ export const projects: Project[] = [
     title: "ATLI Institute",
     category: "Web Development",
     description: "Educational institution website with modern design and intuitive navigation",
-    image: "/images/projects/atli-institute.jpg",
+    image: "/images/atli-institute.jpg",
     tags: ["Web Design", "UI/UX", "Education"],
     demoUrl: "https://atlinstitute.org/",
   },
