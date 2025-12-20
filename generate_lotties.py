@@ -25,10 +25,10 @@ website_color_map = {
     (0.558, 0.4356, 0.342): [1, 1, 1],
     (0.2852, 0.2226, 0.1748): [1, 1, 1],
     
-    # Lights (Negative Space) -> White (Visible Text)
-    (0.9961, 0.9608, 0.7412): [1, 1, 1],
-    (1, 0.9867, 0.9): [1, 1, 1],
-    (0.9675, 0.9415, 0.7725): [1, 1, 1]
+    # Lights (Negative Space) -> Mixed
+    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0, 0], # Transparent (Background/Fill)
+    (1, 0.9867, 0.9): [1, 1, 1], # White (Text)
+    (0.9675, 0.9415, 0.7725): [1, 1, 1] # White (Text)
 }
 
 cyber_color_map = {
