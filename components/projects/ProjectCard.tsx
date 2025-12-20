@@ -63,7 +63,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       >
         {/* Image */}
         <div
-          className="relative aspect-[4/3] overflow-hidden bg-gray-100 cursor-pointer"
+          className="relative aspect-[4/3] overflow-hidden bg-gray-100 cursor-pointer rounded-t-[35px]"
           onClick={() => setIsModalOpen(true)}
         >
           {/* Real project image */}
