@@ -90,7 +90,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Content */}
         <div className="p-6">
           <div className="mb-3">
-            <span className={`inline-block bg-gradient-to-r ${gradient} text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-md`}>
+            <span className="inline-block bg-[#ff4400] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
               {project.category}
             </span>
           </div>
