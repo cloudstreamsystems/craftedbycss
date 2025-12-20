@@ -96,6 +96,13 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None, smart
                             obj['o'] = {'k': 0}
                         return
 
+                    # Light Cream/White Logic (Path 1 / Blob)
+                    if current_rgb == (1, 0.9867, 0.9):
+                         # Map to Transparent (Blob)
+                         obj['c']['k'] = [1, 1, 1]
+                         obj['o'] = {'k': 0}
+                         return
+
         # Standard Color Replacement (Legacy/Fallback)
         if 'c' in obj and isinstance(obj['c'], dict) and 'k' in obj['c']:
             color_val = obj['c']['k']
