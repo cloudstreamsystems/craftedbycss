@@ -97,7 +97,7 @@ export default function RecentProjects() {
           {featuredProjects.map((project) => (
             <InteractiveCard
               key={project.id}
-              className="project-card-item group bg-white rounded-[35px] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
+              className="project-card-item group bg-white rounded-[24px] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
               onClick={() => handleProjectClick(project)}
             >
               {/* Image */}

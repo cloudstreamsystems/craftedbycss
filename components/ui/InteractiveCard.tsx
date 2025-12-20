@@ -82,7 +82,7 @@ export default function InteractiveCard({ children, className = "", onClick }: I
       {/* Spotlight effect */}
       {isHovered && (
         <div
-          className="absolute inset-0 pointer-events-none rounded-[35px] opacity-50 transition-opacity duration-300"
+          className="absolute inset-0 pointer-events-none rounded-[24px] opacity-50 transition-opacity duration-300"
           style={{
             background: `radial-gradient(circle 200px at ${spotlight.x}px ${spotlight.y}px, rgba(255, 255, 255, 0.15), transparent)`,
           }}
