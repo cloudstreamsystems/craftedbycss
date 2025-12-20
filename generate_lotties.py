@@ -16,8 +16,8 @@ website_color_map = {
     # Main Oranges (Fills/Backgrounds) -> Transparent (was Target Orange)
     (1, 0.5569, 0.2275): [1, 0.2667, 0, 0],
     
-    # Tags (HTML, CSS, Code) -> White (Visible)
-    (1, 0.4431, 0): [1, 1, 1],
+    # Tags (HTML, CSS, Code) -> Target Orange (Visible on White)
+    (1, 0.4431, 0): [1, 0.2667, 0],
     
     # Browns/Darks (Lines/Structure) -> White (Visible)
     (0.7668, 0.7117, 0.3532): [1, 0.2667, 0, 0], # Changed to Transparent (likely shadow)
@@ -53,6 +53,12 @@ configs = [
         'output': 'website-design.json',
         'color': [1, 0.2667, 0, 0], # Transparent fallback
         'color_map': website_color_map, # Use specific map
+        'scale_layers': {
+            'HTML': 1.8,
+            'CSS': 1.8,
+            'Code': 1.8,
+            'Bracket': 1.8
+        }
     },
     {
         'source': 'CYBER.json',
