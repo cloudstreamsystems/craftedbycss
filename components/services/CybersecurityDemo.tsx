@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import { Code, CodeBlock, CodeHeader } from "@/components/animate-ui/components/animate/code";
 import { Terminal } from "lucide-react";
 
@@ -18,6 +20,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Nmap done: 1 IP address (1 host up) scanned in 6.42 seconds`;
 
 export default function CybersecurityDemo() {
+    const [key, setKey] = useState(0);
+
     return (
         <div className="w-full h-full flex items-center justify-center p-6">
             <Code code={nmapOutput} className="w-full shadow-2xl bg-[#0f172a] border border-white/10 rounded-xl overflow-hidden ring-1 ring-white/5">
@@ -33,11 +37,17 @@ export default function CybersecurityDemo() {
                     </div>
                 </CodeHeader>
                 <CodeBlock
+                    key={key}
                     className="h-[250px] md:h-[300px] font-mono text-xs md:text-sm p-6 overflow-auto custom-scrollbar"
                     cursor={true}
                     lang="bash"
                     theme="dark"
                     writing={true}
+                    onDone={() => {
+                        setTimeout(() => {
+                            setKey((prev) => prev + 1);
+                        }, 1500);
+                    }}
                 />
             </Code>
             <style jsx global>{`
