@@ -119,7 +119,7 @@ export default function Services() {
                 key={service.id}
                 className="service-card group"
               >
-                <div className="relative h-full bg-[#ff4400] rounded-3xl p-8 border border-white/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col overflow-hidden">
+                <div className="relative h-full bg-[#d13800] rounded-3xl p-8 border border-white/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col overflow-hidden">
                   {/* Gradient Overlay for better text visibility */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black/20 pointer-events-none" />
 
