@@ -53,6 +53,7 @@ configs = [
         'output': 'website-design.json',
         'color': [1, 0.2667, 0, 0], # Transparent fallback
         'color_map': website_color_map, # Use specific map
+        'smart_mode': True,
         'scale_layers': {
             'HTML': 1.8,
             'CSS': 1.8,
@@ -73,34 +74,27 @@ configs = [
     }
 ]
 
-def replace_color(obj, target_color, preserve_light=False, color_map=None, smart_mode=False):
+def replace_color(obj, target_color, preserve_light=False, color_map=None, smart_mode=False, layer_name=""):
     if isinstance(obj, dict):
         # Check for Shape Type if in smart mode
-        if smart_mode and 'ty' in obj and 'c' in obj:
-            shape_type = obj['ty']
-            
-            # Handle Strokes (st) -> Always White
-            if shape_type == 'st':
-                obj['c']['k'] = [1, 1, 1]
-                return
-
-            # Handle Fills (fl)
-            if shape_type == 'fl':
-                # Get current color
+        if smart_mode and 'c' in obj:
+            # Get current color
+            if isinstance(obj['c'], dict) and 'k' in obj['c']:
                 color_val = obj['c']['k']
                 if isinstance(color_val, list) and len(color_val) >= 3:
                     r, g, b = color_val[0], color_val[1], color_val[2]
                     current_rgb = (round(r, 4), round(g, 4), round(b, 4))
                     
-                    # Text Color (Keep White)
-                    # (1, 0.9867, 0.9) is the text color identified
-                    if current_rgb == (1, 0.9867, 0.9) or current_rgb == (0.9675, 0.9415, 0.7725):
-                        obj['c']['k'] = [1, 1, 1]
-                    else:
-                        # All other fills (Backgrounds, Blobs, Tags) -> Transparent
-                        obj['c']['k'] = [1, 1, 1]
-                        obj['o'] = {'k': 0} # Set opacity to 0
-                return
+                    # Main Orange Logic
+                    if current_rgb == (1, 0.5569, 0.2275):
+                        # If it's a structural element (Rectangle, Line, XMLID, setting), make it White
+                        if any(x in layer_name for x in ['Rectangle', 'Line', 'XMLID', 'setting']):
+                            obj['c']['k'] = [1, 1, 1]
+                        else:
+                            # Otherwise (likely Path/Blob), make it Transparent
+                            obj['c']['k'] = [1, 1, 1]
+                            obj['o'] = {'k': 0}
+                        return
 
         # Standard Color Replacement (Legacy/Fallback)
         if 'c' in obj and isinstance(obj['c'], dict) and 'k' in obj['c']:
@@ -146,10 +140,10 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None, smart
                         obj['c']['k'] = new_color
         
         for key, value in obj.items():
-            replace_color(value, target_color, preserve_light, color_map, smart_mode)
+            replace_color(value, target_color, preserve_light, color_map, smart_mode, layer_name)
     elif isinstance(obj, list):
         for item in obj:
-            replace_color(item, target_color, preserve_light, color_map, smart_mode)
+            replace_color(item, target_color, preserve_light, color_map, smart_mode, layer_name)
 
 def scale_layer(layer, scale_factor):
     """Scales a layer's transform properties."""
@@ -178,7 +172,11 @@ for config in configs:
         data = json.load(f)
     
     # Replace colors
-    replace_color(data, config['color'], config.get('preserve_light', False), config.get('color_map'), config.get('smart_mode', False))
+    if 'layers' in data:
+        for layer in data['layers']:
+            replace_color(layer, config['color'], config.get('preserve_light', False), config.get('color_map'), config.get('smart_mode', False), layer.get('nm', ''))
+    else:
+        replace_color(data, config['color'], config.get('preserve_light', False), config.get('color_map'), config.get('smart_mode', False))
 
     # Apply layer scaling if configured
     if 'scale_layers' in config:
