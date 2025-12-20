@@ -27,7 +27,7 @@ export default function RotatingImage({ src, alt }: RotatingImageProps) {
                     src={src}
                     alt={alt}
                     fill
-                    className="object-contain p-4 md:p-0 drop-shadow-2xl"
+                    className="object-contain p-8 md:p-0 drop-shadow-2xl"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                 />
