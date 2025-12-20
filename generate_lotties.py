@@ -16,8 +16,8 @@ website_color_map = {
     # Main Oranges (Monitor/Main Shapes) -> White
     (1, 0.5569, 0.2275): [1, 1, 1],
     
-    # Tags (HTML, CSS, Code) -> White (Visible)
-    (1, 0.4431, 0): [1, 1, 1],
+    # Tags (HTML, CSS, Code) -> Handled in smart_mode now
+    # (1, 0.4431, 0): [1, 1, 1],
     
     # Browns/Darks (Lines/Structure) -> White
     (0.7668, 0.7117, 0.3532): [1, 1, 1],
@@ -94,6 +94,17 @@ def replace_color(obj, target_color, preserve_light=False, color_map=None, smart
                             # Otherwise (likely Path/Blob), make it Transparent
                             obj['c']['k'] = [1, 1, 1]
                             obj['o'] = {'k': 0}
+                        return
+
+                    # Tag Orange Logic (HTML, CSS, Code, Bracket vs Glob)
+                    if current_rgb == (1, 0.4431, 0):
+                        if 'Glob' in layer_name:
+                             # Map to Transparent (Blob)
+                             obj['c']['k'] = [1, 1, 1]
+                             obj['o'] = {'k': 0}
+                        else:
+                             # Map to Target Orange (Tags)
+                             obj['c']['k'] = [1, 0.2667, 0]
                         return
 
                     # Light Cream/White Logic (Path 1 / Blob)
