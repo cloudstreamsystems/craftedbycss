@@ -53,7 +53,7 @@ export default function ServicesPage() {
                     {/* Icon/Visual Side */}
                     <div className="w-full md:w-1/3">
                       {service.id === "brand-identities" ? (
-                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:w-[50vw] md:-ml-[calc((100vw-100%)/2)] rounded-[32px] md:rounded-l-none md:rounded-r-[32px] overflow-hidden">
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:ml-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-l-none md:rounded-r-[32px] overflow-hidden">
                           <Image
                             src="/images/Bag.png"
                             alt="Brand Identities"
