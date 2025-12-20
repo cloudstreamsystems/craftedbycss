@@ -120,7 +120,7 @@ export default function RecentProjects() {
               {/* Content */}
               <div className="p-6">
                 <div className="mb-3">
-                  <span className="inline-block bg-[#28236b]/5 text-[#28236b] px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="inline-block bg-[#ff4400] text-white px-4 py-1 rounded-full text-sm font-semibold">
                     {project.category}
                   </span>
                 </div>
