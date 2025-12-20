@@ -140,11 +140,11 @@ export default function Services() {
                       </motion.div>
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-white transition-colors min-h-[4rem]">
+                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-white transition-colors md:min-h-[4rem]">
                       {service.title}
                     </h3>
 
-                    <p className="text-lg text-white mb-6 leading-relaxed min-h-[5rem]">
+                    <p className="text-lg text-white mb-6 leading-relaxed md:min-h-[5rem]">
                       {service.description}
                     </p>
 
@@ -191,7 +191,7 @@ export default function Services() {
 
             {/* Tooltip */}
             <div
-              className="absolute -top-32 left-1/2 -translate-x-1/2 md:-top-14 md:translate-y-0 md:left-full md:ml-32 block opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
+              className="hidden md:block absolute -top-32 left-1/2 -translate-x-1/2 md:-top-14 md:translate-y-0 md:left-full md:ml-32 opacity-100 transition-opacity duration-500 scale-90 md:scale-100 pointer-events-none w-max"
               style={{ zIndex: 9999, transform: 'translateZ(10px)' }}
             >
               <div className="relative flex flex-col items-center md:items-start transform rotate-[-6deg]">

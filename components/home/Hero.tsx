@@ -71,7 +71,7 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 text-center text-white pt-24 md:pt-20">
         {/* Word-by-Word Reveal with GSAP */}
         <div className="mb-8 md:mb-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-wide md:tracking-wider max-w-6xl mx-auto flex flex-col items-center">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-wide md:tracking-wider max-w-6xl mx-auto flex flex-col items-center">
             {headlineLines.map((line, lineIndex) => (
               <div
                 key={`headline-line-${lineIndex}`}
@@ -169,7 +169,7 @@ export default function Hero() {
             { value: "5+", label: "Years" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-white">{stat.value}</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-white">{stat.value}</div>
               <div className="text-sm md:text-base text-white/90 font-medium">{stat.label}</div>
             </div>
           ))}
