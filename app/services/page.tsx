@@ -61,7 +61,7 @@ export default function ServicesPage() {
                             src="/images/Bag.png"
                             alt="Brand Identities"
                             fill
-                            className="object-contain md:object-cover mix-blend-multiply"
+                            className="object-contain md:object-cover mix-blend-multiply object-left"
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
