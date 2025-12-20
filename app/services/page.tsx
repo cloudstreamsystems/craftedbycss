@@ -17,6 +17,7 @@ const iconMap: Record<string, any> = {
 };
 
 import Image from "next/image";
+import RotatingImage from "@/components/services/RotatingImage";
 
 export default function ServicesPage() {
   return (
@@ -63,13 +64,10 @@ export default function ServicesPage() {
                           />
                         </div>
                       ) : service.id === "web-design" ? (
-                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden">
-                          <Image
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden bg-[#F4F5FF]">
+                          <RotatingImage
                             src="/images/abou_res.png"
                             alt="Website / App Design"
-                            fill
-                            className="object-cover mix-blend-multiply"
-                            sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
                       ) : (

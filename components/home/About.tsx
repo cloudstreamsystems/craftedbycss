@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -17,7 +19,14 @@ export default function About() {
   const bgRight = useRef(null);
   const imageRef = useRef(null);
 
-  // Parallax effects for backgrounds and image
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [-15, 15]);
+
+  // Parallax effects for backgrounds
   useGSAP(() => {
     // Parallax backgrounds
     gsap.to(bgLeft, {
@@ -41,19 +50,6 @@ export default function About() {
         start: "top bottom",
         end: "bottom top",
         scrub: 2,
-      }
-    });
-
-    // Subtle parallax and rotation on the image
-    gsap.to(imageRef.current, {
-      y: 40,
-      rotation: 45,
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
       }
     });
   }, { scope: sectionRef });
@@ -105,16 +101,20 @@ export default function About() {
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image/Visual Side */}
-          <div ref={imageRef} className="relative lg:-ml-20">
-            <div className="relative aspect-square">
+          <div ref={imageRef} className="relative lg:-ml-20 flex justify-center items-center">
+            <motion.div
+              style={{ rotate }}
+              className="relative w-[80%] max-w-[500px] aspect-square p-8"
+            >
               <Image
                 src="/images/abou_res.png"
                 alt="Cloudstream Systems - Digital Solutions"
                 fill
                 className="object-contain mix-blend-multiply drop-shadow-2xl"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* Content Side */}
