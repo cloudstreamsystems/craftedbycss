@@ -14,7 +14,7 @@ output_dir = '/home/sandbox/craftedbycss/public/animations'
 # All others (Shadows, Backgrounds, Fills) -> White (Negative Space)
 website_color_map = {
     # Main Oranges (Fills/Backgrounds) -> Target Orange (Blend with card)
-    (1, 0.5569, 0.2275): [1, 0.2667, 0],
+    (1, 0.5569, 0.2275): [0.8196, 0.2196, 0],
     
     # Tags (HTML, CSS, Code) -> White (Visible)
     (1, 0.4431, 0): [1, 1, 1],
@@ -26,9 +26,9 @@ website_color_map = {
     (0.2852, 0.2226, 0.1748): [1, 1, 1],
     
     # Lights (Negative Space) -> Target Orange
-    (0.9961, 0.9608, 0.7412): [1, 0.2667, 0],
-    (1, 0.9867, 0.9): [1, 0.2667, 0],
-    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0]
+    (0.9961, 0.9608, 0.7412): [0.8196, 0.2196, 0],
+    (1, 0.9867, 0.9): [0.8196, 0.2196, 0],
+    (0.9675, 0.9415, 0.7725): [0.8196, 0.2196, 0]
 }
 
 cyber_color_map = {
@@ -51,15 +51,8 @@ configs = [
     {
         'source': 'website-setup.json',
         'output': 'website-design.json',
-        'color': [1, 0.2667, 0], # Default fallback (should be covered by map)
+        'color': [0.8196, 0.2196, 0], # Default fallback
         'color_map': website_color_map, # Use specific map
-        'scale_layers': {
-            'HTML': 1.7,
-            'CSS': 1.7,
-            'Code': 1.7,
-            'Bracket': 1.7,
-            'Glob': 1.7
-        }
     },
     {
         'source': 'CYBER.json',
