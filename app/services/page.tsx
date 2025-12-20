@@ -73,7 +73,7 @@ export default function ServicesPage() {
                           />
                         </div>
                       ) : service.id === "cybersecurity" ? (
-                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:ml-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-l-none md:rounded-r-[32px] overflow-hidden bg-[#0f172a]">
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] rounded-[32px] overflow-hidden bg-[#0f172a] shadow-2xl">
                           <CybersecurityDemo />
                         </div>
                       ) : (
@@ -84,7 +84,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Content Side */}
-                    <div className={`w-full md:w-2/3 ${service.id === "brand-identities" ? "md:pl-16" : ""} ${service.id === "web-design" ? "md:pr-16" : ""}`}>
+                    <div className={`w-full md:w-2/3 ${service.id === "brand-identities" || service.id === "cybersecurity" ? "md:pl-16" : ""} ${service.id === "web-design" ? "md:pr-16" : ""}`}>
                       <h2 className="text-4xl font-bold mb-4 text-[#28236b]">
                         {service.title}
                       </h2>
