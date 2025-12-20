@@ -16,8 +16,8 @@ website_color_map = {
     # Main Oranges (Monitor/Main Shapes) -> White
     (1, 0.5569, 0.2275): [1, 1, 1],
     
-    # Tags (HTML, CSS, Code) Backgrounds -> Transparent (Floating Text)
-    (1, 0.4431, 0): [1, 0.2667, 0, 0],
+    # Tags (HTML, CSS, Code) -> White (Visible)
+    (1, 0.4431, 0): [1, 1, 1],
     
     # Browns/Darks (Lines/Structure) -> White
     (0.7668, 0.7117, 0.3532): [1, 1, 1],
