@@ -44,8 +44,17 @@ export default function LogoCarousel({
 
     let animationId: number;
     let currentPosition = 0;
-    const logoWidth = scrollElement.scrollWidth / 4; // Quarter because we duplicated 4 times
     let lastTime = performance.now();
+
+    // Use a ref for logoWidth so the animation loop always sees the latest value
+    // without needing to restart the loop on resize
+    const logoWidthRef = { current: scrollElement.scrollWidth / 4 };
+
+    const resizeObserver = new ResizeObserver(() => {
+      logoWidthRef.current = scrollElement.scrollWidth / 4;
+    });
+
+    resizeObserver.observe(scrollElement);
 
     const animate = (currentTime: number) => {
       const deltaTime = currentTime - lastTime;
@@ -61,6 +70,8 @@ export default function LogoCarousel({
       } else {
         currentPosition += moveAmount;
       }
+
+      const logoWidth = logoWidthRef.current;
 
       // Reset position for seamless loop
       if (direction === "left" && currentPosition <= -logoWidth) {
@@ -79,8 +90,9 @@ export default function LogoCarousel({
       if (animationId) {
         cancelAnimationFrame(animationId);
       }
+      resizeObserver.disconnect();
     };
-  }, [speed, direction, isMotionReduced]);
+  }, [speed, direction, isMotionReduced, logos.length]);
 
   const handleMouseEnter = () => {
     if (pauseOnHover && scrollRef.current) {
