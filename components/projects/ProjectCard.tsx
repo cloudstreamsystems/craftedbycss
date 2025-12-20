@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3 } }}
-      className="group relative bg-white rounded-[35px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full"
+      className="group relative h-full"
       style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -59,11 +59,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           stiffness: 300,
           damping: 20,
         }}
+        className="h-full bg-white rounded-[35px] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500"
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Image */}
         <div
-          className="relative aspect-[4/3] overflow-hidden bg-gray-100 cursor-pointer rounded-t-[35px]"
+          className="relative aspect-[4/3] overflow-hidden bg-gray-100 cursor-pointer"
           onClick={() => setIsModalOpen(true)}
         >
           {/* Real project image */}
