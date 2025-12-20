@@ -55,7 +55,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 stiffness: 300,
                 damping: 25
               }}
-              className="relative max-w-7xl w-full"
+              className="relative max-w-5xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
