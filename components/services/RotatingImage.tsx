@@ -22,7 +22,7 @@ export default function RotatingImage({ src, alt }: RotatingImageProps) {
 
     return (
         <div ref={containerRef} className="relative w-full h-full flex items-center justify-center">
-            <motion.div style={{ rotate }} className="relative w-full h-full">
+            <motion.div style={{ rotate }} className="relative w-full h-full will-change-transform">
                 <Image
                     src={src}
                     alt={alt}

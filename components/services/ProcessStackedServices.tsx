@@ -72,13 +72,13 @@ export default function ProcessStackedServices() {
                     return (
                         <div
                             key={index}
-                            className="sticky top-32 mb-8 last:mb-0"
+                            className="sticky top-24 md:top-32 mb-8 last:mb-0"
                             style={{
                                 zIndex: index + 1,
                             }}
                         >
                             <div
-                                className={`${step.color} ${step.textColor} rounded-[32px] md:rounded-[40px] p-6 md:p-16 shadow-2xl transition-transform duration-500 min-h-[300px] md:min-h-[400px] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-16 border border-black/5 mx-auto w-full`}
+                                className={`${step.color} ${step.textColor} rounded-[32px] md:rounded-[40px] p-6 md:p-16 shadow-2xl transition-transform duration-500 min-h-[280px] md:min-h-[400px] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-16 border border-black/5 mx-auto w-full`}
                             >
                                 <div className="flex-1 relative z-10">
                                     <div className="flex items-center gap-4 md:gap-6 mb-6 md:mb-8">

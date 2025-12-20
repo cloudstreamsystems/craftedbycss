@@ -25,7 +25,7 @@ export default function CybersecurityDemo() {
                     nmap scan
                 </CodeHeader>
                 <CodeBlock
-                    className="h-[300px] text-green-400 font-mono text-xs md:text-sm"
+                    className="h-[250px] md:h-[300px] text-green-400 font-mono text-xs md:text-sm"
                     cursor={true}
                     lang="bash"
                 />
