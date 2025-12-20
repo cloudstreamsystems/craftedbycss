@@ -50,7 +50,7 @@ export default function ServicesPage() {
                 return (
                   <div
                     key={service.id}
-                    className={`flex flex-col-reverse ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                       } gap-8 items-center`}
                   >
                     {/* Icon/Visual Side */}

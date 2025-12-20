@@ -74,7 +74,7 @@ export default function ProcessStackedServices() {
                     return (
                         <div
                             key={index}
-                            className="sticky top-24 md:top-32 mb-8 last:mb-0"
+                            className="sticky top-32 md:top-32 mb-8 last:mb-0"
                             style={{
                                 zIndex: index + 1,
                             }}

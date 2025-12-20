@@ -72,8 +72,11 @@ function CodeBlock({
       }
     };
 
-    loadHighlightedCode();
-  }, [lang, themes, writing, isInView, duration, delay, visibleCode, theme]);
+    // Only highlight if NOT writing or if writing is DONE
+    if (!writing || isDone) {
+      loadHighlightedCode();
+    }
+  }, [lang, themes, writing, isInView, duration, delay, visibleCode, theme, isDone]);
 
   React.useEffect(() => {
     if (!writing) {
@@ -142,7 +145,7 @@ function CodeBlock({
         behavior: 'smooth',
       });
     });
-  }, [highlightedCode, writing, isInView, scrollContainerRef, localRef]);
+  }, [highlightedCode, visibleCode, writing, isInView, scrollContainerRef, localRef]);
 
   return (
     <div
@@ -150,9 +153,17 @@ function CodeBlock({
       data-slot="code-block"
       data-writing={writing}
       data-done={isDone}
-      dangerouslySetInnerHTML={{ __html: highlightedCode }}
       {...props}
-    />
+    >
+      {/* Render highlighted code if done, otherwise render plain text */}
+      {(writing && !isDone) ? (
+        <pre className={`shiki ${theme} bg-transparent`}>
+          <code>{visibleCode}</code>
+        </pre>
+      ) : (
+        <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+      )}
+    </div>
   );
 }
 

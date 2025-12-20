@@ -45,12 +45,21 @@ export default function LogoCarousel({
     let animationId: number;
     let currentPosition = 0;
     const logoWidth = scrollElement.scrollWidth / 2; // Half because we duplicated
+    let lastTime = performance.now();
 
-    const animate = () => {
+    const animate = (currentTime: number) => {
+      const deltaTime = currentTime - lastTime;
+      lastTime = currentTime;
+
+      // Calculate movement based on speed (pixels per second) and delta time
+      // speed is roughly pixels per 60 frames, so multiply by 60 to get pixels per second
+      const pixelsPerSecond = speed * 60;
+      const moveAmount = (pixelsPerSecond * deltaTime) / 1000;
+
       if (direction === "left") {
-        currentPosition -= speed / 60; // 60fps
+        currentPosition -= moveAmount;
       } else {
-        currentPosition += speed / 60;
+        currentPosition += moveAmount;
       }
 
       // Reset position for seamless loop
