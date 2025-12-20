@@ -33,8 +33,8 @@ export default function LogoCarousel({
   const { isMotionReduced } = useMotion();
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Duplicate logos for seamless loop
-  const duplicatedLogos = [...logos, ...logos];
+  // Duplicate logos 4 times for seamless loop on wide screens
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
   useEffect(() => {
     if (isMotionReduced) return;
@@ -44,7 +44,7 @@ export default function LogoCarousel({
 
     let animationId: number;
     let currentPosition = 0;
-    const logoWidth = scrollElement.scrollWidth / 2; // Half because we duplicated
+    const logoWidth = scrollElement.scrollWidth / 4; // Quarter because we duplicated 4 times
     let lastTime = performance.now();
 
     const animate = (currentTime: number) => {
@@ -97,7 +97,7 @@ export default function LogoCarousel({
   return (
     <div className={`overflow-hidden ${className}`}>
       <div
-        className="flex items-center gap-8 md:gap-12 lg:gap-16"
+        className="flex items-center"
         ref={scrollRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -111,7 +111,7 @@ export default function LogoCarousel({
         {duplicatedLogos.map((logo, index) => (
           <motion.div
             key={`${logo.id}-${index}`}
-            className="flex-shrink-0 flex items-center justify-center"
+            className="flex-shrink-0 flex items-center justify-center pr-8 md:pr-12 lg:pr-16"
           >
             <Image
               src={logo.src}
