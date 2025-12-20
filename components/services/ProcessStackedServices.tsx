@@ -59,7 +59,7 @@ export default function ProcessStackedServices() {
                     <span className="inline-block text-[#28236b] font-semibold text-sm uppercase tracking-wider mb-4">
                         How We Work
                     </span>
-                    <h2 className="text-5xl md:text-6xl font-bold mb-6 text-[#28236b]">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-6 text-[#28236b]">
                         Our Process
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -99,7 +99,7 @@ export default function ProcessStackedServices() {
                                 </div>
 
                                 {/* Giant Number Decoration */}
-                                <div className={`absolute right-4 bottom-4 md:right-16 md:top-1/2 md:-translate-y-1/2 text-[6rem] md:text-[20rem] font-bold leading-none ${step.numberColor} pointer-events-none select-none`}>
+                                <div className={`absolute right-4 bottom-4 md:right-16 md:top-1/2 md:-translate-y-1/2 text-[4rem] md:text-[20rem] font-bold leading-none ${step.numberColor} pointer-events-none select-none`}>
                                     {index + 1}
                                 </div>
                             </div>

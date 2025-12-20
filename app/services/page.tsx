@@ -26,10 +26,10 @@ export default function ServicesPage() {
     <>
       {/* Hero Section */}
       <ScrollObserver mode="chaos">
-        <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
+        <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-12 md:py-24">
           <Container>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Our Services
               </h1>
               <p className="text-xl md:text-2xl text-white/90">
@@ -42,9 +42,9 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <ScrollObserver mode="drift">
-        <section className="py-20">
+        <section className="py-12 md:py-20">
           <Container>
-            <div className="grid gap-12">
+            <div className="grid gap-8 md:gap-12">
               {services.map((service, index) => {
                 const Icon = iconMap[service.icon];
                 return (
@@ -66,7 +66,7 @@ export default function ServicesPage() {
                           />
                         </div>
                       ) : service.id === "web-design" ? (
-                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden">
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden p-4 md:p-0">
                           <RotatingImage
                             src="/images/abou_res.png"
                             alt="Website / App Design"
@@ -79,7 +79,7 @@ export default function ServicesPage() {
                       ) : service.id === "development" ? (
                         <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden bg-[#F4F5FF]">
                           <Image
-                            src="/images/Frame 1000005768.png"
+                            src="/images/dashboard-demo.png"
                             alt="Development Dashboard"
                             fill
                             className="object-cover object-left-top"

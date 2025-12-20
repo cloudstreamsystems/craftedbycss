@@ -23,7 +23,7 @@ export default function CybersecurityDemo() {
     const [key, setKey] = useState(0);
 
     return (
-        <div className="w-full h-full flex items-center justify-center p-6">
+        <div className="w-full h-full flex items-center justify-center p-4 md:p-6">
             <Code code={nmapOutput} className="w-full shadow-2xl bg-[#0f172a] border border-white/10 rounded-xl overflow-hidden ring-1 ring-white/5">
                 <CodeHeader className="bg-[#1e293b] border-b border-white/10 text-gray-400 h-12 flex items-center px-4">
                     <div className="flex gap-2 mr-4">
@@ -38,7 +38,7 @@ export default function CybersecurityDemo() {
                 </CodeHeader>
                 <CodeBlock
                     key={key}
-                    className="h-[250px] md:h-[300px] font-mono text-xs md:text-sm p-6 overflow-auto custom-scrollbar"
+                    className="h-[250px] md:h-[300px] font-mono text-xs md:text-sm p-6 overflow-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20"
                     cursor={true}
                     lang="bash"
                     theme="dark"
@@ -50,21 +50,6 @@ export default function CybersecurityDemo() {
                     }}
                 />
             </Code>
-            <style jsx global>{`
-                .custom-scrollbar::-webkit-scrollbar {
-                    width: 8px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-track {
-                    background: transparent;
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background: rgba(255, 255, 255, 0.1);
-                    border-radius: 4px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                    background: rgba(255, 255, 255, 0.2);
-                }
-            `}</style>
         </div>
     );
 }
