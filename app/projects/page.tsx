@@ -43,10 +43,14 @@ export default function ProjectsPage() {
               activeCategory={activeCategory}
               onCategoryChange={setActiveCategory}
             />
+          </Container>
 
-            {/* Projects Grid with GSAP Stagger Animation */}
+          {/* Projects Grid with GSAP Stagger Animation - Full Width */}
+          <div className="w-full px-4 md:px-8 max-w-[1920px] mx-auto mb-8 md:mb-12">
             <ProjectGrid projects={filteredProjects} />
+          </div>
 
+          <Container>
             {/* Empty State */}
             {filteredProjects.length === 0 && (
               <div className="text-center py-20">
