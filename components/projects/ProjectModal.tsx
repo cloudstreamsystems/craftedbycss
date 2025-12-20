@@ -55,7 +55,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 stiffness: 300,
                 damping: 25
               }}
-              className="relative max-w-5xl w-full"
+              className="relative max-w-5xl w-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -72,7 +72,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 alt={project.title}
                 width={1200}
                 height={800}
-                className="w-full h-auto max-h-[85vh] object-contain rounded-[24px] shadow-2xl block"
+                className="w-auto h-auto max-h-[85vh] rounded-[24px] shadow-2xl block mx-auto"
               />
 
               {/* View Live Demo Button */}
