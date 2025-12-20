@@ -6,7 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/components/ui/Container";
 import { Lightbulb, Rocket, Palette, TrendingUp } from "lucide-react";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 const processSteps = [
     {
