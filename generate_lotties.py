@@ -13,8 +13,8 @@ output_dir = '/home/sandbox/craftedbycss/public/animations'
 # Darker Orange (Count 5) -> Target Orange (Secondary Elements)
 # All others (Shadows, Backgrounds, Fills) -> White (Negative Space)
 website_color_map = {
-    # Main Oranges (Fills/Backgrounds) -> White (Structure)
-    (1, 0.5569, 0.2275): [1, 1, 1],
+    # Main Oranges (Fills/Backgrounds) -> Transparent (Background)
+    (1, 0.5569, 0.2275): [1, 0.2667, 0, 0],
     
     # Tags (HTML, CSS, Code) -> Target Orange (Visible on White)
     (1, 0.4431, 0): [1, 0.2667, 0],
@@ -27,8 +27,8 @@ website_color_map = {
     
     # Lights (Negative Space) -> Mixed
     (0.9961, 0.9608, 0.7412): [1, 0.2667, 0, 0], # Transparent (Background/Fill)
-    (1, 0.9867, 0.9): [1, 1, 1], # White (Text)
-    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0, 0] # Transparent (Likely Blob)
+    (1, 0.9867, 0.9): [1, 1, 1], # White (Text - Count 13)
+    (0.9675, 0.9415, 0.7725): [1, 0.2667, 0, 0] # Transparent (Background/Fill)
 }
 
 cyber_color_map = {
