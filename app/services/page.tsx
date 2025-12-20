@@ -16,6 +16,8 @@ const iconMap: Record<string, any> = {
   code: Code,
 };
 
+import Image from "next/image";
+
 export default function ServicesPage() {
   return (
     <>
@@ -50,9 +52,21 @@ export default function ServicesPage() {
                   >
                     {/* Icon/Visual Side */}
                     <div className="w-full md:w-1/3">
-                      <div className="bg-gradient-to-br from-[#28236b] to-[#28236b] rounded-[32px] p-12 flex items-center justify-center aspect-square">
-                        <Icon className="w-32 h-32 text-white" />
-                      </div>
+                      {service.id === "brand-identities" ? (
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:w-[50vw] md:-ml-[calc((100vw-100%)/2)] rounded-[32px] md:rounded-l-none md:rounded-r-[32px] overflow-hidden">
+                          <Image
+                            src="/images/Bag.png"
+                            alt="Brand Identities"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
+                      ) : (
+                        <div className="bg-gradient-to-br from-[#28236b] to-[#28236b] rounded-[32px] p-12 flex items-center justify-center aspect-square">
+                          <Icon className="w-32 h-32 text-white" />
+                        </div>
+                      )}
                     </div>
 
                     {/* Content Side */}
