@@ -74,6 +74,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
 
     // Determine background image based on service ID
     const getBackgroundImage = () => {
+        if (service.id === "web-design") return null;
         if (service.id === "development") {
             return "/images/web-design-bg.png";
         }
@@ -86,9 +87,9 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
     const bgImage = getBackgroundImage();
 
     return (
-        <div className="relative py-12 md:py-24 bg-[#28236b]">
+        <div className="relative py-12 md:py-24 bg-[#28236b]" style={{ backgroundColor: '#28236b' }}>
             {/* Background Container - Full Width Bleed */}
-            {bgImage && (
+            {bgImage && service.id !== "web-design" && (
                 <div
                     className={`absolute -top-[40%] -bottom-[40%] w-full hidden md:block z-0 pointer-events-none
             ${isEven ? "right-0" : "left-0"}
