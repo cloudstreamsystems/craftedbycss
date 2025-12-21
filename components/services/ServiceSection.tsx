@@ -74,7 +74,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
 
     // Determine background image based on service ID
     const getBackgroundImage = () => {
-        if (service.id === "web-design" || service.id === "development" || service.id === "brand-identities") {
+        if (service.id === "web-design" || service.id === "development") {
             return "/images/web-design-bg.png";
         }
         if (service.id === "cybersecurity") {
