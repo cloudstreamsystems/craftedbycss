@@ -7,7 +7,8 @@ export async function POST(request: Request) {
         // Basic rate limiting based on IP (using forwarded header or fallback)
         const ip = request.headers.get("x-forwarded-for") || "unknown";
 
-        if (!contactFormRateLimiter.check(ip)) {
+        const isAllowed = await contactFormRateLimiter.check(ip);
+        if (!isAllowed) {
             return NextResponse.json(
                 { error: "Too many requests. Please try again later." },
                 { status: 429 }
