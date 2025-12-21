@@ -87,10 +87,11 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
     return (
         <div className="relative py-12 md:py-24">
             {/* Background Container - Full Width Bleed */}
+            {/* Background Container - Full Width Bleed */}
             {bgImage && (
                 <div
-                    className={`absolute top-0 bottom-0 w-[50vw] hidden md:block z-0 pointer-events-none
-            ${isEven ? "right-0 translate-x-[10%]" : "left-0 -translate-x-[10%]"}
+                    className={`absolute -top-[20%] -bottom-[20%] w-[60vw] hidden md:block z-0 pointer-events-none
+            ${isEven ? "left-1/2" : "right-1/2"}
           `}
                 >
                     <Image
