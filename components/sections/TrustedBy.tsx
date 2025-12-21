@@ -89,7 +89,7 @@ export default function TrustedBy({
 
             <LogoCarousel
               logos={getLogos()}
-              speed={8}
+              speed={5}
               direction="left"
               pauseOnHover={true}
               grayscale={true}

@@ -25,7 +25,7 @@ interface LogoCarouselProps {
 
 export default function LogoCarousel({
   logos,
-  speed = 8,
+  speed = 5,
   direction = "left",
   pauseOnHover = true,
   className = "",
@@ -74,10 +74,12 @@ export default function LogoCarousel({
       const logoWidth = logoWidthRef.current;
 
       // Reset position for seamless loop
+      // We add/subtract logoWidth instead of resetting to 0/-logoWidth
+      // to preserve the sub-pixel overshoot and prevent visual jumps
       if (direction === "left" && currentPosition <= -logoWidth) {
-        currentPosition = 0;
+        currentPosition += logoWidth;
       } else if (direction === "right" && currentPosition >= 0) {
-        currentPosition = -logoWidth;
+        currentPosition -= logoWidth;
       }
 
       scrollElement.style.transform = `translateX(${currentPosition}px)`;
