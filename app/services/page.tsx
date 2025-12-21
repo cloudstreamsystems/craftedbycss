@@ -54,7 +54,7 @@ export default function ServicesPage() {
                       } gap-8 items-center`}
                   >
                     {/* Icon/Visual Side */}
-                    <div className="w-full md:w-1/3">
+                    <div className="w-full md:w-1/3 relative z-20">
                       {service.id === "brand-identities" ? (
                         <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:ml-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-l-none md:rounded-r-[32px] overflow-hidden">
                           <Image
