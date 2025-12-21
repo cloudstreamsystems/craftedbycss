@@ -39,7 +39,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
           animate={{ opacity: 0, transition: { duration: 0.4, delay: 0.6 } }}
           exit={{ opacity: 1, transition: { duration: 0.4, delay: 0.2 } }}
         >
-          <div className="relative w-48 md:w-64 h-24">
+          <div className="relative w-72 md:w-96 h-32">
             <NextImage
               src="/logo.png"
               alt="Cloudstream Systems"
