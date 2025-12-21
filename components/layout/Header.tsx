@@ -81,7 +81,7 @@ export default function Header() {
               alt="Cloudstream Systems"
               width={262}
               height={88}
-              className={`h-12 md:h-14 w-auto transition-all duration-500 ${isDarkText ? 'brightness-0' : 'brightness-0 invert'}`}
+              className={`${isScrolled ? 'h-12 md:h-14' : 'h-16 md:h-20'} w-auto transition-all duration-500 ${isDarkText ? 'brightness-0' : 'brightness-0 invert'}`}
               priority
             />
           </Link>
@@ -92,14 +92,14 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium text-sm tracking-wide hover:text-[#ff4400] transition-colors relative group ${isDarkText ? 'text-[#28236b]' : 'text-white/90'}`}
+                className={`font-medium ${isScrolled ? 'text-sm' : 'text-base'} tracking-wide hover:text-[#ff4400] transition-colors relative group ${isDarkText ? 'text-[#28236b]' : 'text-white/90'}`}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff4400] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
             <Link href="/contact">
-              <button className="bg-[#ff4400] text-[#28236b] px-6 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-[#ff4400] transition-all duration-300 shadow-lg shadow-[#ff4400]/20">
+              <button className={`bg-[#ff4400] text-[#28236b] ${isScrolled ? 'px-6 py-3 text-sm' : 'px-8 py-4 text-base'} rounded-full font-bold hover:bg-white hover:text-[#ff4400] transition-all duration-300 shadow-lg shadow-[#ff4400]/20`}>
                 Get Started
               </button>
             </Link>
