@@ -36,7 +36,7 @@ export default function HamburgerMenu() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: "-100%" }}
                     transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                    className="fixed inset-0 bg-[#1e1b4b] z-40 flex flex-col pt-28 px-6 md:px-20 lg:px-28"
+                    className="fixed inset-0 bg-[#28236b] z-40 flex flex-col pt-28 px-6 md:px-20 lg:px-28"
                 >
                     {/* Background Elements */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-[#3730a3] rounded-full blur-[100px] opacity-20 pointer-events-none" />
