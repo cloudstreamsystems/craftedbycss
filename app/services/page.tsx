@@ -77,7 +77,7 @@ export default function ServicesPage() {
                           <CybersecurityDemo />
                         </div>
                       ) : service.id === "development" ? (
-                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-[calc(min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] md:w-[calc(100%_-_min(-1rem,_(1280px_-_100vw)_/_2_-_1rem))] rounded-[32px] md:rounded-r-none md:rounded-l-[32px] overflow-hidden bg-[#F4F5FF] p-4 md:p-0">
+                        <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] md:mr-12 rounded-[32px] overflow-hidden bg-[#F4F5FF] p-4 md:p-0 shadow-lg">
                           <Image
                             src="/images/dashboard-demo.png"
                             alt="Development Dashboard"
@@ -163,9 +163,9 @@ export default function ServicesPage() {
                         </div>
                       </div>
                     ) : service.id === "development" ? (
-                      <div className="w-full md:w-2/3 relative md:pr-16">
+                      <div className="w-full md:w-2/3 relative md:pr-16 md:-ml-24">
                         {/* Background Shape (reusing web-design-bg as requested) */}
-                        <div className="absolute -top-[20%] -bottom-[20%] -right-[10%] w-[150vw] z-0 hidden md:block">
+                        <div className="absolute -top-[20%] -bottom-[20%] -right-[20%] w-[150vw] z-0 hidden md:block">
                           <Image
                             src="/images/web-design-bg.png"
                             alt="Background Shape"
