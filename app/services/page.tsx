@@ -97,12 +97,12 @@ export default function ServicesPage() {
                     {service.id === "web-design" ? (
                       <div className="w-full md:w-2/3 relative md:pr-16">
                         {/* Background Shape */}
-                        <div className="absolute inset-0 w-[110%] h-[120%] -top-[10%] -left-[5%] z-0 hidden md:block">
+                        <div className="absolute -top-[20%] -bottom-[20%] -right-[10%] w-[150vw] z-0 hidden md:block">
                           <Image
                             src="/images/web-design-bg.png"
                             alt="Background Shape"
                             fill
-                            className="object-fill"
+                            className="object-cover object-right"
                           />
                         </div>
                         {/* Mobile Background (simplified or same) */}
@@ -131,12 +131,12 @@ export default function ServicesPage() {
                     ) : service.id === "cybersecurity" ? (
                       <div className="w-full md:w-2/3 relative md:pl-16">
                         {/* Background Shape */}
-                        <div className="absolute inset-0 w-[110%] h-[120%] -top-[10%] -left-[5%] z-0 hidden md:block">
+                        <div className="absolute -top-[20%] -bottom-[20%] -left-[10%] w-[150vw] z-0 hidden md:block">
                           <Image
                             src="/images/cybersecurity-bg.png"
                             alt="Background Shape"
                             fill
-                            className="object-fill"
+                            className="object-cover object-left"
                           />
                         </div>
                         {/* Mobile Background */}
@@ -165,12 +165,12 @@ export default function ServicesPage() {
                     ) : service.id === "development" ? (
                       <div className="w-full md:w-2/3 relative md:pr-16">
                         {/* Background Shape (reusing web-design-bg as requested) */}
-                        <div className="absolute inset-0 w-[110%] h-[120%] -top-[10%] -left-[5%] z-0 hidden md:block">
+                        <div className="absolute -top-[20%] -bottom-[20%] -right-[10%] w-[150vw] z-0 hidden md:block">
                           <Image
                             src="/images/web-design-bg.png"
                             alt="Background Shape"
                             fill
-                            className="object-fill"
+                            className="object-cover object-right"
                           />
                         </div>
                         {/* Mobile Background */}
