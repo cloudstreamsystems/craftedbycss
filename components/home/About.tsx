@@ -163,31 +163,7 @@ export default function About() {
                 Learn More About Us
               </Link>
 
-              {/* Tooltip */}
-              <div
-                className="hidden lg:block absolute -top-14 left-full ml-8 opacity-100 transition-opacity duration-500 pointer-events-none w-max"
-                style={{ zIndex: 9999, transform: 'translateZ(10px)' }}
-              >
-                <div className="relative flex items-center transform rotate-[-6deg]">
-                  {/* Simple hand-drawn arrow pointing from text to button */}
-                  <svg
-                    className="w-12 h-12 text-[#28236b] mr-2"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M90,20 Q60,60 30,50" />
-                    <path d="M30,50 L40,40" />
-                    <path d="M30,50 L40,60" />
-                  </svg>
-                  <span className="font-[family-name:var(--font-caveat)] text-3xl text-[#28236b] leading-tight">
-                    who are we?
-                  </span>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
