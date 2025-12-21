@@ -38,7 +38,7 @@ export default function CybersecurityDemo() {
                 </CodeHeader>
                 <CodeBlock
                     key={key}
-                    className="h-[250px] md:h-[300px] font-mono text-xs md:text-sm p-6 overflow-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20"
+                    className="h-[250px] md:h-[300px] font-mono text-xs md:text-sm p-6 overflow-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20 text-gray-200 [&_span]:text-gray-200"
                     cursor={true}
                     lang="bash"
                     theme="dark"

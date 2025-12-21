@@ -102,7 +102,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                         priority
                     />
                     {/* Gradient Overlay for Text Readability */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${isEven ? "from-transparent via-[#28236b]/50 to-[#28236b]" : "from-[#28236b] via-[#28236b]/50 to-transparent"}`} />
+                    <div className={`absolute inset-0 bg-gradient-to-r ${isEven ? "from-transparent via-[#28236b]/90 to-[#28236b]" : "from-[#28236b] via-[#28236b]/90 to-transparent"}`} />
                 </div>
             )}
 
