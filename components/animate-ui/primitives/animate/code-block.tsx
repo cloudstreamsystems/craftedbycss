@@ -157,7 +157,7 @@ function CodeBlock({
     >
       {/* Render highlighted code if done, otherwise render plain text */}
       {(writing && !isDone) ? (
-        <pre className={`shiki ${theme} bg-transparent`}>
+        <pre className={`shiki ${theme} bg-transparent text-gray-200`}>
           <code>{visibleCode}</code>
         </pre>
       ) : (

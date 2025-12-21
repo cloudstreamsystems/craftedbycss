@@ -128,7 +128,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
           `}
                     >
                         {/* Mobile Background */}
-                        <div className="absolute inset-0 bg-[#28236b] rounded-[32px] md:hidden -z-10" />
+                        <div className="absolute inset-0 bg-[#28236b] rounded-[32px] -z-10" />
 
                         <div className="p-8 md:p-12">
                             <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${bgImage ? "text-white" : "text-[#28236b]"}`}>
