@@ -13,7 +13,7 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <ScrollObserver mode="chaos">
-        <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white py-24">
+        <section className="relative bg-gradient-to-br from-[#28236b] to-[#28236b] text-white pt-40 pb-24 md:pt-56">
           <Container>
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
