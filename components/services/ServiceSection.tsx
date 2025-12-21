@@ -90,15 +90,16 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
             {/* Background Container - Full Width Bleed */}
             {bgImage && (
                 <div
-                    className={`absolute -top-[20%] -bottom-[20%] w-[60vw] hidden md:block z-0 pointer-events-none
-            ${isEven ? "left-1/2" : "right-1/2"}
+                    className={`absolute -top-[40%] -bottom-[40%] w-[90vw] hidden md:block z-0 pointer-events-none
+            ${isEven ? "right-0" : "left-0"}
           `}
                 >
                     <Image
                         src={bgImage}
                         alt="Background Shape"
                         fill
-                        className={`object-cover ${isEven ? "object-left" : "object-right"}`}
+                        className={`object-cover ${isEven ? "object-right" : "object-left"}`}
+                        priority
                     />
                 </div>
             )}
