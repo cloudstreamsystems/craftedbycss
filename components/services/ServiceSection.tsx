@@ -131,19 +131,19 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                         <div className="absolute inset-0 bg-[#28236b] rounded-[32px] -z-10" />
 
                         <div className="p-8 md:p-12">
-                            <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${bgImage ? "text-white" : "text-[#28236b]"}`}>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                                 {service.title}
                             </h2>
-                            <p className={`text-lg md:text-xl mb-8 leading-relaxed ${bgImage ? "text-white/90" : "text-gray-700"}`}>
+                            <p className="text-lg md:text-xl mb-8 leading-relaxed text-white/90">
                                 {service.description}
                             </p>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {service.features.map((feature, idx) => (
                                     <div key={idx} className="flex items-start gap-3">
-                                        <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 ${bgImage ? "bg-white" : "bg-[#28236b]"}`}>
-                                            <Check className={`w-4 h-4 ${bgImage ? "text-[#28236b]" : "text-white"}`} />
+                                        <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 bg-white">
+                                            <Check className="w-4 h-4 text-[#28236b]" />
                                         </div>
-                                        <span className={`text-base font-medium ${bgImage ? "text-white" : "text-gray-700"}`}>
+                                        <span className="text-base font-medium text-white">
                                             {feature}
                                         </span>
                                     </div>
