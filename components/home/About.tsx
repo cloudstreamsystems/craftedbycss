@@ -165,13 +165,13 @@ export default function About() {
 
               {/* Tooltip */}
               <div
-                className="hidden lg:block absolute -top-14 left-full ml-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none w-max"
+                className="hidden lg:block absolute -top-14 left-full ml-8 opacity-100 transition-opacity duration-500 pointer-events-none w-max"
                 style={{ zIndex: 9999, transform: 'translateZ(10px)' }}
               >
                 <div className="relative flex items-center transform rotate-[-6deg]">
                   {/* Simple hand-drawn arrow pointing from text to button */}
                   <svg
-                    className="w-12 h-12 text-[#28236b] mr-2 transform rotate-180"
+                    className="w-12 h-12 text-[#28236b] mr-2"
                     viewBox="0 0 100 100"
                     fill="none"
                     stroke="currentColor"
