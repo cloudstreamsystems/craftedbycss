@@ -1,4 +1,6 @@
-import { Metadata } from "next";
+"use client";
+
+import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import ScrollObserver from "@/components/ScrollObserver";
 import { services } from "@/lib/data/services";
@@ -6,10 +8,7 @@ import { Check } from "lucide-react";
 import ServiceSection from "@/components/services/ServiceSection";
 import ProcessStackedServices from "@/components/services/ProcessStackedServices";
 
-export const metadata: Metadata = {
-  title: "Services | Cloudstream Systems",
-  description: "Explore our comprehensive digital services including brand identities, web design, art direction, and development.",
-};
+
 
 
 export default function ServicesPage() {
@@ -57,7 +56,14 @@ export default function ServicesPage() {
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="flex gap-4">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex gap-4"
+                  >
                     <div className="w-12 h-12 bg-[#28236b] rounded-xl flex items-center justify-center flex-shrink-0">
                       <Check className="w-6 h-6 text-white" />
                     </div>
@@ -67,7 +73,7 @@ export default function ServicesPage() {
                       </h3>
                       <p className="text-gray-700">{benefit.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

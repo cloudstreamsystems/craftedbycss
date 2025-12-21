@@ -85,7 +85,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
             {/* Background Container - Full Width Bleed */}
             {bgImage && service.id !== "web-design" && service.id !== "cybersecurity" && (
                 <div
-                    className={`absolute -top-[40%] -bottom-[40%] w-full hidden md:block z-0 pointer-events-none
+                    className={`absolute -top-[40%] -bottom-[40%] w-full z-0 pointer-events-none opacity-50 md:opacity-100
             ${isEven ? "right-0" : "left-0"}
           `}
                 >
@@ -106,14 +106,18 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
 
                     {/* Visual Column */}
-                    <div
+                    <motion.div
+                        initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                         className={`
             md:col-span-6 lg:col-span-7 relative
             order-2 ${isEven ? "md:order-1" : "md:order-2"}
           `}
                     >
                         {renderVisual()}
-                    </div>
+                    </motion.div>
 
                     {/* Text Column */}
                     <div
