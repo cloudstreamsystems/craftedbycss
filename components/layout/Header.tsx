@@ -65,7 +65,7 @@ export default function Header() {
   const styles = getHeaderStyles();
 
   // Dark text when scrolled (White Header) AND in chaos or warning mode (Dark Section)
-  const isDarkText = isScrolled && (headerMode === 'warning' || headerMode === 'chaos');
+  const isDarkText = !isMenuOpen && isScrolled && (headerMode === 'warning' || headerMode === 'chaos');
 
   return (
     <>
