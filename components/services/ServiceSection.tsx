@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import { Check, Palette, Monitor, Shield, Code } from "lucide-react";
 import { Service } from "@/lib/data/services";
@@ -125,13 +126,31 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                         <div className="absolute inset-0 bg-[#28236b] rounded-[32px] -z-10" />
 
                         <div className="p-8 md:p-12">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="text-3xl md:text-4xl font-bold mb-6 text-white"
+                            >
                                 {service.title}
-                            </h2>
-                            <p className="text-lg md:text-xl mb-8 leading-relaxed text-white/90">
+                            </motion.h2>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="text-lg md:text-xl mb-8 leading-relaxed text-white/90"
+                            >
                                 {service.description}
-                            </p>
-                            <div className="grid sm:grid-cols-2 gap-4">
+                            </motion.p>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                className="grid sm:grid-cols-2 gap-4"
+                            >
                                 {service.features.map((feature, idx) => (
                                     <div key={idx} className="flex items-start gap-3">
                                         <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 bg-white">
@@ -142,7 +161,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                                         </span>
                                     </div>
                                 ))}
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
