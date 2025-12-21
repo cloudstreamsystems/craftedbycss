@@ -109,7 +109,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                 <div
                     className={`
             md:col-span-6 lg:col-span-7 relative
-            ${isEven ? "md:order-1" : "md:order-2"}
+            order-2 ${isEven ? "md:order-1" : "md:order-2"}
           `}
                 >
                     {renderVisual()}
@@ -119,7 +119,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                 <div
                     className={`
             md:col-span-6 lg:col-span-5 relative
-            ${isEven ? "md:order-2 md:-ml-12" : "md:order-1 md:-mr-12"}
+            order-1 ${isEven ? "md:order-2 md:-ml-12" : "md:order-1 md:-mr-12"}
           `}
                 >
                     {/* Mobile Background */}
