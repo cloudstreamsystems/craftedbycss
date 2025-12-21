@@ -94,24 +94,60 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Content Side */}
-                    <div className={`w-full md:w-2/3 ${service.id === "brand-identities" || service.id === "cybersecurity" ? "md:pl-16" : ""} ${service.id === "web-design" || service.id === "development" ? "md:pr-16" : ""}`}>
-                      <h2 className="text-4xl font-bold mb-4 text-[#28236b]">
-                        {service.title}
-                      </h2>
-                      <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                        {service.description}
-                      </p>
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="w-6 h-6 bg-[#28236b] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                              <Check className="w-4 h-4 text-white" />
-                            </div>
-                            <span className="text-lg text-gray-700">{feature}</span>
+                    {service.id === "web-design" ? (
+                      <div className="w-full md:w-2/3 relative md:pr-16">
+                        {/* Background Shape */}
+                        <div className="absolute inset-0 w-[110%] h-[120%] -top-[10%] -left-[5%] z-0 hidden md:block">
+                          <Image
+                            src="/images/web-design-bg.png"
+                            alt="Background Shape"
+                            fill
+                            className="object-fill"
+                          />
+                        </div>
+                        {/* Mobile Background (simplified or same) */}
+                        <div className="absolute inset-0 w-full h-full z-0 md:hidden bg-[#28236b] rounded-[32px]"></div>
+
+                        {/* Content */}
+                        <div className="relative z-10 p-8 md:p-16">
+                          <h2 className="text-4xl font-bold mb-4 text-white">
+                            {service.title}
+                          </h2>
+                          <p className="text-xl text-white/90 mb-6 leading-relaxed">
+                            {service.description}
+                          </p>
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            {service.features.map((feature, idx) => (
+                              <div key={idx} className="flex items-start gap-3">
+                                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                  <Check className="w-4 h-4 text-[#28236b]" />
+                                </div>
+                                <span className="text-lg text-white">{feature}</span>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className={`w-full md:w-2/3 ${service.id === "brand-identities" || service.id === "cybersecurity" ? "md:pl-16" : ""} ${service.id === "development" ? "md:pr-16" : ""}`}>
+                        <h2 className="text-4xl font-bold mb-4 text-[#28236b]">
+                          {service.title}
+                        </h2>
+                        <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+                          {service.description}
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {service.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-6 h-6 bg-[#28236b] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <Check className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-lg text-gray-700">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
