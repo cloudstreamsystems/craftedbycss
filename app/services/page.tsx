@@ -34,13 +34,11 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <ScrollObserver mode="drift">
         <section className="py-12 md:py-20 overflow-hidden">
-          <Container>
-            <div className="flex flex-col gap-12 md:gap-32">
-              {services.map((service, index) => (
-                <ServiceSection key={service.id} service={service} index={index} />
-              ))}
-            </div>
-          </Container>
+          <div className="flex flex-col">
+            {services.map((service, index) => (
+              <ServiceSection key={service.id} service={service} index={index} />
+            ))}
+          </div>
         </section>
       </ScrollObserver>
 

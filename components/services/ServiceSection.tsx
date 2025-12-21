@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Container from "@/components/ui/Container";
 import { Check, Palette, Monitor, Shield, Code } from "lucide-react";
 import { Service } from "@/lib/data/services";
 import RotatingImage from "@/components/services/RotatingImage";
@@ -87,7 +88,6 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
     return (
         <div className="relative py-12 md:py-24">
             {/* Background Container - Full Width Bleed */}
-            {/* Background Container - Full Width Bleed */}
             {bgImage && (
                 <div
                     className={`absolute -top-[40%] -bottom-[40%] w-[90vw] hidden md:block z-0 pointer-events-none
@@ -104,51 +104,53 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                 </div>
             )}
 
-            {/* Content Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+            <Container>
+                {/* Content Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
 
-                {/* Visual Column */}
-                <div
-                    className={`
+                    {/* Visual Column */}
+                    <div
+                        className={`
             md:col-span-6 lg:col-span-7 relative
             order-2 ${isEven ? "md:order-1" : "md:order-2"}
           `}
-                >
-                    {renderVisual()}
-                </div>
+                    >
+                        {renderVisual()}
+                    </div>
 
-                {/* Text Column */}
-                <div
-                    className={`
+                    {/* Text Column */}
+                    <div
+                        className={`
             md:col-span-6 lg:col-span-5 relative
             order-1 ${isEven ? "md:order-2 md:-ml-12" : "md:order-1 md:-mr-12"}
           `}
-                >
-                    {/* Mobile Background */}
-                    <div className="absolute inset-0 bg-[#28236b] rounded-[32px] md:hidden -z-10" />
+                    >
+                        {/* Mobile Background */}
+                        <div className="absolute inset-0 bg-[#28236b] rounded-[32px] md:hidden -z-10" />
 
-                    <div className="p-8 md:p-12">
-                        <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${bgImage ? "text-white" : "text-[#28236b]"}`}>
-                            {service.title}
-                        </h2>
-                        <p className={`text-lg md:text-xl mb-8 leading-relaxed ${bgImage ? "text-white/90" : "text-gray-700"}`}>
-                            {service.description}
-                        </p>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            {service.features.map((feature, idx) => (
-                                <div key={idx} className="flex items-start gap-3">
-                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 ${bgImage ? "bg-white" : "bg-[#28236b]"}`}>
-                                        <Check className={`w-4 h-4 ${bgImage ? "text-[#28236b]" : "text-white"}`} />
+                        <div className="p-8 md:p-12">
+                            <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${bgImage ? "text-white" : "text-[#28236b]"}`}>
+                                {service.title}
+                            </h2>
+                            <p className={`text-lg md:text-xl mb-8 leading-relaxed ${bgImage ? "text-white/90" : "text-gray-700"}`}>
+                                {service.description}
+                            </p>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {service.features.map((feature, idx) => (
+                                    <div key={idx} className="flex items-start gap-3">
+                                        <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 ${bgImage ? "bg-white" : "bg-[#28236b]"}`}>
+                                            <Check className={`w-4 h-4 ${bgImage ? "text-[#28236b]" : "text-white"}`} />
+                                        </div>
+                                        <span className={`text-base font-medium ${bgImage ? "text-white" : "text-gray-700"}`}>
+                                            {feature}
+                                        </span>
                                     </div>
-                                    <span className={`text-base font-medium ${bgImage ? "text-white" : "text-gray-700"}`}>
-                                        {feature}
-                                    </span>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }
