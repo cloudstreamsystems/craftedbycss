@@ -59,7 +59,7 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
                             src="/images/dashboard-demo.png"
                             alt="Development Dashboard"
                             fill
-                            className="object-cover object-left-top"
+                            className="object-contain"
                         />
                     </div>
                 );
@@ -86,11 +86,11 @@ export default function ServiceSection({ service, index }: ServiceSectionProps) 
     const bgImage = getBackgroundImage();
 
     return (
-        <div className="relative py-12 md:py-24">
+        <div className="relative py-12 md:py-24 bg-[#28236b]">
             {/* Background Container - Full Width Bleed */}
             {bgImage && (
                 <div
-                    className={`absolute -top-[40%] -bottom-[40%] w-[90vw] hidden md:block z-0 pointer-events-none
+                    className={`absolute -top-[40%] -bottom-[40%] w-full hidden md:block z-0 pointer-events-none
             ${isEven ? "right-0" : "left-0"}
           `}
                 >
