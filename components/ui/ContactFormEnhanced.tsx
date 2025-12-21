@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2, Check } from "lucide-react";
 import { useMotion } from "@/contexts/MotionContext";
+import { validateContactForm } from "@/lib/form-security";
 
 interface FloatingLabelInputProps {
   id: string;
@@ -142,6 +143,15 @@ export default function ContactFormEnhanced() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Client-side validation
+    const validation = validateContactForm(formData);
+    if (!validation.isValid) {
+      console.error("Validation errors:", validation.errors);
+      setSubmitStatus("error");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
@@ -151,7 +161,7 @@ export default function ContactFormEnhanced() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(validation.sanitizedData),
       });
 
       const data = await response.json();

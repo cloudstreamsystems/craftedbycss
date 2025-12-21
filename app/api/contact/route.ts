@@ -1,35 +1,13 @@
 import { NextResponse } from "next/server";
 import { validateContactForm } from "@/lib/form-security";
-
-// Simple in-memory rate limiting (for demonstration purposes)
-// In production, use Redis or a similar service
-const rateLimitMap = new Map<string, number[]>();
-
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const MAX_REQUESTS = 5; // 5 requests per minute
-
-function isRateLimited(ip: string): boolean {
-    const now = Date.now();
-    const timestamps = rateLimitMap.get(ip) || [];
-
-    // Filter out old timestamps
-    const validTimestamps = timestamps.filter(t => now - t < RATE_LIMIT_WINDOW);
-
-    if (validTimestamps.length >= MAX_REQUESTS) {
-        return true;
-    }
-
-    validTimestamps.push(now);
-    rateLimitMap.set(ip, validTimestamps);
-    return false;
-}
+import { contactFormRateLimiter } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
     try {
         // Basic rate limiting based on IP (using forwarded header or fallback)
         const ip = request.headers.get("x-forwarded-for") || "unknown";
 
-        if (isRateLimited(ip)) {
+        if (!contactFormRateLimiter.check(ip)) {
             return NextResponse.json(
                 { error: "Too many requests. Please try again later." },
                 { status: 429 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send } from "lucide-react";
+import { validateContactForm } from "@/lib/form-security";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,6 +25,17 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Client-side validation
+    const validation = validateContactForm(formData);
+    if (!validation.isValid) {
+      // In a real app, you'd show specific errors for each field
+      // For now, we'll just show a generic error or log them
+      console.error("Validation errors:", validation.errors);
+      setSubmitStatus("error");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
@@ -33,7 +45,7 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(validation.sanitizedData),
       });
 
       const data = await response.json();
