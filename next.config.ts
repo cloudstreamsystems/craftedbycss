@@ -11,9 +11,9 @@ const nextConfig: NextConfig = {
           contentSecurityPolicy: {
             directives: {
               defaultSrc: "'self'",
-              styleSrc: ["'self'"],
+              styleSrc: ["'self'", "'unsafe-inline'"],
               imgSrc: ["'self'", "data:", "blob:"],
-              scriptSrc: ["'self'"],
+              scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
               connectSrc: ["'self'"],
               frameSrc: [],
             },
