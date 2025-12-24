@@ -83,6 +83,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     target={project.demoUrl === "#" ? undefined : "_blank"}
                     rel={project.demoUrl === "#" ? undefined : "noopener noreferrer"}
                     onClick={(e) => {
+                      e.stopPropagation();
                       if (project.demoUrl === "#") {
                         e.preventDefault();
                       }
