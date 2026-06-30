@@ -75,6 +75,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#28236b] mb-1">Phone</h3>
+                       <a
                         href="tel:+233542755549"
                         className="text-gray-700 hover:text-[#28236b] transition-colors">
                         +233 54 275 5549
